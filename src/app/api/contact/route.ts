@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,28 +25,31 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // In production, you would send an email or store in a database.
-    // Options:
-    // 1. Use Resend (resend.com) - great for transactional emails
-    // 2. Use SendGrid or Mailgun
-    // 3. Store in a database (Supabase, PlanetScale, etc.)
-    // 4. Send to a webhook (Slack, Discord, etc.)
-    //
-    // For now, log the submission and return success.
-    console.log('Contact form submission:', {
-      name,
-      email,
-      company: company || 'Not provided',
-      budget: budget || 'Not specified',
-      project,
-      timestamp: new Date().toISOString(),
+    // Send notification email to you
+    await resend.emails.send({
+      from: 'MDK Engineering <contact@mdkengineering.com>',
+      to: 'kueck.marcel@gmail.com',
+      replyTo: email,
+      subject: `New inquiry from ${name}${company ? ` (${company})` : ''}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <table style="border-collapse:collapse;width:100%;max-width:600px;">
+          <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Name</td><td style="padding:8px;border-bottom:1px solid #eee;">${name}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Email</td><td style="padding:8px;border-bottom:1px solid #eee;"><a href="mailto:${email}">${email}</a></td></tr>
+          <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Company</td><td style="padding:8px;border-bottom:1px solid #eee;">${company || 'Not provided'}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;">Budget</td><td style="padding:8px;border-bottom:1px solid #eee;">${budget || 'Not specified'}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold;vertical-align:top;">Project</td><td style="padding:8px;">${project}</td></tr>
+        </table>
+        <p style="margin-top:16px;color:#666;font-size:13px;">Sent from mdkengineering.com contact form</p>
+      `,
     });
 
     return NextResponse.json(
       { message: 'Thank you! Your message has been received. I\'ll get back to you within 24 hours.' },
       { status: 200 }
     );
-  } catch {
+  } catch (error) {
+    console.error('Contact form error:', error);
     return NextResponse.json(
       { error: 'Something went wrong. Please try again or email directly.' },
       { status: 500 }
