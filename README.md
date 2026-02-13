@@ -1,34 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MDK Engineering
+
+> Engineering Intelligence Into Reality
+
+The website for MDK Engineering — an AI engineering consultancy based in Munich, Germany.
+
+**Live:** [mdkengineering.com](https://mdkengineering.com)
+
+## Tech Stack
+
+- [Next.js 16](https://nextjs.org/) — App Router, TypeScript, Server Components
+- CSS Modules — Component-scoped styling
+- [MDX](https://mdxjs.com/) — Blog content with next-mdx-remote
+- [Vercel](https://vercel.com/) — Deployment & hosting
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-## Learn More
+```
+src/
+  app/           — Pages (App Router)
+  components/    — Reusable components
+  lib/           — Utility functions
+content/
+  blog/          — MDX blog posts
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Route | Description |
+|-------|-------------|
+| `/` | Home — hero, services, projects, about, blog preview, contact |
+| `/services` | Detailed service offerings & pricing |
+| `/about` | Background, timeline, capabilities |
+| `/projects` | Project portfolio |
+| `/projects/[slug]` | Individual case studies |
+| `/blog` | Blog listing |
+| `/blog/[slug]` | Individual blog posts (MDX) |
+| `/contact` | Contact form & info |
+| `/impressum` | Legal notice (German, TMG §5) |
+| `/datenschutz` | Privacy policy (German, DSGVO) |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Adding Blog Posts
 
-## Deploy on Vercel
+Create a new `.mdx` file in `content/blog/`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```mdx
+---
+title: "Your Post Title"
+description: "A short description for SEO and previews."
+date: "2025-01-20"
+category: "Tutorial"
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Your content here...
+```
+
+## Deployment
+
+This project is configured for Vercel deployment:
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+```
+
+Or connect the GitHub repository to Vercel for automatic deployments on push.
+
+## Before Going Live
+
+- [ ] Replace placeholder data in `/impressum` and `/datenschutz` (use [e-recht24.de](https://www.e-recht24.de/) generator)
+- [ ] Set up email service for contact form (e.g., [Resend](https://resend.com/))
+- [ ] Add real project photos / headshot
+- [ ] Configure custom domain on Vercel
+- [ ] Set up Vercel Analytics (optional, privacy-friendly)
+
+## License
+
+© MDK Engineering. All rights reserved.

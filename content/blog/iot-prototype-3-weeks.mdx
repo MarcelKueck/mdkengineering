@@ -1,0 +1,161 @@
+---
+title: "From Concept to Working IoT Prototype in 3 Weeks"
+description: "How we built and deployed an environmental monitoring system with custom hardware, edge AI, and a real-time dashboard in just three weeks."
+date: "2024-12-20"
+category: "Case Study"
+---
+
+## The challenge
+
+A facilities management company approached us with a problem: they managed 40+ commercial buildings and had no real-time visibility into environmental conditions. Temperature complaints from tenants were reactive, energy costs were climbing, and compliance reporting was manual.
+
+They needed a monitoring system. Their timeline: "as fast as possible." Their budget: limited.
+
+## Week 1: Design & hardware selection
+
+### Day 1-2: Requirements & architecture
+
+We started with a focused discovery session. The key requirements:
+
+- Monitor temperature, humidity, CO2, and particulate matter
+- Real-time alerts when conditions go out of range
+- Historical data for compliance reporting
+- Easy to install (no rewiring, no IT infrastructure changes)
+- Cost under €150 per monitoring point
+
+Our architecture decision: **edge-first with cloud sync.** Each sensor node processes data locally and only sends aggregated readings to the cloud. This reduces bandwidth, improves reliability, and keeps latency low for alerts.
+
+### Day 3-5: Hardware prototyping
+
+We selected the ESP32-S3 as our microcontroller — it has built-in WiFi/BLE, enough processing power for edge analytics, and costs under €5.
+
+Sensor selection:
+
+- **BME280** for temperature and humidity (±0.5°C accuracy, sufficient for our use case)
+- **SCD41** for CO2 (photoacoustic sensing, no calibration needed)
+- **PMS5003** for particulate matter
+
+Total bill of materials per node: **€87**
+
+By the end of day 5, we had a working breadboard prototype reading all sensors and transmitting data over MQTT.
+
+## Week 2: Firmware & backend
+
+### Firmware development
+
+The ESP32 firmware handles:
+
+1. Sensor reading at configurable intervals (default: 30 seconds)
+2. Local averaging and anomaly detection (edge AI)
+3. MQTT publishing to the cloud broker
+4. OTA (over-the-air) update capability
+5. Fallback to local storage if connectivity is lost
+
+The edge AI component is lightweight but effective: a simple statistical model that learns the "normal" pattern for each room over 48 hours, then flags deviations. This catches HVAC failures, window-left-open situations, and occupancy-driven CO2 spikes — without needing cloud connectivity.
+
+### Backend & data pipeline
+
+Our backend stack:
+
+- **MQTT broker** (Mosquitto) for ingestion
+- **TimescaleDB** for time-series storage (PostgreSQL extension — we get the best of both worlds)
+- **FastAPI** for the REST API
+- **Redis** for real-time alert state
+
+The data pipeline:
+
+```
+Sensor → MQTT → Ingestion Service → TimescaleDB
+                     ↓
+              Alert Evaluation → Notification Service
+                                      ↓
+                              Email / SMS / Dashboard
+```
+
+### Alert logic
+
+Alerts use a three-tier system:
+
+1. **Warning:** Parameter approaching threshold (e.g., temperature > 25°C)
+2. **Alert:** Parameter exceeds threshold (e.g., temperature > 28°C)
+3. **Critical:** Sustained exceedance or rapid change (e.g., temperature rising > 2°C/hour)
+
+Each tier triggers different notifications. Warnings go to the dashboard only. Alerts send email. Critical sends SMS to the on-call technician.
+
+## Week 3: Dashboard & deployment
+
+### Dashboard
+
+We built the monitoring dashboard with Next.js and deployed it on Vercel. Key features:
+
+- Real-time readings with WebSocket updates
+- Historical charts (1 hour, 24 hours, 7 days, 30 days)
+- Floor plan view with sensor positions
+- Alert history and acknowledgment
+- CSV export for compliance reporting
+
+The design is intentionally simple. Facilities managers aren't data scientists — they need clear, actionable information. Green means good. Yellow means attention needed. Red means act now.
+
+### Physical deployment
+
+We designed a 3D-printed enclosure (PLA, printed on our Prusa MK4) that:
+
+- Houses all components securely
+- Allows airflow for accurate readings
+- Mounts with 3M Command strips (no drilling)
+- Looks professional enough for commercial spaces
+
+Deployment per node takes about 10 minutes:
+
+1. Mount the enclosure
+2. Plug in USB-C power
+3. Connect to WiFi via the setup app
+4. Verify readings on the dashboard
+
+### Pilot deployment
+
+We deployed 12 nodes across two buildings for the initial pilot. The entire installation took one afternoon.
+
+## Results
+
+After the first month of operation:
+
+- **3 HVAC issues** detected before tenant complaints
+- **12% reduction** in heating energy (from identifying overheated zones)
+- **Compliance reporting** reduced from 2 days/month to 15 minutes
+- **Tenant satisfaction** improved — they could see their building cared about air quality
+
+## What made this possible in 3 weeks
+
+1. **Opinionated technology choices.** We didn't evaluate 20 microcontrollers or 5 cloud platforms. We picked proven tools and moved fast.
+
+2. **Vertical integration.** Having hardware, firmware, backend, and frontend capability in-house eliminates coordination overhead.
+
+3. **80/20 approach.** The first version doesn't need every feature. It needs the core features working reliably. We can iterate from there.
+
+4. **Reusable components.** Our MQTT ingestion pipeline, alert system, and dashboard framework are modular. We customize, not rebuild.
+
+## Scaling up
+
+The pilot succeeded, and the client is now rolling out to all 40 buildings (~500 sensor nodes). For the scale-up, we're:
+
+- Moving to a custom PCB design (reduces per-unit cost to ~€45)
+- Adding LoRaWAN support for buildings with poor WiFi coverage
+- Implementing predictive models for energy optimization
+- Building a mobile app for technicians
+
+## Lessons for your project
+
+If you're considering IoT for your operations:
+
+1. **Start with a real problem**, not a technology. "We need IoT" is not a requirement. "We're losing money because we can't see what's happening in our buildings" is.
+
+2. **Prototype fast, validate faster.** Three weeks to a working system is aggressive but achievable when you focus.
+
+3. **Plan for the boring stuff.** Power, connectivity, mounting, maintenance — these "boring" details determine whether your IoT system works in practice or just in the demo.
+
+4. **Edge computing is your friend.** Don't send everything to the cloud. Process locally, sync intelligently.
+
+---
+
+_Have an IoT project in mind? [Reach out](/contact) — we love turning hardware+software ideas into working systems._
