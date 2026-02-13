@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './home.module.css';
 import ContactForm from '@/components/ContactForm';
-import TypingTitle from '@/components/TypingTitle';
+import HeroAnimation from '@/components/HeroAnimation';
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
         <div className="container">
           <div className={styles.heroContent}>
             <div className={styles.heroTag}>AI Engineering &amp; Automation Studio · Munich</div>
-            <TypingTitle />
+            <HeroAnimation />
             <p className={styles.heroDescription}>
               AI engineer and inventor based in Munich. I help companies automate processes,
               build intelligent systems, and turn ideas into working technology, end to end.
@@ -38,36 +38,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Terminal decoration */}
-          <div className={styles.heroTerminal}>
-            <div className={styles.terminalBar}>
-              <div className={styles.terminalDot} />
-              <div className={styles.terminalDot} />
-              <div className={styles.terminalDot} />
-              <span className={styles.terminalTitle}>mdk@workshop:~</span>
-            </div>
-            <div className={styles.terminalBody}>
-              <div className={styles.terminalLine}>
-                <span className={styles.terminalComment}># current project pipeline</span>
-              </div>
-              <div className={styles.terminalLine}>
-                <span className={styles.terminalPrompt}>$</span> mdk status --active
-              </div>
-              <div className={styles.terminalLine}>&nbsp;</div>
-              <div className={styles.terminalLine}>
-                <span className={styles.terminalKeyword}>AI_AUTOMATION</span>{' '}
-                <span className={styles.terminalString}>▓▓▓▓▓▓▓░░░</span> 72%
-              </div>
-              <div className={styles.terminalLine}>
-                <span className={styles.terminalKeyword}>IOT_PROTOTYPE</span>{' '}
-                <span className={styles.terminalString}>▓▓▓▓▓▓▓▓▓░</span> 91%
-              </div>
-              <div className={styles.terminalLine}>
-                <span className={styles.terminalKeyword}>ML_PIPELINE</span>{'   '}
-                <span className={styles.terminalString}>▓▓▓▓░░░░░░</span> 38%
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
