@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './about.module.css';
 
 export const metadata: Metadata = {
@@ -27,16 +28,18 @@ export default function AboutPage() {
         <div className="container">
           <div className={styles.aboutGrid}>
             <div className={styles.aboutPhoto}>
-              <div className={styles.aboutPhotoPattern} />
+              <Image
+                src="/marcel.jpg"
+                alt="Marcel Koch — AI Engineer & Founder of MDK Engineering"
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
+                style={{ objectFit: 'cover' }}
+                priority
+              />
               <div className={`${styles.aboutPhotoCorner} ${styles.cornerTl}`} />
               <div className={`${styles.aboutPhotoCorner} ${styles.cornerTr}`} />
               <div className={`${styles.aboutPhotoCorner} ${styles.cornerBl}`} />
               <div className={`${styles.aboutPhotoCorner} ${styles.cornerBr}`} />
-              <span className={styles.aboutPhotoLabel}>
-                [ professional photo ]
-                <br /><br />
-                Ideally at a workbench, near a<br />3D printer, or in a workshop setting
-              </span>
             </div>
 
             <div className={styles.aboutText}>
