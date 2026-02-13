@@ -10,8 +10,8 @@
   --bg-card-hover: #373b40;
   --bg-elevated: #3b3f45;
   --text-primary: #f5f0eb;
-  --text-secondary: #a09a93;
-  --text-muted: #6b6560;
+  --text-secondary: #b5b0a9;
+  --text-muted: #9e9890;
   --accent: #e8641b;
   --accent-hover: #ff7a33;
   --accent-dim: rgba(232, 100, 27, 0.12);
@@ -63,20 +63,8 @@ img {
 }
 
 /* ═══════════════════════════════════════════
-   GRID BACKGROUND
+   BACKGROUND
    ═══════════════════════════════════════════ */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(245, 240, 235, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(245, 240, 235, 0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-  z-index: 0;
-}
-
 body::after {
   content: '';
   position: fixed;

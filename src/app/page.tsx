@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './home.module.css';
 import ContactForm from '@/components/ContactForm';
+import TypingTitle from '@/components/TypingTitle';
 
 export default function Home() {
   return (
@@ -11,14 +12,10 @@ export default function Home() {
         <div className="container">
           <div className={styles.heroContent}>
             <div className={styles.heroTag}>AI Engineering &amp; Automation Studio · Munich</div>
-            <h1 className={styles.heroTitle}>
-              I engineer <span className={styles.accent}>AI</span> into
-              <br />
-              real systems.
-            </h1>
+            <TypingTitle />
             <p className={styles.heroDescription}>
               AI engineer and inventor based in Munich. I help companies automate processes,
-              build intelligent systems, and turn ideas into working technology — end to end.
+              build intelligent systems, and turn ideas into working technology, end to end.
             </p>
             <div className={styles.heroButtons}>
               <Link href="#contact" className="btn btn-primary btn-arrow">
@@ -80,10 +77,25 @@ export default function Home() {
           <div className={styles.trustInner}>
             <span className={styles.trustLabel}>Background</span>
             <div className={styles.trustLogos}>
-              <span className={styles.trustLogo}>TU Munich</span>
-              <span className={styles.trustLogo}>Oxford</span>
-              <span className={styles.trustLogo}>Siemens</span>
-              <span className={styles.trustLogo}>Devanthro</span>
+              <div className={styles.trustItem}>
+                <span className={styles.trustName}>TUM</span>
+                <span className={styles.trustRole}>Computer Science</span>
+              </div>
+              <div className={styles.trustDivider} />
+              <div className={styles.trustItem}>
+                <span className={styles.trustName}>Oxford</span>
+                <span className={styles.trustRole}>AI Research</span>
+              </div>
+              <div className={styles.trustDivider} />
+              <div className={styles.trustItem}>
+                <span className={styles.trustName}>Siemens</span>
+                <span className={styles.trustRole}>Systems Engineering</span>
+              </div>
+              <div className={styles.trustDivider} />
+              <div className={styles.trustItem}>
+                <span className={styles.trustName}>Devanthro</span>
+                <span className={styles.trustRole}>Humanoid Robotics</span>
+              </div>
             </div>
           </div>
         </div>
@@ -96,7 +108,7 @@ export default function Home() {
             <div className="section-label">Services</div>
             <h2 className="section-title">What I build.</h2>
             <p className="section-subtitle">
-              End-to-end engineering — from understanding your problem to deploying a working
+              End-to-end engineering: from understanding your problem to deploying a working
               solution. No handoffs, no gaps.
             </p>
           </div>
@@ -107,7 +119,7 @@ export default function Home() {
               <h3>AI &amp; Process Automation</h3>
               <p>
                 Intelligent systems that eliminate manual work. I design and build AI-powered
-                workflows that automate repetitive, complex, or data-heavy processes — integrated
+                workflows that automate repetitive, complex, or data-heavy processes, integrated
                 into your existing tools.
               </p>
               <div className={styles.serviceTech}>
@@ -127,7 +139,7 @@ export default function Home() {
               <h3>Rapid Prototyping &amp; MVPs</h3>
               <p>
                 From napkin sketch to working prototype in 2–6 weeks. Sprint-based approach covering
-                both hardware and software — 3D-printed enclosures, custom sensors, dashboards, and
+                both hardware and software: 3D-printed enclosures, custom sensors, dashboards, and
                 AI models.
               </p>
               <div className={styles.serviceTech}>
@@ -147,7 +159,7 @@ export default function Home() {
               <h3>Hardware-Software Integration</h3>
               <p>
                 Connecting the physical world to intelligent software. Embedded systems, IoT,
-                robotics, smart devices — from PCB design and firmware to edge AI and cloud
+                robotics, smart devices. From PCB design and firmware to edge AI and cloud
                 connectivity.
               </p>
               <div className={styles.serviceTech}>
@@ -193,7 +205,7 @@ export default function Home() {
             <div className="section-label">Projects</div>
             <h2 className="section-title">Selected work.</h2>
             <p className="section-subtitle">
-              Real systems I&apos;ve designed and built — from AI pipelines to physical prototypes.
+              Real systems I&apos;ve designed and built, from AI pipelines to physical prototypes.
               Each project ships, no slide decks.
             </p>
           </div>
@@ -291,7 +303,7 @@ export default function Home() {
             <div className={styles.aboutPhoto}>
               <Image
                 src="/marcel.jpg"
-                alt="Marcel Koch — AI Engineer & Founder of MDK Engineering"
+                alt="Marcel Koch, AI Engineer & Founder of MDK Engineering"
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"
                 style={{ objectFit: 'cover' }}
@@ -305,7 +317,7 @@ export default function Home() {
 
             <div className={styles.aboutText}>
               <blockquote>
-                I&apos;ve always been the person who takes things apart to understand how they work —
+                I&apos;ve always been the person who takes things apart to understand how they work
                 and then builds something better. I studied Computer Science at TUM, researched at
                 Oxford, built robots at Devanthro, and engineered systems at Siemens. I&apos;ve
                 founded two startups.
@@ -314,7 +326,7 @@ export default function Home() {
                 Now I help companies turn AI from a buzzword into working technology. I call myself
                 an inventor because that&apos;s what I do: I invent solutions. Whether that means
                 writing a machine learning pipeline, designing a circuit board, or 3D-printing a
-                prototype at 2am — I do whatever it takes to make the thing work.
+                prototype at 2am. I do whatever it takes to make the thing work.
               </blockquote>
 
               <div className={styles.aboutFacts}>
@@ -375,7 +387,7 @@ export default function Home() {
                 <span className={styles.blogDate}>Feb 2026</span>
               </div>
               <h3>
-                Why 94% of German Mittelstand Companies Haven&apos;t Adopted AI — And What to Do
+                Why 94% of German Mittelstand Companies Haven&apos;t Adopted AI and What to Do
                 About It
               </h3>
               <p>
@@ -435,7 +447,7 @@ export default function Home() {
               <h3>Have a process that needs automating or an idea that needs building?</h3>
               <p>
                 Every engagement starts with a free 30-minute discovery call. Tell me about your
-                challenge — I&apos;ll tell you honestly whether I can help and what it would take.
+                challenge, and I&apos;ll tell you honestly whether I can help and what it would take.
               </p>
 
               <div className={styles.contactDetails}>
@@ -464,7 +476,6 @@ export default function Home() {
               </div>
 
               <div className={styles.contactResponse}>
-                <span className={styles.statusDot} />
                 Typically responds within 24 hours
               </div>
             </div>

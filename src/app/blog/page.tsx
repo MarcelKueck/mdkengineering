@@ -26,7 +26,7 @@ export default function BlogPage() {
           <h1 className="section-title">Insights & Tutorials</h1>
           <p style={{ maxWidth: '640px', opacity: 0.8, fontSize: '1.125rem', lineHeight: 1.7 }}>
             Practical perspectives on AI, engineering, and building technology
-            that works — from the workshop floor to production.
+            that works, from the workshop floor to production.
           </p>
         </div>
       </section>

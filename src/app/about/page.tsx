@@ -19,7 +19,7 @@ export default function AboutPage() {
             The <span className="accent">engineer</span> behind it.
           </h1>
           <p>
-            I take things apart to understand how they work — then build something better.
+            I take things apart to understand how they work, then build something better.
           </p>
         </div>
       </div>
@@ -30,7 +30,7 @@ export default function AboutPage() {
             <div className={styles.aboutPhoto}>
               <Image
                 src="/marcel.jpg"
-                alt="Marcel Koch — AI Engineer & Founder of MDK Engineering"
+                alt="Marcel Koch, AI Engineer & Founder of MDK Engineering"
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"
                 style={{ objectFit: 'cover' }}
@@ -44,7 +44,7 @@ export default function AboutPage() {
 
             <div className={styles.aboutText}>
               <blockquote>
-                I&apos;ve always been the person who takes things apart to understand how they work —
+                I&apos;ve always been the person who takes things apart to understand how they work
                 and then builds something better. I studied Computer Science at TUM, researched at
                 Oxford, built robots at Devanthro, and engineered systems at Siemens. I&apos;ve
                 founded two startups.
@@ -53,7 +53,7 @@ export default function AboutPage() {
                 Now I help companies turn AI from a buzzword into working technology. I call myself
                 an inventor because that&apos;s what I do: I invent solutions. Whether that means
                 writing a machine learning pipeline, designing a circuit board, or 3D-printing a
-                prototype at 2am — I do whatever it takes to make the thing work.
+                prototype at 2am. I do whatever it takes to make the thing work.
               </blockquote>
             </div>
           </div>
@@ -70,7 +70,7 @@ export default function AboutPage() {
           <div className={styles.timelineGrid}>
             <div className={styles.timelineCard}>
               <div className={styles.timelineDate}>Education</div>
-              <h3>TU Munich — Computer Science</h3>
+              <h3>TU Munich, Computer Science</h3>
               <p>Strong foundation in algorithms, systems engineering, and mathematics.</p>
             </div>
             <div className={styles.timelineCard}>
@@ -86,7 +86,7 @@ export default function AboutPage() {
             <div className={styles.timelineCard}>
               <div className={styles.timelineDate}>Robotics</div>
               <h3>Devanthro</h3>
-              <p>Building humanoid robots — bridging AI, embedded systems, and mechanical engineering.</p>
+              <p>Building humanoid robots, bridging AI, embedded systems, and mechanical engineering.</p>
             </div>
             <div className={styles.timelineCard}>
               <div className={styles.timelineDate}>Entrepreneurship</div>

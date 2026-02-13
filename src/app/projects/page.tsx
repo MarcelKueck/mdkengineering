@@ -5,7 +5,7 @@ import styles from './projects.module.css';
 export const metadata: Metadata = {
   title: 'Projects',
   description:
-    'Case studies and selected work — from AI-powered automation pipelines to IoT prototypes with on-device machine learning.',
+    'Case studies and selected work: from AI-powered automation pipelines to IoT prototypes with on-device machine learning.',
 };
 
 const projects = [
@@ -48,7 +48,7 @@ export default function ProjectsPage() {
             Selected <span className="accent">work</span>.
           </h1>
           <p>
-            Real systems I&apos;ve designed and built — from AI pipelines to physical prototypes.
+            Real systems I&apos;ve designed and built, from AI pipelines to physical prototypes.
             Each project ships, no slide decks.
           </p>
         </div>

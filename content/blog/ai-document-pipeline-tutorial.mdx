@@ -7,7 +7,7 @@ category: "Tutorial"
 
 ## What we're building
 
-In this tutorial, I'll walk through the architecture and key decisions behind building an AI-powered document processing pipeline — the kind we deploy for engineering companies dealing with thousands of technical documents.
+In this tutorial, I'll walk through the architecture and key decisions behind building an AI-powered document processing pipeline, the kind we deploy for engineering companies dealing with thousands of technical documents.
 
 The system handles three core tasks:
 
@@ -42,7 +42,7 @@ Our approach:
 
 1. Start with a pre-trained model
 2. Fine-tune on the client's actual documents
-3. Use confidence thresholds — anything below 95% goes to human review
+3. Use confidence thresholds: anything below 95% goes to human review
 4. The human-reviewed documents become training data for the next iteration
 
 **Pro tip:** Don't try to classify everything from day one. Start with the 3-4 most common document types. You'll cover 80% of volume with 20% of the categories.
@@ -53,11 +53,11 @@ This is where it gets interesting. We use a two-pass approach:
 
 ### Pass 1: Rule-based extraction
 
-For structured, predictable fields — part numbers (regex patterns), dates, standard form fields — rules are faster, cheaper, and more reliable than AI.
+For structured, predictable fields like part numbers (regex patterns), dates, and standard form fields, rules are faster, cheaper, and more reliable than AI.
 
 ### Pass 2: LLM-based extraction
 
-For unstructured content — descriptions, specifications embedded in paragraphs, contextual information — we use a language model with carefully crafted prompts.
+For unstructured content like descriptions, specifications embedded in paragraphs, and contextual information, we use a language model with carefully crafted prompts.
 
 The prompt engineering matters enormously here. We provide:
 
@@ -75,7 +75,7 @@ Every extracted field gets a confidence score. Our validation pipeline:
 3. **Consistency validation:** Do the extracted values make sense together?
 4. **Confidence aggregation:** Combine individual scores into a document-level confidence
 
-Documents scoring above 95% confidence go straight through. Below that threshold, they're queued for human review — but with the AI's best guess pre-filled, so the human is validating, not starting from scratch.
+Documents scoring above 95% confidence go straight through. Below that threshold, they're queued for human review, but with the AI's best guess pre-filled, so the human is validating, not starting from scratch.
 
 ## Step 5: Integration & routing
 
@@ -99,13 +99,13 @@ From recent deployments:
 | Documents processed per day        | 50-100      | 2,000+     |
 | Staff hours on document processing | 40 hrs/week | 8 hrs/week |
 
-The 8 hours remaining are almost entirely spent on edge cases and exceptions — which is exactly the kind of work humans are better at.
+The 8 hours remaining are almost entirely spent on edge cases and exceptions, which is exactly the kind of work humans are better at.
 
 ## Key lessons learned
 
 1. **Start with data quality, not model quality.** A simple model on clean data beats a sophisticated model on messy data every time.
 
-2. **Build the human-in-the-loop from day one.** It's not a fallback — it's a feature. It ensures quality and provides continuous training data.
+2. **Build the human-in-the-loop from day one.** It's not a fallback, it's a feature. It ensures quality and provides continuous training data.
 
 3. **Monitor in production.** Document formats change. New document types appear. Your system needs to detect and adapt.
 

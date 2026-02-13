@@ -30,7 +30,6 @@ export default function Navbar() {
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.navInner}`}>
         <Link href="/" className={styles.navLogo}>
-          <span className={styles.dot} />
           MDK Engineering
         </Link>
 

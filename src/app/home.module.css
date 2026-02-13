@@ -223,7 +223,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(2rem, 5vw, 4rem);
+  gap: clamp(2rem, 5vw, 3rem);
   flex-wrap: wrap;
 }
 
@@ -239,26 +239,63 @@
 .trustLogos {
   display: flex;
   align-items: center;
-  gap: clamp(1.5rem, 4vw, 3rem);
+  gap: clamp(1rem, 3vw, 2.5rem);
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.trustLogo {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  padding: 0.5rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: 4px;
+.trustItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
   transition: var(--transition);
-  white-space: nowrap;
 }
 
-.trustLogo:hover {
+.trustItem:hover .trustName {
+  color: var(--text-primary);
+}
+
+.trustItem:hover .trustRole {
   color: var(--text-secondary);
-  border-color: var(--border-hover);
+}
+
+.trustName {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  transition: var(--transition);
+}
+
+.trustRole {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: var(--transition);
+}
+
+.trustDivider {
+  width: 1px;
+  height: 32px;
+  background: var(--border-hover);
+}
+
+@media (max-width: 640px) {
+  .trustDivider {
+    display: none;
+  }
+
+  .trustLogos {
+    gap: 1.5rem;
+  }
+
+  .trustItem {
+    min-width: 120px;
+  }
 }
 
 /* Services */
@@ -718,14 +755,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.statusDot {
-  width: 6px;
-  height: 6px;
-  background: #28c840;
-  border-radius: 50%;
-  animation: pulse-dot 2s ease-in-out infinite;
 }
 
 @media (max-width: 768px) {

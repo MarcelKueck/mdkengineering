@@ -58,7 +58,7 @@ export default function ContactPage() {
                   <li>Free 30-minute discovery call</li>
                   <li>Problem assessment & feasibility check</li>
                   <li>Proposal with clear scope, timeline & pricing</li>
-                  <li>No obligations — only proceed if it makes sense</li>
+                  <li>No obligations, only proceed if it makes sense</li>
                 </ol>
               </div>
 

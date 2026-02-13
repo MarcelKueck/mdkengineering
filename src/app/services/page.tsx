@@ -13,7 +13,7 @@ const services = [
     id: 'ai-automation',
     icon: '⚡',
     title: 'AI & Process Automation',
-    what: 'Designing and building AI-powered systems that automate repetitive, complex, or data-heavy workflows. From intelligent document processing to predictive maintenance — systems that work reliably in production, not just in a demo.',
+    what: 'Designing and building AI-powered systems that automate repetitive, complex, or data-heavy workflows. From intelligent document processing to predictive maintenance, these systems work reliably in production, not just in a demo.',
     forWhom:
       'Companies drowning in manual processes, manufacturers wanting smarter production, teams that need AI integrated into existing tools and workflows.',
     process: [
@@ -47,7 +47,7 @@ const services = [
     id: 'hw-sw',
     icon: '🔧',
     title: 'Hardware-Software Integration',
-    what: 'Connecting the physical world to intelligent software — embedded systems, IoT, robotics, smart devices. From PCB design and firmware to edge AI and cloud connectivity.',
+    what: 'Connecting the physical world to intelligent software. Embedded systems, IoT, robotics, smart devices. From PCB design and firmware to edge AI and cloud connectivity.',
     forWhom:
       'Companies building physical products with smart features, robotics teams, IoT ventures that need both hardware and software expertise in one place.',
     process: [
@@ -89,7 +89,7 @@ export default function ServicesPage() {
           </h1>
           <p>
             From understanding your problem to deploying a working solution. No handoffs, no gaps,
-            no slide decks — just working technology.
+            no slide decks, just working technology.
           </p>
         </div>
       </div>

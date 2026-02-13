@@ -42,7 +42,7 @@ const caseStudies: Record<string, CaseStudy> = {
     icon: '📊',
     title: 'AI-Powered Document Processing Pipeline',
     problem:
-      'The client received hundreds of documents daily — invoices, contracts, shipping notes, compliance forms — all in different formats. A team of 4 people spent most of their day manually extracting data and routing documents to the right departments. The process was slow, error-prone, and not scalable.',
+      'The client received hundreds of documents daily (invoices, contracts, shipping notes, compliance forms), all in different formats. A team of 4 people spent most of their day manually extracting data and routing documents to the right departments. The process was slow, error-prone, and not scalable.',
     approach:
       'I built an intelligent document pipeline that combines OCR with LLM-based analysis. Documents arrive via email or upload, are classified by type using a fine-tuned classifier, then key data is extracted using LangChain with Claude API. The extracted data is validated against business rules and automatically pushed to the existing ERP system via REST API. Edge cases get flagged for human review.',
     result:
@@ -63,11 +63,11 @@ const caseStudies: Record<string, CaseStudy> = {
     icon: '🌡️',
     title: 'IoT Environmental Monitoring with Anomaly Detection',
     problem:
-      'A pharmaceutical logistics company needed continuous cold chain monitoring for temperature-sensitive shipments. Their existing solution was manual temperature loggers checked at delivery — by which point any excursion had already happened. They needed real-time monitoring with predictive alerting.',
+      'A pharmaceutical logistics company needed continuous cold chain monitoring for temperature-sensitive shipments. Their existing solution was manual temperature loggers checked at delivery, and by that point any excursion had already happened. They needed real-time monitoring with predictive alerting.',
     approach:
       'I designed a complete IoT solution from scratch: custom sensor nodes with ESP32 microcontrollers, temperature/humidity sensors, and LoRaWAN connectivity for long-range, low-power communication. The backend includes a real-time data pipeline feeding into InfluxDB, a React dashboard with live monitoring, and an ML-based anomaly detection model that predicts temperature excursions before they happen.',
     result:
-      'The full prototype — from concept to working demo with 10 sensor nodes — was completed in 3 weeks. The system is now in pilot deployment with the client, monitoring 50+ shipments. Anomaly detection catches 94% of potential excursions with an average 23-minute advance warning.',
+      'The full prototype, from concept to working demo with 10 sensor nodes, was completed in 3 weeks. The system is now in pilot deployment with the client, monitoring 50+ shipments. Anomaly detection catches 94% of potential excursions with an average 23-minute advance warning.',
     resultMetric: '3-week prototype cycle, now in pilot',
     techStack: ['ESP32', 'LoRaWAN', '3D Printing', 'React', 'InfluxDB', 'scikit-learn', 'Python', 'Node.js'],
     details: [

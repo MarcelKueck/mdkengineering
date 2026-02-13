@@ -21,16 +21,16 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "MDK Engineering — Engineering Intelligence Into Reality",
+    default: "MDK Engineering | Engineering Intelligence Into Reality",
     template: "%s | MDK Engineering",
   },
   description:
-    "AI engineer and inventor based in Munich. I help companies automate processes, build intelligent systems, and turn ideas into working technology — end to end.",
+    "AI engineer and inventor based in Munich. I help companies automate processes, build intelligent systems, and turn ideas into working technology, end to end.",
   metadataBase: new URL("https://mdkengineering.com"),
   openGraph: {
-    title: "MDK Engineering — Engineering Intelligence Into Reality",
+    title: "MDK Engineering | Engineering Intelligence Into Reality",
     description:
-      "AI engineer and inventor based in Munich. I help companies automate processes, build intelligent systems, and turn ideas into working technology — end to end.",
+      "AI engineer and inventor based in Munich. I help companies automate processes, build intelligent systems, and turn ideas into working technology, end to end.",
     url: "https://mdkengineering.com",
     siteName: "MDK Engineering",
     locale: "en_US",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MDK Engineering — Engineering Intelligence Into Reality",
+    title: "MDK Engineering | Engineering Intelligence Into Reality",
     description:
       "AI engineer and inventor based in Munich. I help companies automate processes, build intelligent systems, and turn ideas into working technology.",
   },

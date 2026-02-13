@@ -27,7 +27,7 @@ Our architecture decision: **edge-first with cloud sync.** Each sensor node proc
 
 ### Day 3-5: Hardware prototyping
 
-We selected the ESP32-S3 as our microcontroller — it has built-in WiFi/BLE, enough processing power for edge analytics, and costs under €5.
+We selected the ESP32-S3 as our microcontroller. It has built-in WiFi/BLE, enough processing power for edge analytics, and costs under €5.
 
 Sensor selection:
 
@@ -51,14 +51,14 @@ The ESP32 firmware handles:
 4. OTA (over-the-air) update capability
 5. Fallback to local storage if connectivity is lost
 
-The edge AI component is lightweight but effective: a simple statistical model that learns the "normal" pattern for each room over 48 hours, then flags deviations. This catches HVAC failures, window-left-open situations, and occupancy-driven CO2 spikes — without needing cloud connectivity.
+The edge AI component is lightweight but effective: a simple statistical model that learns the "normal" pattern for each room over 48 hours, then flags deviations. This catches HVAC failures, window-left-open situations, and occupancy-driven CO2 spikes without needing cloud connectivity.
 
 ### Backend & data pipeline
 
 Our backend stack:
 
 - **MQTT broker** (Mosquitto) for ingestion
-- **TimescaleDB** for time-series storage (PostgreSQL extension — we get the best of both worlds)
+- **TimescaleDB** for time-series storage (PostgreSQL extension, so we get the best of both worlds)
 - **FastAPI** for the REST API
 - **Redis** for real-time alert state
 
@@ -94,7 +94,7 @@ We built the monitoring dashboard with Next.js and deployed it on Vercel. Key fe
 - Alert history and acknowledgment
 - CSV export for compliance reporting
 
-The design is intentionally simple. Facilities managers aren't data scientists — they need clear, actionable information. Green means good. Yellow means attention needed. Red means act now.
+The design is intentionally simple. Facilities managers aren't data scientists, they need clear, actionable information. Green means good. Yellow means attention needed. Red means act now.
 
 ### Physical deployment
 
@@ -123,7 +123,7 @@ After the first month of operation:
 - **3 HVAC issues** detected before tenant complaints
 - **12% reduction** in heating energy (from identifying overheated zones)
 - **Compliance reporting** reduced from 2 days/month to 15 minutes
-- **Tenant satisfaction** improved — they could see their building cared about air quality
+- **Tenant satisfaction** improved as they could see their building cared about air quality
 
 ## What made this possible in 3 weeks
 
@@ -152,10 +152,10 @@ If you're considering IoT for your operations:
 
 2. **Prototype fast, validate faster.** Three weeks to a working system is aggressive but achievable when you focus.
 
-3. **Plan for the boring stuff.** Power, connectivity, mounting, maintenance — these "boring" details determine whether your IoT system works in practice or just in the demo.
+3. **Plan for the boring stuff.** Power, connectivity, mounting, maintenance: these "boring" details determine whether your IoT system works in practice or just in the demo.
 
 4. **Edge computing is your friend.** Don't send everything to the cloud. Process locally, sync intelligently.
 
 ---
 
-_Have an IoT project in mind? [Reach out](/contact) — we love turning hardware+software ideas into working systems._
+_Have an IoT project in mind? [Reach out](/contact). We love turning hardware+software ideas into working systems._
