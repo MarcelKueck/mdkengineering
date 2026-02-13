@@ -41,9 +41,9 @@ type Phase =
 type ArmPose = { shoulder: number; elbow: number; wrist: number; grip: boolean };
 
 const IDLE_POSE: ArmPose   = { shoulder: 0,   elbow: 0,   wrist: 0,  grip: false };
-const REACH_POSE: ArmPose  = { shoulder: -50, elbow: -8,  wrist: -50, grip: false };
-const GRAB_POSE: ArmPose   = { shoulder: -50, elbow: -8,  wrist: -50, grip: true };
-const FIX_POSE: ArmPose    = { shoulder: -50, elbow: -8,  wrist: -50,   grip: true };
+const REACH_POSE: ArmPose  = { shoulder: -30, elbow: -8,  wrist: -50, grip: false };
+const GRAB_POSE: ArmPose   = { shoulder: -30, elbow: -8,  wrist: -50, grip: true };
+const FIX_POSE: ArmPose    = { shoulder: -30, elbow: -8,  wrist: -50,   grip: true };
 const RELEASE_POSE: ArmPose = { shoulder: -30, elbow: -8,  wrist: -50,  grip: false };
 
 export default function HeroAnimation() {

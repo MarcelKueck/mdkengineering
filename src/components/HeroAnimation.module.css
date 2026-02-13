@@ -64,11 +64,11 @@
 /* ── Right: robotic arm ── */
 .armWrapper {
   position: absolute;
-  right: -60px;
+  right: -150px;
   top: 50%;
-  transform: translateY(-50%);
-  width: 624px;
-  height: 676px;
+  transform: translateY(-45%);
+  width: 811px;
+  height: 879px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -128,8 +128,8 @@
 
 @media (min-width: 1025px) and (max-width: 1280px) {
   .armWrapper {
-    width: 500px;
-    height: 540px;
+    width: 650px;
+    height: 702px;
     right: -40px;
   }
 }
