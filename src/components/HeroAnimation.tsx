@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './HeroAnimation.module.css';
 
 /* ── Text segments ── */
@@ -35,16 +35,57 @@ type Phase =
   | 'done';
 
 /* ── Robotic arm angles ── */
-// The arm SVG is drawn in a static "idle" pose.
-// We animate joint rotations via CSS custom properties.
-// shoulder = rotation at base pivot, elbow = rotation at elbow pivot
 type ArmPose = { shoulder: number; elbow: number; wrist: number; grip: boolean };
 
-const IDLE_POSE: ArmPose   = { shoulder: 0,   elbow: 0,   wrist: 0,  grip: false };
-const REACH_POSE: ArmPose  = { shoulder: -30, elbow: -8,  wrist: -50, grip: false };
-const GRAB_POSE: ArmPose   = { shoulder: -30, elbow: -8,  wrist: -50, grip: true };
-const FIX_POSE: ArmPose    = { shoulder: -30, elbow: -8,  wrist: -50,   grip: true };
-const RELEASE_POSE: ArmPose = { shoulder: -30, elbow: -8,  wrist: -50,  grip: false };
+const IDLE_POSE: ArmPose = { shoulder: 0, elbow: 0, wrist: 0, grip: false };
+
+/* ── Arm segment lengths (in SVG units) ── */
+const UPPER_ARM_LEN = 193; // shoulder pivot (475) to elbow pivot (282)
+const FOREARM_LEN = 124;   // elbow pivot (282) to wrist pivot (158)
+const GRIPPER_LEN = 28;    // wrist pivot to gripper tip (~158 to ~130, where fingers close)
+
+/* ── Inverse kinematics ── */
+// Given a target (tx, ty) relative to the shoulder pivot in SVG coords,
+// compute shoulder and elbow angles so the gripper tip reaches the target.
+// SVG y-axis points DOWN, arm extends UP from shoulder.
+function solveIK(tx: number, ty: number): { shoulder: number; elbow: number; wrist: number } {
+  // The "end effector" length = forearm + gripper as a single segment from elbow
+  const reachLen = FOREARM_LEN + GRIPPER_LEN;
+  const dist = Math.sqrt(tx * tx + ty * ty);
+
+  // Clamp to reachable range
+  const maxReach = UPPER_ARM_LEN + reachLen - 2;
+  const minReach = Math.abs(UPPER_ARM_LEN - reachLen) + 2;
+  const d = Math.max(minReach, Math.min(maxReach, dist));
+
+  // Law of cosines for elbow angle (interior angle between upper arm and forearm)
+  const cosElbow = (UPPER_ARM_LEN * UPPER_ARM_LEN + reachLen * reachLen - d * d)
+    / (2 * UPPER_ARM_LEN * reachLen);
+  const elbowAngle = Math.PI - Math.acos(Math.max(-1, Math.min(1, cosElbow)));
+
+  // Angle from shoulder to target
+  // atan2(tx, -ty): tx is horizontal offset (positive = left in our case),
+  // -ty flips y because SVG y goes down but our arm extends upward
+  const angleToTarget = Math.atan2(tx, -ty);
+
+  // Law of cosines for the angle offset at shoulder
+  const cosShoulder = (UPPER_ARM_LEN * UPPER_ARM_LEN + d * d - reachLen * reachLen)
+    / (2 * UPPER_ARM_LEN * d);
+  const shoulderOffset = Math.acos(Math.max(-1, Math.min(1, cosShoulder)));
+
+  // For targets to the left (negative tx), subtract the offset
+  const shoulderAngle = angleToTarget - shoulderOffset;
+
+  // Wrist: compensate so end effector stays roughly vertical (pointing down at letter)
+  const totalArmAngle = shoulderAngle + elbowAngle;
+  const wristAngle = -totalArmAngle * 0.15; // mild compensation
+
+  return {
+    shoulder: (shoulderAngle * 180) / Math.PI,
+    elbow: (elbowAngle * 180) / Math.PI,
+    wrist: (wristAngle * 180) / Math.PI,
+  };
+}
 
 export default function HeroAnimation() {
   const [typedRow1, setTypedRow1] = useState('');
@@ -57,6 +98,55 @@ export default function HeroAnimation() {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const armStartedRef = useRef(false);
+  const aiIRef = useRef<HTMLSpanElement>(null);
+  const armWrapperRef = useRef<HTMLDivElement>(null);
+  const reachPoseRef = useRef<ArmPose | null>(null);
+
+  /* ── Compute reach pose dynamically ── */
+  const computeReachPose = useCallback((): ArmPose => {
+    if (reachPoseRef.current) return reachPoseRef.current;
+
+    const iEl = aiIRef.current;
+    const armEl = armWrapperRef.current;
+    const svgEl = armEl?.querySelector('svg');
+    if (!iEl || !armEl || !svgEl) {
+      // Fallback if refs aren't ready
+      return { shoulder: -30, elbow: -8, wrist: -50, grip: false };
+    }
+
+    const iRect = iEl.getBoundingClientRect();
+
+    // Use the SVG's own coordinate transform to get accurate mapping
+    // This accounts for preserveAspectRatio (default xMidYMid meet)
+    const svgPoint = (svgEl as SVGSVGElement).createSVGPoint();
+
+    // Target = center-top of the "I" letter
+    svgPoint.x = iRect.left + iRect.width / 2;
+    svgPoint.y = iRect.top + iRect.height * 0.35;
+
+    // Transform screen coords → SVG coords using the SVG's inverse CTM
+    const ctm = (svgEl as SVGSVGElement).getScreenCTM();
+    if (!ctm) {
+      return { shoulder: -30, elbow: -8, wrist: -50, grip: false };
+    }
+    const svgCoords = svgPoint.matrixTransform(ctm.inverse());
+
+    // Shoulder pivot is at SVG (250, 475)
+    const dx = svgCoords.x - 250;
+    const dy = svgCoords.y - 475;
+
+    const ik = solveIK(dx, dy);
+
+    const pose: ArmPose = {
+      shoulder: ik.shoulder,
+      elbow: ik.elbow,
+      wrist: ik.wrist,
+      grip: false,
+    };
+
+    reachPoseRef.current = pose;
+    return pose;
+  }, []);
 
   /* ── Type row 1 ── */
   useEffect(() => {
@@ -118,22 +208,28 @@ export default function HeroAnimation() {
       ids.push(id);
     };
 
+    // Compute the reach pose dynamically based on where the "I" actually is
+    const reach = computeReachPose();
+    const grab: ArmPose = { ...reach, grip: true };
+    const fix: ArmPose = { ...reach, wrist: reach.wrist + 5, grip: true }; // slight wrist adjust
+    const release: ArmPose = { ...fix, grip: false };
+
     let t = ARM_DELAY;
 
     // 1. Reach
-    s(() => { setPhase('arm-reaching'); setArmPose(REACH_POSE); }, t);
+    s(() => { setPhase('arm-reaching'); setArmPose(reach); }, t);
     t += ARM_REACH_MS;
 
     // 2. Grab
-    s(() => { setPhase('arm-grabbing'); setArmPose(GRAB_POSE); }, t);
+    s(() => { setPhase('arm-grabbing'); setArmPose(grab); }, t);
     t += GRAB_PAUSE_MS;
 
     // 3. Fix the I
-    s(() => { setPhase('arm-fixing'); setTiltFixed(true); setArmPose(FIX_POSE); }, t);
+    s(() => { setPhase('arm-fixing'); setTiltFixed(true); setArmPose(fix); }, t);
     t += FIX_MS;
 
     // 4. Release
-    s(() => { setPhase('arm-releasing'); setArmPose(RELEASE_POSE); }, t);
+    s(() => { setPhase('arm-releasing'); setArmPose(release); }, t);
     t += RELEASE_PAUSE_MS;
 
     // 5. Return to idle
@@ -145,7 +241,7 @@ export default function HeroAnimation() {
 
     // No cleanup — timeouts are stored in ref and must not be cancelled by phase changes
     // They will be cleaned up on unmount via the separate effect below
-  }, [phase]);
+  }, [phase, computeReachPose]);
 
   // Cleanup on unmount only
   useEffect(() => {
@@ -174,6 +270,7 @@ export default function HeroAnimation() {
         <span className={styles.aiText}>
           {ROW1_A}
           <span
+            ref={aiIRef}
             className={`${styles.aiI} ${tiltFixed ? styles.aiIFixed : styles.aiITilted}`}
           >
             {ROW1_I}
@@ -219,7 +316,7 @@ export default function HeroAnimation() {
       </div>
 
       {/* ── Right: industrial robotic arm ── */}
-      <div className={styles.armWrapper}>
+      <div ref={armWrapperRef} className={styles.armWrapper}>
         <svg
           viewBox="0 0 500 600"
           fill="none"
