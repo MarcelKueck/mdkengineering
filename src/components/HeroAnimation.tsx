@@ -369,6 +369,9 @@ export default function HeroAnimation() {
     const ids = armTimeoutsRef.current;
     const s = (fn: () => void, ms: number) => { const id = setTimeout(fn, ms); ids.push(id); };
 
+    // Lock scrolling while the edge arm is active
+    document.body.style.overflow = 'hidden';
+
     let t = ARM_DELAY;
 
     // 1. Enter — fade in, arm starts at idle pose (straight up, mostly hidden)
@@ -412,13 +415,16 @@ export default function HeroAnimation() {
     t += ARM_RETURN_MS;
 
     // 7. Done
-    s(() => { setEdgePhase('done'); setPhase('done'); }, t);
+    s(() => { document.body.style.overflow = ''; setEdgePhase('done'); setPhase('done'); }, t);
   }, [phase, armVariant]);
 
   // Cleanup on unmount only
   useEffect(() => {
     const ids = armTimeoutsRef.current;
-    return () => { ids.forEach(clearTimeout); };
+    return () => {
+      ids.forEach(clearTimeout);
+      document.body.style.overflow = '';
+    };
   }, []);
 
   /* ── Render row 1 with tilted I ── */
