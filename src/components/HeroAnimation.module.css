@@ -61,7 +61,7 @@
   transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ── Right: robotic arm ── */
+/* ── Right: robotic arm (desktop only, >1280px) ── */
 .armWrapper {
   position: absolute;
   right: -150px;
@@ -76,6 +76,28 @@
   pointer-events: none;
 }
 
+/* ── Edge arm (≤1280px, reaches from top-right screen edge) ── */
+.edgeArm {
+  pointer-events: none;
+  z-index: 10;
+  overflow: visible;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.edgeEntering {
+  opacity: 1;
+}
+
+.edgeVisible {
+  opacity: 1;
+}
+
+.edgeExiting {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
 .armSvg {
   width: 100%;
   height: 100%;
@@ -85,17 +107,17 @@
 
 /* ── Joint rotation groups (CSS transitions) ── */
 .shoulderGroup {
-  transition: transform var(--arm-transition, 1000ms) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--arm-transition, 1000ms) var(--arm-easing, cubic-bezier(0.4, 0, 0.2, 1));
   transform: rotate(var(--shoulder-angle, 0deg));
 }
 
 .elbowGroup {
-  transition: transform var(--arm-transition, 1000ms) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--arm-transition, 1000ms) var(--arm-easing, cubic-bezier(0.4, 0, 0.2, 1));
   transform: rotate(var(--elbow-angle, 0deg));
 }
 
 .wristGroup {
-  transition: transform var(--arm-transition, 1000ms) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--arm-transition, 1000ms) var(--arm-easing, cubic-bezier(0.4, 0, 0.2, 1));
   transform: rotate(var(--wrist-angle, 0deg));
 }
 
@@ -116,20 +138,6 @@
 }
 
 /* ── Responsive ── */
-@media (max-width: 1024px) {
-  .armWrapper {
-    display: none;
-  }
-
-  .container {
-    display: block;
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1280px) {
-  .armWrapper {
-    width: 650px;
-    height: 702px;
-    right: -40px;
-  }
-}
+/* No breakpoint overrides needed:
+   - Desktop (>1280px): .armWrapper is shown via armVariant='desktop' in JS
+   - Edge (≤1280px including mobile): .edgeArm reaches from top-right viewport edge */
