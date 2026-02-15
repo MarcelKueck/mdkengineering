@@ -41,7 +41,7 @@
 
 /* ── AI text highlight ── */
 .aiText {
-  color: var(--accent);
+  color: var(--text);
   position: relative;
   white-space: nowrap;
 }

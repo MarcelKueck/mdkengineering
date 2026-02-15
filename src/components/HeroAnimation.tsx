@@ -574,29 +574,18 @@ export default function HeroAnimation() {
                   <circle cx="250" cy="158" r="4.5" fill="var(--accent)" opacity="0.45" />
 
                   {/* ═══ GRIPPER ═══ */}
-                  <rect x="240" y="140" width="20" height="16" rx="3" fill="#2d3034" stroke="var(--accent)" strokeWidth="2" />
-                  <line x1="244" y1="148" x2="256" y2="148" stroke="var(--accent)" strokeWidth="0.6" opacity="0.3" />
+                  <rect x="238" y="138" width="24" height="20" rx="3" fill="#2d3034" stroke="var(--accent)" strokeWidth="2" />
+                  <line x1="243" y1="148" x2="257" y2="148" stroke="var(--accent)" strokeWidth="0.6" opacity="0.3" />
                   <path
                     d={armPose.grip
-                      ? 'M244 140 L247 118 C247 115,248 114,249 115 L250 120'
-                      : 'M244 140 L233 114 C231 110,233 108,235 109 L244 118'}
-                    stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" fill="none" className={styles.finger} />
+                      ? 'M243 138 L246 110 C246 106,248 105,249 107 L250 114'
+                      : 'M243 138 L230 108 C228 104,230 102,232 103 L243 114'}
+                    stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" fill="none" className={styles.finger} />
                   <path
                     d={armPose.grip
-                      ? 'M256 140 L253 118 C253 115,252 114,251 115 L250 120'
-                      : 'M256 140 L267 114 C269 110,267 108,265 109 L256 118'}
-                    stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" fill="none" className={styles.finger} />
-                  {armPose.grip ? (
-                    <>
-                      <circle cx="248" cy="115" r="2" fill="var(--accent)" opacity="0.5" />
-                      <circle cx="252" cy="115" r="2" fill="var(--accent)" opacity="0.5" />
-                    </>
-                  ) : (
-                    <>
-                      <circle cx="233" cy="112" r="2" fill="var(--accent)" opacity="0.5" />
-                      <circle cx="267" cy="112" r="2" fill="var(--accent)" opacity="0.5" />
-                    </>
-                  )}
+                      ? 'M257 138 L254 110 C254 106,252 105,251 107 L250 114'
+                      : 'M257 138 L270 108 C272 104,270 102,268 103 L257 114'}
+                    stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" fill="none" className={styles.finger} />
                 </g>
               </g>
             </g>
@@ -675,29 +664,18 @@ export default function HeroAnimation() {
                   <circle cx="250" cy="158" r="4.5" fill="var(--accent)" opacity="0.45" />
 
                   {/* ═══ GRIPPER ═══ */}
-                  <rect x="240" y="140" width="20" height="16" rx="3" fill="#2d3034" stroke="var(--accent)" strokeWidth="2" />
-                  <line x1="244" y1="148" x2="256" y2="148" stroke="var(--accent)" strokeWidth="0.6" opacity="0.3" />
+                  <rect x="238" y="138" width="24" height="20" rx="3" fill="#2d3034" stroke="var(--accent)" strokeWidth="2" />
+                  <line x1="243" y1="148" x2="257" y2="148" stroke="var(--accent)" strokeWidth="0.6" opacity="0.3" />
                   <path
                     d={armPose.grip
-                      ? 'M244 140 L247 118 C247 115,248 114,249 115 L250 120'
-                      : 'M244 140 L233 114 C231 110,233 108,235 109 L244 118'}
-                    stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" fill="none" className={styles.finger} />
+                      ? 'M243 138 L246 110 C246 106,248 105,249 107 L250 114'
+                      : 'M243 138 L230 108 C228 104,230 102,232 103 L243 114'}
+                    stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" fill="none" className={styles.finger} />
                   <path
                     d={armPose.grip
-                      ? 'M256 140 L253 118 C253 115,252 114,251 115 L250 120'
-                      : 'M256 140 L267 114 C269 110,267 108,265 109 L256 118'}
-                    stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" fill="none" className={styles.finger} />
-                  {armPose.grip ? (
-                    <>
-                      <circle cx="248" cy="115" r="2" fill="var(--accent)" opacity="0.5" />
-                      <circle cx="252" cy="115" r="2" fill="var(--accent)" opacity="0.5" />
-                    </>
-                  ) : (
-                    <>
-                      <circle cx="233" cy="112" r="2" fill="var(--accent)" opacity="0.5" />
-                      <circle cx="267" cy="112" r="2" fill="var(--accent)" opacity="0.5" />
-                    </>
-                  )}
+                      ? 'M257 138 L254 110 C254 106,252 105,251 107 L250 114'
+                      : 'M257 138 L270 108 C272 104,270 102,268 103 L257 114'}
+                    stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" fill="none" className={styles.finger} />
                 </g>
               </g>
             </g>
