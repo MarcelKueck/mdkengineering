@@ -42,7 +42,7 @@ const IDLE_POSE: ArmPose = { shoulder: 0, elbow: 0, wrist: 0, grip: false };
 /* ── Arm segment lengths (in SVG units) ── */
 const UPPER_ARM_LEN = 193; // shoulder pivot (475) to elbow pivot (282)
 const FOREARM_LEN = 124;   // elbow pivot (282) to wrist pivot (158)
-const GRIPPER_LEN = 28;    // wrist pivot to gripper tip (~158 to ~130, where fingers close)
+const GRIPPER_LEN = 38;    // wrist pivot to gripper tip (~158 to ~120, where fingers close)
 
 /* ── Arm variant based on viewport ── */
 // desktop: full arm with base, positioned beside text
@@ -574,18 +574,18 @@ export default function HeroAnimation() {
                   <circle cx="250" cy="158" r="4.5" fill="var(--accent)" opacity="0.45" />
 
                   {/* ═══ GRIPPER ═══ */}
-                  <rect x="238" y="138" width="24" height="20" rx="3" fill="#2d3034" stroke="var(--accent)" strokeWidth="2" />
-                  <line x1="243" y1="148" x2="257" y2="148" stroke="var(--accent)" strokeWidth="0.6" opacity="0.3" />
+                  <rect x="240" y="142" width="20" height="16" rx="3" fill="#2d3034" stroke="var(--accent)" strokeWidth="2" />
+                  <line x1="244" y1="150" x2="256" y2="150" stroke="var(--accent)" strokeWidth="0.6" opacity="0.3" />
                   <path
                     d={armPose.grip
-                      ? 'M243 138 L246 110 C246 106,248 105,249 107 L250 114'
-                      : 'M243 138 L230 108 C228 104,230 102,232 103 L243 114'}
-                    stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" fill="none" className={styles.finger} />
+                      ? 'M244 142 L247 118 C247 114,249 113,250 115 L250 120'
+                      : 'M244 142 L232 114 C230 110,232 108,234 109 L244 120'}
+                    stroke="var(--accent)" strokeWidth="4" strokeLinecap="round" fill="none" className={styles.finger} />
                   <path
                     d={armPose.grip
-                      ? 'M257 138 L254 110 C254 106,252 105,251 107 L250 114'
-                      : 'M257 138 L270 108 C272 104,270 102,268 103 L257 114'}
-                    stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" fill="none" className={styles.finger} />
+                      ? 'M256 142 L253 118 C253 114,251 113,250 115 L250 120'
+                      : 'M256 142 L268 114 C270 110,268 108,266 109 L256 120'}
+                    stroke="var(--accent)" strokeWidth="4" strokeLinecap="round" fill="none" className={styles.finger} />
                 </g>
               </g>
             </g>
@@ -664,18 +664,18 @@ export default function HeroAnimation() {
                   <circle cx="250" cy="158" r="4.5" fill="var(--accent)" opacity="0.45" />
 
                   {/* ═══ GRIPPER ═══ */}
-                  <rect x="238" y="138" width="24" height="20" rx="3" fill="#2d3034" stroke="var(--accent)" strokeWidth="2" />
-                  <line x1="243" y1="148" x2="257" y2="148" stroke="var(--accent)" strokeWidth="0.6" opacity="0.3" />
+                  <rect x="240" y="142" width="20" height="16" rx="3" fill="#2d3034" stroke="var(--accent)" strokeWidth="2" />
+                  <line x1="244" y1="150" x2="256" y2="150" stroke="var(--accent)" strokeWidth="0.6" opacity="0.3" />
                   <path
                     d={armPose.grip
-                      ? 'M243 138 L246 110 C246 106,248 105,249 107 L250 114'
-                      : 'M243 138 L230 108 C228 104,230 102,232 103 L243 114'}
-                    stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" fill="none" className={styles.finger} />
+                      ? 'M244 142 L247 118 C247 114,249 113,250 115 L250 120'
+                      : 'M244 142 L232 114 C230 110,232 108,234 109 L244 120'}
+                    stroke="var(--accent)" strokeWidth="4" strokeLinecap="round" fill="none" className={styles.finger} />
                   <path
                     d={armPose.grip
-                      ? 'M257 138 L254 110 C254 106,252 105,251 107 L250 114'
-                      : 'M257 138 L270 108 C272 104,270 102,268 103 L257 114'}
-                    stroke="var(--accent)" strokeWidth="3" strokeLinecap="round" fill="none" className={styles.finger} />
+                      ? 'M256 142 L253 118 C253 114,251 113,250 115 L250 120'
+                      : 'M256 142 L268 114 C270 110,268 108,266 109 L256 120'}
+                    stroke="var(--accent)" strokeWidth="4" strokeLinecap="round" fill="none" className={styles.finger} />
                 </g>
               </g>
             </g>
