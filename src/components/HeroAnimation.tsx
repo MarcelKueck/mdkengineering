@@ -166,7 +166,15 @@ export default function HeroAnimation() {
 
   /* ── Detect arm variant on mount + resize ── */
   useEffect(() => {
-    const update = () => setArmVariant(getArmVariant());
+    const update = () => {
+      const v = getArmVariant();
+      setArmVariant(v);
+      // Lock scrolling immediately for edge arm to prevent scroll offset
+      // before the arm animation begins (unlocked when animation completes)
+      if (v === 'edge') {
+        document.body.style.overflow = 'hidden';
+      }
+    };
     update();
     window.addEventListener('resize', update);
     return () => window.removeEventListener('resize', update);
@@ -368,9 +376,6 @@ export default function HeroAnimation() {
 
     const ids = armTimeoutsRef.current;
     const s = (fn: () => void, ms: number) => { const id = setTimeout(fn, ms); ids.push(id); };
-
-    // Lock scrolling while the edge arm is active
-    document.body.style.overflow = 'hidden';
 
     let t = ARM_DELAY;
 
