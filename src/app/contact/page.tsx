@@ -5,11 +5,11 @@ import styles from './contact.module.css';
 export const metadata: Metadata = {
   title: 'Contact – MDK Engineering',
   description:
-    'Get in touch with MDK Engineering. Free discovery call to discuss your AI automation, prototyping, or engineering project.',
+    'Get in touch with MDK Engineering. Free discovery call to discuss your AI knowledge system, RAG pipeline, or document intelligence project.',
   openGraph: {
     title: 'Contact – MDK Engineering',
     description:
-      'Free discovery call to discuss your AI automation, prototyping, or engineering project.',
+      'Free discovery call to discuss your AI knowledge system, RAG pipeline, or document intelligence project.',
     url: 'https://mdkengineering.com/contact',
   },
 };
@@ -20,7 +20,7 @@ export default function ContactPage() {
       <section className="page-header">
         <div className="container">
           <span className="section-label">{'// Contact'}</span>
-          <h1 className="section-title">Let&apos;s Build Something</h1>
+          <h1 className="section-title">Let&apos;s Build Your Knowledge System</h1>
           <p style={{ maxWidth: '640px', opacity: 0.8, fontSize: '1.125rem', lineHeight: 1.7 }}>
             Have an engineering challenge? Let&apos;s talk. I offer a free discovery
             call to understand your problem before proposing a solution.
@@ -73,7 +73,7 @@ export default function ContactPage() {
                     GitHub →
                   </a>
                   <a
-                    href="https://linkedin.com/in/marcelkoch"
+                    href="https://linkedin.com/in/marcelkueck"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

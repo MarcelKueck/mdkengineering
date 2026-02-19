@@ -57,7 +57,7 @@ export default function DatenschutzPage() {
             <h3>Verantwortliche Stelle</h3>
             <p>
               MDK Engineering<br />
-              Marcel Koch<br />
+              Marcel Kück<br />
               [Straße und Hausnummer]<br />
               [PLZ und Ort]<br />
               Deutschland<br />

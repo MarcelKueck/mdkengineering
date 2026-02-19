@@ -16,25 +16,26 @@ interface CaseStudy {
 }
 
 const caseStudies: Record<string, CaseStudy> = {
-  'predictive-quality-inspection': {
-    slug: 'predictive-quality-inspection',
-    icon: '🏭',
-    title: 'Predictive Quality Inspection System',
+  'research-knowledge-assistant': {
+    slug: 'research-knowledge-assistant',
+    icon: '🔬',
+    title: 'AI Knowledge Assistant for Academic Research',
     problem:
-      'A manufacturing client was relying on manual spot-checks for quality inspection on their production line. This was slow, inconsistent, and allowed too many defective products to reach customers. They needed an automated system that could inspect every single unit in real-time without slowing down the line.',
+      'A research institute had thousands of papers, internal reports, and datasets spread across multiple repositories and file shares. Researchers spent hours manually searching for relevant prior work, often missing critical references. The existing keyword-based search was inadequate for finding conceptually related work across disciplines.',
     approach:
-      'I designed and built an end-to-end computer vision system with custom hardware and on-device ML inference. The solution includes a multi-camera array positioned at critical points on the production line, running TensorFlow Lite models on Raspberry Pi compute units. Each unit communicates via MQTT to a central dashboard that provides real-time defect analytics and automated alerting.',
+      'I built a domain-specific RAG system tailored to the institute\'s research corpus. The system ingests papers (PDF, LaTeX), internal reports, and metadata, chunks them using a strategy optimized for academic content (respecting section boundaries, tables, and citations), and indexes them in a vector database. Researchers interact through a conversational interface that retrieves relevant passages and generates citation-backed answers. A re-ranking pipeline ensures the most relevant results surface first, and an evaluation framework continuously measures retrieval quality.',
     result:
-      'The system achieved a 73% reduction in defect escape rate within the first month of deployment. Inspection latency is under 50ms per unit, meaning zero impact on production line speed. The system handles over 10,000 inspections per shift with consistent accuracy.',
-    resultMetric: '↓ 73% reduction in defect escape rate',
-    techStack: ['Python', 'TensorFlow Lite', 'OpenCV', 'Raspberry Pi', 'Custom PCB', 'MQTT', 'InfluxDB', 'Grafana'],
+      'Literature review that previously took hours now completes in seconds. Researchers report discovering relevant cross-disciplinary work they would have missed entirely. The system handles over 15,000 documents with sub-second query response times. Retrieval precision measured at 89% on the institute\'s evaluation benchmark.',
+    resultMetric: '↓ Hours of literature search reduced to seconds',
+    techStack: ['Python', 'LangChain', 'Pinecone', 'Claude API', 'FastAPI', 'React', 'RAGAS', 'PostgreSQL'],
     details: [
-      'Custom camera mount and lighting rig designed in CAD and 3D-printed',
-      'Training pipeline with 15,000+ annotated images of good and defective parts',
-      'Edge inference at 20+ FPS with <50ms latency',
-      'Custom PCB for power management and camera triggering',
-      'MQTT-based data pipeline to InfluxDB + Grafana dashboard',
-      'Automated alert system via email and Slack',
+      'Custom PDF and LaTeX parsing pipeline preserving document structure and citations',
+      'Chunking strategy optimized for academic content — respects section boundaries, figures, and tables',
+      'Hybrid search combining dense vector retrieval with BM25 keyword matching',
+      'Re-ranking pipeline using cross-encoder models for improved precision',
+      'Citation tracking — every generated answer includes source references with page numbers',
+      'Evaluation framework measuring precision, recall, and faithfulness using RAGAS',
+      'Feedback loop allowing researchers to rate answer quality, feeding into continuous improvement',
     ],
   },
   'ai-document-processing': {
@@ -58,25 +59,26 @@ const caseStudies: Record<string, CaseStudy> = {
       'Full audit trail and compliance logging',
     ],
   },
-  'iot-environmental-monitoring': {
-    slug: 'iot-environmental-monitoring',
-    icon: '🌡️',
-    title: 'IoT Environmental Monitoring with Anomaly Detection',
+  'medical-copilot': {
+    slug: 'medical-copilot',
+    icon: '⚕️',
+    title: 'Medical Practice AI Copilot (In Development)',
     problem:
-      'A pharmaceutical logistics company needed continuous cold chain monitoring for temperature-sensitive shipments. Their existing solution was manual temperature loggers checked at delivery, and by that point any excursion had already happened. They needed real-time monitoring with predictive alerting.',
+      'German medical practices face a growing challenge: staying current with evolving clinical guidelines, drug interactions, and treatment protocols while managing increasing patient volumes. Physicians spend significant time manually searching through medical databases and guidelines during consultations. Existing tools are either too generic (not tailored to German medical regulations) or not compliant with DSGVO and medical data protection requirements.',
     approach:
-      'I designed a complete IoT solution from scratch: custom sensor nodes with ESP32 microcontrollers, temperature/humidity sensors, and LoRaWAN connectivity for long-range, low-power communication. The backend includes a real-time data pipeline feeding into InfluxDB, a React dashboard with live monitoring, and an ML-based anomaly detection model that predicts temperature excursions before they happen.',
+      'I am designing and building a fully DSGVO-compliant AI copilot specifically for German medical practices. The system retrieves patient-relevant guidelines, drug interaction data, and clinical protocols from verified medical knowledge bases using a RAG architecture with strict guardrails. Every response includes source citations from approved medical databases. The system is designed with multiple safety layers: input validation, output guardrails, confidence scoring, and mandatory human-in-the-loop for all clinical recommendations.',
     result:
-      'The full prototype, from concept to working demo with 10 sensor nodes, was completed in 3 weeks. The system is now in pilot deployment with the client, monitoring 50+ shipments. Anomaly detection catches 94% of potential excursions with an average 23-minute advance warning.',
-    resultMetric: '3-week prototype cycle, now in pilot',
-    techStack: ['ESP32', 'LoRaWAN', '3D Printing', 'React', 'InfluxDB', 'scikit-learn', 'Python', 'Node.js'],
+      'Currently in active development with pilot phase planned for late 2025. Architecture is complete, core RAG pipeline is functional with initial medical knowledge base. Compliance framework for DSGVO and medical data regulations has been validated with legal counsel.',
+    resultMetric: 'Currently in development — pilot phase 2025',
+    techStack: ['Python', 'LangChain', 'Vector Database', 'Claude API', 'FastAPI', 'DSGVO Compliance Framework', 'Medical NLP', 'Guardrails AI'],
     details: [
-      'Custom sensor node with ESP32, BME280 sensor, and LoRa radio',
-      '3D-printed IP65-rated enclosure designed for logistics environments',
-      'Battery life of 6+ months with adaptive sampling rate',
-      'LoRaWAN gateway with 2km+ indoor range',
-      'Real-time React dashboard with historical data and trend analysis',
-      'Anomaly detection model trained on synthetic and real temperature data',
+      'RAG pipeline ingesting verified German medical guidelines (AWMF Leitlinien), drug databases, and clinical protocols',
+      'DSGVO-compliant architecture — all patient data stays on-premise, no PHI sent to external LLM APIs',
+      'Multi-layer guardrails: input filtering, output validation, confidence scoring, and mandatory physician review',
+      'Citation system linking every recommendation to specific guideline sections and evidence grades',
+      'Drug interaction checking against ABDA database with severity classification',
+      'Designed for integration with common German practice management systems (PVS)',
+      'Audit trail for every query and recommendation for medical documentation requirements',
     ],
   },
 };

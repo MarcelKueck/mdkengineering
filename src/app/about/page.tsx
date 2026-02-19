@@ -6,7 +6,7 @@ import styles from './about.module.css';
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'AI engineer and inventor. CS at TU Munich, research at Oxford, former engineer at Siemens and Devanthro. 2x startup founder. Based in Munich.',
+    'AI knowledge systems specialist. CS at TU Munich, research at Oxford, former engineer at Siemens and Devanthro. 2x startup founder. Based in Munich.',
 };
 
 export default function AboutPage() {
@@ -30,7 +30,7 @@ export default function AboutPage() {
             <div className={styles.aboutPhoto}>
               <Image
                 src="/marcel.jpg"
-                alt="Marcel Koch, AI Engineer & Founder of MDK Engineering"
+                alt="Marcel Kück, AI Engineer & Founder of MDK Engineering"
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"
                 style={{ objectFit: 'cover' }}
@@ -50,10 +50,12 @@ export default function AboutPage() {
                 founded two startups.
               </blockquote>
               <blockquote>
-                Now I help companies turn AI from a buzzword into working technology. I call myself
-                an inventor because that&apos;s what I do: I invent solutions. Whether that means
-                writing a machine learning pipeline, designing a circuit board, or 3D-printing a
-                prototype at 2am. I do whatever it takes to make the thing work.
+                Today I specialize in AI knowledge systems — building production-grade RAG pipelines
+                that give teams reliable access to their organization&apos;s knowledge. I&apos;ve
+                built these systems for research institutions, e-commerce platforms, and healthcare
+                providers. Each domain taught me something different about what it takes to make
+                retrieval actually work: evaluation rigor from research, scale from e-commerce,
+                compliance from healthcare.
               </blockquote>
             </div>
           </div>
@@ -96,7 +98,7 @@ export default function AboutPage() {
             <div className={styles.timelineCard}>
               <div className={styles.timelineDate}>Now</div>
               <h3>MDK Engineering</h3>
-              <p>Helping companies engineer AI into real systems. End-to-end, concept to production.</p>
+              <p>Building production-grade AI knowledge systems for research, healthcare, and e-commerce.</p>
             </div>
           </div>
         </div>
@@ -107,32 +109,32 @@ export default function AboutPage() {
       <section>
         <div className="container">
           <div className="section-label">Capabilities</div>
-          <h2 className="section-title">Full-stack, literally.</h2>
+          <h2 className="section-title">What I bring.</h2>
 
           <div className={styles.capGrid}>
             <div className={styles.capCard}>
-              <h3>🧠 AI & Machine Learning</h3>
-              <p>Deep learning, NLP, computer vision, LLM applications, ML pipelines, model deployment</p>
+              <h3>🧠 RAG &amp; Retrieval Systems</h3>
+              <p>Retrieval-augmented generation, vector search, embedding optimization, chunking strategies, re-ranking, hybrid search</p>
             </div>
             <div className={styles.capCard}>
-              <h3>💻 Software Engineering</h3>
+              <h3>� Document Intelligence</h3>
+              <p>OCR, LLM-based extraction and classification, structured data pipelines, multi-format processing</p>
+            </div>
+            <div className={styles.capCard}>
+              <h3>� Evaluation &amp; Testing</h3>
+              <p>RAG evaluation frameworks (RAGAS, DeepEval), systematic benchmarking, precision/recall measurement, faithfulness testing</p>
+            </div>
+            <div className={styles.capCard}>
+              <h3>🔒 Compliance &amp; Security</h3>
+              <p>DSGVO-compliant AI systems, data handling for regulated industries, guardrails, audit trails, access control</p>
+            </div>
+            <div className={styles.capCard}>
+              <h3>💻 Full-Stack Development</h3>
               <p>Python, TypeScript, React, Next.js, FastAPI, PostgreSQL, cloud infrastructure</p>
             </div>
             <div className={styles.capCard}>
-              <h3>🔌 Hardware & Electronics</h3>
-              <p>PCB design, embedded systems, firmware (C/C++), sensor integration, custom enclosures</p>
-            </div>
-            <div className={styles.capCard}>
-              <h3>🏭 Prototyping & Manufacturing</h3>
-              <p>3D printing (FDM/SLA), CAD, CNC basics, rapid iteration, DFM considerations</p>
-            </div>
-            <div className={styles.capCard}>
-              <h3>🤖 Robotics & IoT</h3>
-              <p>ROS, edge computing, MQTT/LoRaWAN, sensor networks, real-time systems</p>
-            </div>
-            <div className={styles.capCard}>
-              <h3>📐 Architecture & Strategy</h3>
-              <p>System design, technology selection, build vs. buy, AI readiness assessment</p>
+              <h3>📐 Architecture &amp; Strategy</h3>
+              <p>System design, LLM selection, build vs. buy analysis, technology roadmaps</p>
             </div>
           </div>
         </div>

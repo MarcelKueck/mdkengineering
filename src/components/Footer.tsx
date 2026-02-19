@@ -8,7 +8,7 @@ export default function Footer() {
         <div className={styles.footerInner}>
           <div className={styles.footerLeft}>
             <span className={styles.footerLogo}>MDK Engineering</span>
-            <span className={styles.footerTagline}>Engineering intelligence into reality.</span>
+            <span className={styles.footerTagline}>AI knowledge systems that work.</span>
           </div>
           <div className={styles.footerLinks}>
             <Link href="/services">Services</Link>

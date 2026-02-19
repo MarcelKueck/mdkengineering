@@ -1,8 +1,9 @@
 # MDK Engineering
 
-> Engineering Intelligence Into Reality
+> AI Knowledge Systems That Work
 
-The website for MDK Engineering — an AI engineering consultancy based in Munich, Germany.
+The website for MDK Engineering — an AI knowledge systems consultancy based in Munich, Germany.
+Specializing in production-grade RAG systems, document intelligence, and AI architecture consulting.
 
 **Live:** [mdkengineering.com](https://mdkengineering.com)
 

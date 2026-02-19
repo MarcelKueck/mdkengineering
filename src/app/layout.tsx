@@ -21,16 +21,16 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "MDK Engineering | Engineering Intelligence Into Reality",
+    default: "MDK Engineering | AI Knowledge Systems That Work",
     template: "%s | MDK Engineering",
   },
   description:
-    "AI engineer and inventor based in Munich. I help companies automate processes, build intelligent systems, and turn ideas into working technology, end to end.",
+    "I build AI systems that give your team instant, reliable access to your organization's knowledge — production-grade, compliant, and tailored to your domain. Based in Munich.",
   metadataBase: new URL("https://mdkengineering.com"),
   openGraph: {
-    title: "MDK Engineering | Engineering Intelligence Into Reality",
+    title: "MDK Engineering | AI Knowledge Systems That Work",
     description:
-      "AI engineer and inventor based in Munich. I help companies automate processes, build intelligent systems, and turn ideas into working technology, end to end.",
+      "I build AI systems that give your team instant, reliable access to your organization's knowledge — production-grade, compliant, and tailored to your domain. Based in Munich.",
     url: "https://mdkengineering.com",
     siteName: "MDK Engineering",
     locale: "en_US",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MDK Engineering | Engineering Intelligence Into Reality",
+    title: "MDK Engineering | AI Knowledge Systems That Work",
     description:
-      "AI engineer and inventor based in Munich. I help companies automate processes, build intelligent systems, and turn ideas into working technology.",
+      "I build AI systems that give your team instant, reliable access to your organization's knowledge — production-grade, compliant, and tailored to your domain. Based in Munich.",
   },
   robots: {
     index: true,
@@ -76,7 +76,7 @@ export default function RootLayout({
               url: 'https://mdkengineering.com',
               email: 'marcel@mdkengineering.com',
               description:
-                'AI engineer and inventor based in Munich. Specializing in AI automation, rapid prototyping, and hardware-software integration.',
+                'AI knowledge systems specialist based in Munich. Building production-grade RAG systems for research, healthcare, and e-commerce.',
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Munich',
@@ -84,10 +84,10 @@ export default function RootLayout({
               },
               founder: {
                 '@type': 'Person',
-                name: 'Marcel Koch',
-                jobTitle: 'AI Engineer & Founder',
+                name: 'Marcel Kück',
+                jobTitle: 'AI Engineer & Knowledge Systems Specialist',
               },
-              areaServed: 'DE',
+              areaServed: ['DE', 'EU'],
               priceRange: '€€€',
             }),
           }}

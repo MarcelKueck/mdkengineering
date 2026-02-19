@@ -5,76 +5,59 @@ import styles from './services.module.css';
 export const metadata: Metadata = {
   title: 'Services',
   description:
-    'AI & process automation, rapid prototyping, hardware-software integration, and technical consulting. End-to-end engineering from concept to working system.',
+    'Custom RAG & knowledge systems, AI document intelligence, and architecture consulting. Production-grade AI systems for research, healthcare, and e-commerce.',
 };
 
 const services = [
   {
-    id: 'ai-automation',
-    icon: '⚡',
-    title: 'AI & Process Automation',
-    what: 'Designing and building AI-powered systems that automate repetitive, complex, or data-heavy workflows. From intelligent document processing to predictive maintenance, these systems work reliably in production, not just in a demo.',
+    id: 'rag-systems',
+    icon: '🧠',
+    title: 'Custom RAG & Knowledge Systems',
+    what: 'I design and build retrieval-augmented generation systems that make your organization\'s knowledge instantly accessible. These aren\'t chatbot demos — they\'re production systems with proper evaluation, monitoring, and guardrails. Whether your knowledge lives in research papers, product databases, internal wikis, or medical guidelines, I build systems that retrieve the right information, in context, reliably.',
     forWhom:
-      'Companies drowning in manual processes, manufacturers wanting smarter production, teams that need AI integrated into existing tools and workflows.',
+      'Organizations sitting on valuable knowledge that their teams can\'t access efficiently. Research institutions, e-commerce companies with large product catalogs, healthcare providers needing clinical decision support, any team where finding the right information is a daily bottleneck.',
     process: [
-      { step: 'Assess', desc: 'Audit current workflows and identify automation opportunities' },
-      { step: 'Design', desc: 'Architecture the solution, select the right AI approach' },
-      { step: 'Build', desc: 'Develop, train models, integrate with existing systems' },
-      { step: 'Deploy', desc: 'Production deployment with monitoring and testing' },
-      { step: 'Support', desc: 'Ongoing optimization and maintenance' },
+      { step: 'Audit', desc: 'Map your knowledge sources, data quality, and access patterns' },
+      { step: 'Design', desc: 'Architecture the retrieval pipeline — chunking strategy, embedding model selection, re-ranking approach' },
+      { step: 'Build', desc: 'Implement the system with proper evaluation benchmarks from day one' },
+      { step: 'Evaluate', desc: 'Systematic testing against your real queries — precision, recall, faithfulness' },
+      { step: 'Deploy & Monitor', desc: 'Production deployment with observability, feedback loops, and continuous improvement' },
     ],
-    tech: ['Python', 'LangChain', 'OpenAI/Claude APIs', 'n8n', 'Custom ML Pipelines', 'Computer Vision', 'NLP', 'FastAPI'],
-    outcome: 'Reduced manual data entry by 85% for a manufacturing client',
+    tech: ['Python', 'LangChain / LlamaIndex', 'Vector Databases (Pinecone, Weaviate, Qdrant)', 'OpenAI / Claude APIs', 'Embedding Models', 'FastAPI', 'Evaluation Frameworks (RAGAS, DeepEval)', 'PostgreSQL'],
+    outcome: 'Built a research knowledge assistant that reduced literature review time from hours to minutes for an academic institution',
   },
   {
-    id: 'prototyping',
-    icon: '🚀',
-    title: 'Rapid Prototyping & MVP Development',
-    what: 'Taking an idea from napkin sketch to working prototype in 2–6 weeks. Full-stack capability means the prototype can include hardware (3D-printed enclosures, custom PCBs, sensors) AND software (apps, dashboards, AI models).',
+    id: 'document-intelligence',
+    icon: '�',
+    title: 'AI Document Intelligence',
+    what: 'End-to-end systems that extract, classify, and route documents using LLM-based analysis. From unstructured PDFs to structured, actionable data — integrated into your existing ERP, CRM, or workflow tools. These systems handle the messy reality of real-world documents: inconsistent formats, handwritten notes, multi-language content.',
     forWhom:
-      'Startups validating ideas, corporate innovation teams, R&D departments that need to prove a concept fast.',
+      'Companies processing high volumes of documents manually — invoices, contracts, shipping notes, research papers, patient records. Teams where data entry and document routing consume hours that should be spent on higher-value work.',
     process: [
-      { step: 'Define', desc: 'Clarify scope, success criteria, and constraints' },
-      { step: 'Design', desc: 'System architecture and user experience' },
-      { step: 'Build', desc: 'Rapid development in focused sprints' },
-      { step: 'Test', desc: 'Real-world testing and stakeholder feedback' },
-      { step: 'Iterate', desc: 'Refine based on learnings' },
+      { step: 'Assess', desc: 'Analyze your document types, volumes, and current processing workflow' },
+      { step: 'Design', desc: 'Define extraction schemas, classification rules, and integration points' },
+      { step: 'Build', desc: 'Develop the pipeline with OCR, LLM extraction, and validation logic' },
+      { step: 'Integrate', desc: 'Connect to your existing systems via API — ERP, CRM, databases' },
+      { step: 'Optimize', desc: 'Tune accuracy, handle edge cases, set up monitoring' },
     ],
-    tech: ['3D Printing', 'CAD/CAM', 'React/Next.js', 'FastAPI', 'ML Models', 'Arduino/ESP32', 'Custom PCB'],
-    outcome: 'Built a working IoT sensor prototype with AI-based anomaly detection in 3 weeks',
-  },
-  {
-    id: 'hw-sw',
-    icon: '🔧',
-    title: 'Hardware-Software Integration',
-    what: 'Connecting the physical world to intelligent software. Embedded systems, IoT, robotics, smart devices. From PCB design and firmware to edge AI and cloud connectivity.',
-    forWhom:
-      'Companies building physical products with smart features, robotics teams, IoT ventures that need both hardware and software expertise in one place.',
-    process: [
-      { step: 'Spec', desc: 'Define hardware requirements and constraints' },
-      { step: 'Design', desc: 'Schematic and PCB design, 3D enclosure modeling' },
-      { step: 'Prototype', desc: 'Fabrication, assembly, firmware development' },
-      { step: 'Integrate', desc: 'Connect to cloud, dashboards, AI pipelines' },
-      { step: 'Validate', desc: 'Testing, certification prep, production readiness' },
-    ],
-    tech: ['PCB Design (KiCad)', 'Firmware (C/C++)', '3D Printing', 'Edge AI', 'MQTT/LoRaWAN', 'Sensor Integration', 'Cloud IoT'],
-    outcome: 'Designed and built a custom sensor array with on-device ML for real-time quality inspection',
+    tech: ['Python', 'Claude / OpenAI APIs', 'OCR (Tesseract, Azure Document Intelligence)', 'FastAPI', 'PostgreSQL', 'n8n', 'LangChain'],
+    outcome: 'Reduced manual data entry by 85% with an AI document processing pipeline for invoice and contract handling',
   },
   {
     id: 'consulting',
     icon: '📐',
-    title: 'Technical Consulting & Architecture',
-    what: 'Helping teams make the right technical decisions before they write a single line of code. Architecture reviews, AI adoption strategy, technology selection, and hands-on team mentoring.',
+    title: 'AI Architecture & Consulting',
+    what: 'Helping teams make the right technical decisions before they invest in the wrong approach. RAG architecture reviews, LLM evaluation strategy, build-vs-buy analysis, compliance planning (DSGVO, medical regulations), and hands-on team mentoring. I bring practical experience shipping these systems across multiple domains.',
     forWhom:
-      'CTOs evaluating AI adoption, teams stuck on architecture decisions, companies choosing between build vs. buy, startups that need senior technical guidance.',
+      'CTOs evaluating RAG or LLM integration, teams stuck on architecture decisions for knowledge systems, companies needing compliance guidance for AI in regulated industries, startups that need senior technical guidance on their AI roadmap.',
     process: [
-      { step: 'Discovery', desc: 'Understand your current state and goals' },
-      { step: 'Analysis', desc: 'Technical assessment and opportunity mapping' },
-      { step: 'Recommend', desc: 'Clear recommendations with trade-off analysis' },
-      { step: 'Guide', desc: 'Hands-on support during implementation' },
+      { step: 'Discovery', desc: 'Understand your current state, data landscape, and goals' },
+      { step: 'Analysis', desc: 'Technical assessment, opportunity mapping, risk identification' },
+      { step: 'Recommend', desc: 'Clear recommendations with trade-off analysis and implementation roadmap' },
+      { step: 'Guide', desc: 'Hands-on support during implementation — code reviews, architecture decisions, evaluation setup' },
     ],
-    tech: ['Architecture Design', 'AI Strategy', 'Team Mentoring', 'Tech Selection', 'Build vs. Buy Analysis'],
-    outcome: 'Available as one-off workshops, weekly advisory, or embedded consulting',
+    tech: ['Architecture Design', 'RAG Evaluation Strategy', 'LLM Selection & Benchmarking', 'DSGVO / Compliance Planning', 'Build vs. Buy Analysis', 'Team Mentoring'],
+    outcome: 'Available as one-off architecture reviews, weekly advisory, or embedded consulting',
   },
 ];
 
@@ -83,13 +66,13 @@ export default function ServicesPage() {
     <>
       <div className="page-header">
         <div className="container">
-          <div className="hero-tag">What I Build</div>
+          <div className="hero-tag">Services</div>
           <h1>
-            End-to-end <span className="accent">engineering</span> services.
+            AI knowledge systems that work in <span className="accent">production</span>.
           </h1>
           <p>
-            From understanding your problem to deploying a working solution. No handoffs, no gaps,
-            no slide decks, just working technology.
+            From understanding your data landscape to deploying a reliable retrieval system.
+            Every engagement starts with your actual problem, not a technology pitch.
           </p>
         </div>
       </div>
@@ -152,14 +135,14 @@ export default function ServicesPage() {
           <h2 className="section-title">Transparent from the start.</h2>
           <div className={styles.pricingGrid}>
             <div className={styles.pricingCard}>
-              <h3>Automation Sprints</h3>
+              <h3>Knowledge System Pilots</h3>
               <div className={styles.pricingValue}>from €5,000</div>
-              <p>Focused engagements to automate specific workflows or build targeted solutions.</p>
+              <p>Focused engagements to build a targeted RAG system or knowledge retrieval solution for your specific use case.</p>
             </div>
             <div className={styles.pricingCard}>
               <h3>Consulting</h3>
               <div className={styles.pricingValue}>from €150/hr</div>
-              <p>Architecture reviews, AI strategy, and hands-on technical guidance. Also available as weekly retainer.</p>
+              <p>Architecture reviews, RAG evaluation strategy, compliance planning, and hands-on technical guidance. Also available as weekly retainer.</p>
             </div>
             <div className={styles.pricingCard}>
               <h3>Discovery Call</h3>

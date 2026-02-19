@@ -11,11 +11,12 @@ export default function Home() {
       <section className={styles.hero} id="hero">
         <div className="container">
           <div className={styles.heroContent}>
-            <div className={styles.heroTag}>AI Engineering &amp; Automation Studio · Munich</div>
+            <div className={styles.heroTag}>AI Knowledge Systems · Munich</div>
             <HeroAnimation />
             <p className={styles.heroDescription}>
-              AI engineer and inventor based in Munich. I help companies automate processes,
-              build intelligent systems, and turn ideas into working technology, end to end.
+              I build AI systems that give your team instant, reliable access to your
+              organization&apos;s knowledge — whether that&apos;s research papers, product catalogs,
+              or medical guidelines. Production-grade, compliant, tailored to your domain.
             </p>
             <div className={styles.heroButtons}>
               <Link href="#contact" className="btn btn-primary btn-arrow">
@@ -33,7 +34,7 @@ export default function Home() {
                 <span className="num">2</span> Startups Founded
               </div>
               <div className={styles.heroMetaItem}>
-                <span className="num">E2E</span> HW + SW
+                <span className="num">E2E</span> Research · Healthcare · E-Commerce
               </div>
             </div>
           </div>
@@ -85,81 +86,61 @@ export default function Home() {
 
           <div className={`${styles.servicesGrid} reveal reveal-delay-2`}>
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>⚡</div>
-              <h3>AI &amp; Process Automation</h3>
+              <div className={styles.serviceIcon}>🧠</div>
+              <h3>Custom RAG &amp; Knowledge Systems</h3>
               <p>
-                Intelligent systems that eliminate manual work. I design and build AI-powered
-                workflows that automate repetitive, complex, or data-heavy processes, integrated
-                into your existing tools.
+                I build AI-powered retrieval systems that make your organization&apos;s knowledge
+                instantly accessible. From research databases to product catalogs to medical
+                guidelines — accurate, contextual, and production-ready.
               </p>
               <div className={styles.serviceTech}>
                 <span className="tech-tag">Python</span>
                 <span className="tech-tag">LangChain</span>
+                <span className="tech-tag">Vector DBs</span>
                 <span className="tech-tag">LLM APIs</span>
-                <span className="tech-tag">n8n</span>
-                <span className="tech-tag">Computer Vision</span>
+                <span className="tech-tag">Evaluation Pipelines</span>
               </div>
-              <Link href="/services#ai-automation" className={styles.serviceLink}>
-                Discuss your workflow →
+              <Link href="/services#rag-systems" className={styles.serviceLink}>
+                Discuss your knowledge challenge →
               </Link>
             </div>
 
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>🚀</div>
-              <h3>Rapid Prototyping &amp; MVPs</h3>
+              <div className={styles.serviceIcon}>�</div>
+              <h3>AI Document Intelligence</h3>
               <p>
-                From napkin sketch to working prototype in 2–6 weeks. Sprint-based approach covering
-                both hardware and software: 3D-printed enclosures, custom sensors, dashboards, and
-                AI models.
+                End-to-end systems that extract, classify, and route documents using LLM-based
+                analysis. Invoices, contracts, reports, research papers — integrated into your
+                existing workflows and tools.
               </p>
               <div className={styles.serviceTech}>
-                <span className="tech-tag">3D Printing</span>
-                <span className="tech-tag">CAD</span>
-                <span className="tech-tag">React</span>
+                <span className="tech-tag">Python</span>
+                <span className="tech-tag">Claude/OpenAI APIs</span>
                 <span className="tech-tag">FastAPI</span>
-                <span className="tech-tag">ML Models</span>
+                <span className="tech-tag">OCR</span>
+                <span className="tech-tag">NLP</span>
               </div>
-              <Link href="/services#prototyping" className={styles.serviceLink}>
-                Start a sprint →
+              <Link href="/services#document-intelligence" className={styles.serviceLink}>
+                Automate your documents →
               </Link>
             </div>
 
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>🔧</div>
-              <h3>Hardware-Software Integration</h3>
+              <div className={styles.serviceIcon}>�</div>
+              <h3>AI Architecture &amp; Consulting</h3>
               <p>
-                Connecting the physical world to intelligent software. Embedded systems, IoT,
-                robotics, smart devices. From PCB design and firmware to edge AI and cloud
-                connectivity.
+                Architecture reviews, RAG evaluation strategy, build-vs-buy analysis, and compliance
+                planning. I help teams make the right technical decisions before writing a single
+                line of code.
               </p>
               <div className={styles.serviceTech}>
-                <span className="tech-tag">PCB Design</span>
-                <span className="tech-tag">Firmware</span>
-                <span className="tech-tag">Edge AI</span>
-                <span className="tech-tag">MQTT</span>
-                <span className="tech-tag">Sensors</span>
-              </div>
-              <Link href="/services#hw-sw" className={styles.serviceLink}>
-                Scope your system →
-              </Link>
-            </div>
-
-            <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>📐</div>
-              <h3>Technical Consulting</h3>
-              <p>
-                Helping teams make the right technical decisions before writing a line of code.
-                Architecture reviews, AI adoption strategy, build-vs-buy analysis, and hands-on
-                mentoring.
-              </p>
-              <div className={styles.serviceTech}>
-                <span className="tech-tag">Architecture</span>
-                <span className="tech-tag">AI Strategy</span>
-                <span className="tech-tag">Team Mentoring</span>
+                <span className="tech-tag">Architecture Design</span>
+                <span className="tech-tag">RAG Evaluation</span>
+                <span className="tech-tag">Compliance Strategy</span>
                 <span className="tech-tag">Tech Selection</span>
               </div>
               <Link href="/services#consulting" className={styles.serviceLink}>
-                Book a session →
+                Book a consultation →
               </Link>
             </div>
           </div>
@@ -175,33 +156,31 @@ export default function Home() {
             <div className="section-label">Projects</div>
             <h2 className="section-title">Selected work.</h2>
             <p className="section-subtitle">
-              Real systems I&apos;ve designed and built, from AI pipelines to physical prototypes.
-              Each project ships, no slide decks.
+              Real AI knowledge systems I&apos;ve designed and built. Each project ships — no slide decks.
             </p>
           </div>
 
           <div className={styles.projectsGrid}>
-            <Link href="/projects/predictive-quality-inspection" className={`${styles.projectCard} reveal reveal-delay-1`}>
+            <Link href="/projects/research-knowledge-assistant" className={`${styles.projectCard} reveal reveal-delay-1`}>
               <div className={styles.projectImage}>
                 <div className={styles.projectImagePattern} />
-                <div className={styles.projectImageIcon}>🏭</div>
+                <div className={styles.projectImageIcon}>🔬</div>
                 <span className={styles.projectStatus}>● Case Study</span>
               </div>
               <div className={styles.projectBody}>
-                <h3>Predictive Quality Inspection System</h3>
+                <h3>AI Knowledge Assistant for Academic Research</h3>
                 <p className={styles.projectDesc}>
-                  Designed and deployed a computer vision pipeline for real-time quality inspection
-                  on a production line. Custom camera array with on-device ML classifies defects in
-                  under 50ms.
+                  Built a domain-specific RAG system for a research institute, enabling researchers
+                  to query thousands of papers and internal documents with accurate, citation-backed
+                  answers.
                 </p>
-                <div className={styles.projectResult}>↓ 73% reduction in defect escape rate</div>
+                <div className={styles.projectResult}>↓ Hours of literature search reduced to seconds</div>
                 <div className={styles.projectTags}>
                   <span className="tech-tag">Python</span>
-                  <span className="tech-tag">TensorFlow Lite</span>
-                  <span className="tech-tag">OpenCV</span>
-                  <span className="tech-tag">Raspberry Pi</span>
-                  <span className="tech-tag">Custom PCB</span>
-                  <span className="tech-tag">MQTT</span>
+                  <span className="tech-tag">LangChain</span>
+                  <span className="tech-tag">Vector DB</span>
+                  <span className="tech-tag">Claude API</span>
+                  <span className="tech-tag">FastAPI</span>
                 </div>
               </div>
             </Link>
@@ -231,27 +210,26 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link href="/projects/iot-environmental-monitoring" className={`${styles.projectCard} reveal reveal-delay-3`}>
+            <Link href="/projects/medical-copilot" className={`${styles.projectCard} reveal reveal-delay-3`}>
               <div className={styles.projectImage}>
                 <div className={styles.projectImagePattern} />
-                <div className={styles.projectImageIcon}>🌡️</div>
-                <span className={styles.projectStatus}>● Case Study</span>
+                <div className={styles.projectImageIcon}>⚕️</div>
+                <span className={styles.projectStatus}>● In Development</span>
               </div>
               <div className={styles.projectBody}>
-                <h3>IoT Environmental Monitoring with Anomaly Detection</h3>
+                <h3>Medical Practice AI Copilot</h3>
                 <p className={styles.projectDesc}>
-                  Designed a wireless sensor network for cold chain monitoring in pharmaceutical
-                  logistics. Custom hardware with LoRaWAN connectivity and ML-based anomaly
-                  detection.
+                  Designing a fully DSGVO-compliant AI assistant for German medical practices.
+                  Retrieves patient-relevant guidelines, drug interactions, and clinical protocols
+                  from verified medical knowledge bases.
                 </p>
-                <div className={styles.projectResult}>3-week prototype cycle, now in pilot</div>
+                <div className={styles.projectResult}>Currently in development — pilot phase 2025</div>
                 <div className={styles.projectTags}>
-                  <span className="tech-tag">ESP32</span>
-                  <span className="tech-tag">LoRaWAN</span>
-                  <span className="tech-tag">3D Printing</span>
-                  <span className="tech-tag">React</span>
-                  <span className="tech-tag">InfluxDB</span>
-                  <span className="tech-tag">scikit-learn</span>
+                  <span className="tech-tag">Python</span>
+                  <span className="tech-tag">RAG</span>
+                  <span className="tech-tag">DSGVO Compliance</span>
+                  <span className="tech-tag">Medical NLP</span>
+                  <span className="tech-tag">Guardrails</span>
                 </div>
               </div>
             </Link>
@@ -273,7 +251,7 @@ export default function Home() {
             <div className={styles.aboutPhoto}>
               <Image
                 src="/marcel.jpg"
-                alt="Marcel Koch, AI Engineer & Founder of MDK Engineering"
+                alt="Marcel Kück, AI Engineer & Founder of MDK Engineering"
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"
                 style={{ objectFit: 'cover' }}
@@ -287,34 +265,34 @@ export default function Home() {
 
             <div className={styles.aboutText}>
               <blockquote>
-                I&apos;ve always been the person who takes things apart to understand how they work
-                and then builds something better. I studied Computer Science at TUM, researched at
-                Oxford, built robots at Devanthro, and engineered systems at Siemens. I&apos;ve
-                founded two startups.
+                I&apos;ve built AI knowledge systems for research institutions, e-commerce platforms,
+                and healthcare providers. Each domain has different accuracy requirements, compliance
+                constraints, and user expectations — and I&apos;ve learned what actually works in
+                production, not just in demos.
               </blockquote>
               <blockquote>
-                Now I help companies turn AI from a buzzword into working technology. I call myself
-                an inventor because that&apos;s what I do: I invent solutions. Whether that means
-                writing a machine learning pipeline, designing a circuit board, or 3D-printing a
-                prototype at 2am. I do whatever it takes to make the thing work.
+                My background spans computer science (TUM), AI research (Oxford), industrial systems
+                (Siemens), and robotics (Devanthro). That breadth means I understand not just the ML,
+                but the infrastructure, the integration, and the real-world constraints that determine
+                whether a system actually ships.
               </blockquote>
 
               <div className={styles.aboutFacts}>
                 <div className={styles.aboutFact}>
                   <div className={styles.factLabel}>Education</div>
-                  <div className={styles.factValue}>CS at TU Munich · Research at Oxford</div>
+                  <div className={styles.factValue}>CS at TU Munich · AI Research at Oxford</div>
                 </div>
                 <div className={styles.aboutFact}>
                   <div className={styles.factLabel}>Industry</div>
-                  <div className={styles.factValue}>Siemens · Devanthro</div>
+                  <div className={styles.factValue}>Siemens · Devanthro · 2 Startups</div>
                 </div>
                 <div className={styles.aboutFact}>
-                  <div className={styles.factLabel}>Stack</div>
-                  <div className={styles.factValue}>Software · AI · Hardware · Robotics</div>
+                  <div className={styles.factLabel}>Focus</div>
+                  <div className={styles.factValue}>RAG Systems · Document AI · Compliance</div>
                 </div>
                 <div className={styles.aboutFact}>
                   <div className={styles.factLabel}>Location</div>
-                  <div className={styles.factValue}>Munich, Germany · Global clients</div>
+                  <div className={styles.factValue}>Munich · Working Internationally</div>
                 </div>
               </div>
 
@@ -414,7 +392,7 @@ export default function Home() {
 
           <div className={styles.contactGrid}>
             <div className={`${styles.contactInfo} reveal reveal-delay-1`}>
-              <h3>Have a process that needs automating or an idea that needs building?</h3>
+              <h3>Have a knowledge challenge or an AI system that needs building?</h3>
               <p>
                 Every engagement starts with a free 30-minute discovery call. Tell me about your
                 challenge, and I&apos;ll tell you honestly whether I can help and what it would take.

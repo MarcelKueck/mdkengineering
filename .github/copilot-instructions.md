@@ -2,7 +2,10 @@
 
 ## Project Overview
 
-MDK Engineering is a Next.js 16 website for an AI engineering consultancy based in Munich.
+MDK Engineering is a Next.js 16 website for an AI knowledge systems consultancy based in Munich.
+The business specializes in production-grade RAG (Retrieval-Augmented Generation) systems,
+AI document intelligence, and technical consulting for organizations where accuracy and
+compliance matter. Clients span research, healthcare, and e-commerce.
 It's deployed on Vercel at mdkengineering.com.
 
 ## Tech Stack

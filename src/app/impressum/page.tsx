@@ -23,7 +23,7 @@ export default function ImpressumPage() {
             <h2>Angaben gemäß § 5 TMG</h2>
             <p>
               MDK Engineering<br />
-              Marcel Koch<br />
+              Marcel Kück<br />
               [Straße und Hausnummer]<br />
               [PLZ und Ort]<br />
               Deutschland
@@ -42,7 +42,7 @@ export default function ImpressumPage() {
 
             <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
             <p>
-              Marcel Koch<br />
+              Marcel Kück<br />
               [Adresse wie oben]
             </p>
 

@@ -5,18 +5,19 @@ import styles from './projects.module.css';
 export const metadata: Metadata = {
   title: 'Projects',
   description:
-    'Case studies and selected work: from AI-powered automation pipelines to IoT prototypes with on-device machine learning.',
+    'Case studies and selected work: production-grade RAG systems, AI document intelligence, and knowledge retrieval pipelines across research, healthcare, and e-commerce.',
 };
 
 const projects = [
   {
-    slug: 'predictive-quality-inspection',
-    icon: '🏭',
-    title: 'Predictive Quality Inspection System',
+    slug: 'research-knowledge-assistant',
+    icon: '🔬',
+    title: 'AI Knowledge Assistant for Academic Research',
     description:
-      'Designed and deployed a computer vision pipeline for real-time quality inspection on a production line. Custom camera array with on-device ML classifies defects in under 50ms, replacing manual spot-checks.',
-    result: '↓ 73% reduction in defect escape rate',
-    tags: ['Python', 'TensorFlow Lite', 'OpenCV', 'Raspberry Pi', 'Custom PCB', 'MQTT'],
+      'Built a domain-specific RAG system for a research institute, enabling researchers to query thousands of papers and internal documents with accurate, citation-backed answers.',
+    result: '↓ Hours of literature search reduced to seconds',
+    tags: ['Python', 'LangChain', 'Vector DB', 'Claude API', 'FastAPI'],
+    status: 'Case Study',
   },
   {
     slug: 'ai-document-processing',
@@ -26,15 +27,17 @@ const projects = [
       'Built an end-to-end automation system that extracts, classifies, and routes incoming documents (invoices, contracts, shipping notes) using LLM-based analysis. Integrates with existing ERP via REST API.',
     result: '↓ 85% reduction in manual data entry',
     tags: ['Python', 'LangChain', 'Claude API', 'FastAPI', 'PostgreSQL', 'n8n'],
+    status: 'Case Study',
   },
   {
-    slug: 'iot-environmental-monitoring',
-    icon: '🌡️',
-    title: 'IoT Environmental Monitoring with Anomaly Detection',
+    slug: 'medical-copilot',
+    icon: '⚕️',
+    title: 'Medical Practice AI Copilot (In Development)',
     description:
-      'Designed a wireless sensor network for cold chain monitoring in pharmaceutical logistics. Custom hardware with LoRaWAN connectivity, real-time dashboard, and ML-based anomaly detection with automated alerting.',
-    result: '3-week prototype cycle, now in pilot',
-    tags: ['ESP32', 'LoRaWAN', '3D Printing', 'React', 'InfluxDB', 'scikit-learn'],
+      'Designing a fully DSGVO-compliant AI assistant for German medical practices. Retrieves patient-relevant guidelines, drug interactions, and clinical protocols from verified medical knowledge bases.',
+    result: 'Currently in development — pilot phase 2025',
+    tags: ['Python', 'RAG', 'DSGVO Compliance', 'Medical NLP', 'Guardrails'],
+    status: 'In Development',
   },
 ];
 
@@ -48,8 +51,7 @@ export default function ProjectsPage() {
             Selected <span className="accent">work</span>.
           </h1>
           <p>
-            Real systems I&apos;ve designed and built, from AI pipelines to physical prototypes.
-            Each project ships, no slide decks.
+            Real AI knowledge systems I&apos;ve designed and built. Each project ships — no slide decks.
           </p>
         </div>
       </div>
@@ -66,7 +68,7 @@ export default function ProjectsPage() {
                 <div className={styles.projectImage}>
                   <div className={styles.projectImagePattern} />
                   <div className={styles.projectImageIcon}>{project.icon}</div>
-                  <span className={styles.projectStatus}>● Case Study</span>
+                  <span className={styles.projectStatus}>● {project.status}</span>
                 </div>
                 <div className={styles.projectBody}>
                   <h3>{project.title}</h3>
@@ -90,9 +92,9 @@ export default function ProjectsPage() {
 
       <section>
         <div className="container" style={{ textAlign: 'center' }}>
-          <h2 className="section-title">Have a project in mind?</h2>
+          <h2 className="section-title">Have a knowledge challenge?</h2>
           <p className="section-subtitle" style={{ margin: '0 auto 2rem' }}>
-            I&apos;m always interested in challenging engineering problems. Let&apos;s discuss yours.
+            I&apos;m always interested in complex retrieval and knowledge system problems. Let&apos;s discuss yours.
           </p>
           <Link href="/contact" className="btn btn-primary btn-arrow">
             Start a Conversation
