@@ -7,7 +7,7 @@
 .projectCard {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 4px;
   overflow: hidden;
   transition: var(--transition);
   cursor: pointer;
@@ -16,50 +16,50 @@
 
 .projectCard:hover {
   border-color: var(--border-hover);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3);
+}
+
+.projectCard:hover .projectImageIcon {
+  opacity: 0.5;
 }
 
 .projectImage {
   width: 100%;
-  height: 200px;
+  padding: 1.25rem 1.5rem;
   background: var(--bg-secondary);
   position: relative;
-  overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .projectImagePattern {
   position: absolute;
   inset: 0;
-  opacity: 0.15;
+  opacity: 0.08;
   background-image:
     linear-gradient(rgba(245, 240, 235, 0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(245, 240, 235, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-size: 24px 24px;
 }
 
 .projectImageIcon {
-  font-size: 2.5rem;
-  opacity: 0.3;
+  font-size: 1.5rem;
+  opacity: 0.35;
   z-index: 1;
+  transition: var(--transition);
 }
 
 .projectStatus {
-  position: absolute;
-  top: 12px;
-  left: 12px;
   font-family: var(--font-mono);
   font-size: 0.65rem;
   color: var(--accent);
-  background: rgba(39, 42, 45, 0.8);
-  backdrop-filter: blur(8px);
-  padding: 0.3rem 0.6rem;
+  background: rgba(39, 42, 45, 0.6);
+  padding: 0.25rem 0.5rem;
   border-radius: 3px;
   border: 1px solid var(--accent-dim);
   z-index: 2;
+  margin-left: auto;
 }
 
 .projectBody {
@@ -68,7 +68,7 @@
 
 .projectCard h3 {
   font-size: 1.05rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .projectDesc {
@@ -82,11 +82,11 @@
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--accent);
-  background: var(--accent-dim);
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--accent);
   margin-bottom: 1rem;
-  display: inline-block;
+  display: block;
+  line-height: 1.4;
 }
 
 .projectTags {
