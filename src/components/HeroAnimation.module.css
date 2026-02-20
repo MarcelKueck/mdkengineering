@@ -52,7 +52,7 @@
 }
 
 .aiITilted {
-  transform: rotate(20deg) translateY(-3px);
+  transform: rotate(25deg) translateY(-3px);
   transition: transform 0.15s ease;
 }
 

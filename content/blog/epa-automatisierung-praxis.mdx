@@ -1,0 +1,87 @@
+---
+title: "ePA-Automatisierung: Wie Ihre Praxis 2026 compliant bleibt, ohne Ihre MFAs zu überlasten"
+description: "Seit Oktober 2025 ist die ePA Pflicht. Ab 2026 drohen Sanktionen. Hier erfahren Sie, wie Automatisierung den ePA-Upload von einer Zeitfresser-Aufgabe in einen Hintergrundprozess verwandelt."
+date: "2026-02-20"
+category: "Praxisautomatisierung"
+---
+
+## Die ePA ist da — und sie macht Arbeit
+
+Seit Oktober 2025 ist die elektronische Patientenakte (ePA) verpflichtend für alle Arztpraxen in Deutschland. Was politisch als Digitalisierungsfortschritt gefeiert wird, bedeutet im Praxisalltag vor allem eins: mehr Verwaltungsaufwand.
+
+Befundberichte, Labordaten, Bildgebung, Arztbriefe — all das muss nun in die ePA hochgeladen werden. Und zwar pro Patient, pro Dokument, mit dem richtigen Format und der richtigen Kategorie.
+
+## Was die meisten PVS-Anbieter liefern
+
+Die großen PVS-Anbieter (CGM Medistar, medatixx, T2med) haben ePA-Upload-Funktionen integriert. Aber in der Praxis sieht das so aus:
+
+- **Pro Patient mehrere Klicks** — Dokument auswählen, Kategorie zuordnen, hochladen, bestätigen
+- **Keine Batch-Verarbeitung** — jeder Patient wird einzeln bearbeitet
+- **Keine automatische Formatierung** — Dokumente müssen manuell in das richtige Format gebracht werden
+- **Kein Compliance-Dashboard** — keine Übersicht, welche Patienten bereits versorgt sind und wo Lücken bestehen
+
+Bei 40+ Patienten pro Tag summiert sich das schnell zu 1-2 Stunden täglicher MFA-Arbeitszeit — ausschließlich für ePA-Uploads.
+
+## Ab 2026: Sanktionen bei Nicht-Compliance
+
+Was viele Praxen noch nicht auf dem Schirm haben: Ab 2026 drohen reale finanzielle Konsequenzen:
+
+- **1% Honorarkürzung** bei fehlender ePA-Nutzung
+- **Halbierte TI-Pauschale** bei Nicht-Compliance
+- **Dokumentationspflicht** — Praxen müssen nachweisen können, dass sie die ePA aktiv befüllen
+
+Die finanzielle Belastung ist damit nicht trivial — insbesondere für kleinere Praxen.
+
+## Der Automatisierungsansatz
+
+Anstatt Ihre MFAs mit manuellem Upload zu belasten, lässt sich der gesamte ePA-Prozess automatisieren:
+
+### 1. Automatische Identifikation
+
+Alle im PVS bereits digital vorliegenden Dokumente werden automatisch identifiziert und als ePA-relevant markiert. Befundberichte, Laborwerte, Bildgebung — das System erkennt den Dokumententyp und die Zuordnung zum Patienten.
+
+### 2. Formatierung und Validierung
+
+Dokumente werden automatisch in das richtige ePA-Format gebracht. Strukturierte Daten (Labordaten) werden als FHIR-Ressourcen formatiert, unstrukturierte Dokumente (Arztbriefe, Befunde) als PDF/A.
+
+### 3. OCR für nicht-digitale Dokumente
+
+Eingehende Faxe, Scans und Ausdrucke werden per OCR erfasst, klassifiziert und ins PVS übertragen — bevor sie in die ePA hochgeladen werden.
+
+### 4. Hintergrund-Upload
+
+Der eigentliche Upload geschieht im Hintergrund. Keine Klicks pro Patient, keine manuelle Zuordnung. Das System arbeitet die Warteschlange automatisch ab.
+
+### 5. Compliance-Dashboard
+
+Ein Dashboard zeigt der Praxisleitung den ePA-Status: Welche Patienten haben eine ePA? Was wurde hochgeladen? Wo gibt es Lücken? Wer hat widersprochen (Opt-out)?
+
+## Die technische Umsetzung
+
+Die Automatisierung basiert auf einer Pipeline aus bewährten Komponenten:
+
+- **Python** als Basis für die gesamte Verarbeitungslogik
+- **OCR (Tesseract)** für die Digitalisierung nicht-digitaler Dokumente
+- **LLM-basierte Klassifikation** für die automatische Zuordnung von Dokumententypen
+- **GDT-Schnittstelle** für die nahtlose Anbindung an Ihr PVS
+- **n8n** für die Workflow-Orchestrierung
+- **DSGVO-konformes Hosting** auf deutschen Servern (Hetzner oder AWS Frankfurt)
+
+## ROI-Rechnung: Lohnt sich das?
+
+Nehmen wir eine typische Allgemeinarztpraxis mit 40 Patienten pro Tag:
+
+| Ohne Automatisierung                      | Mit Automatisierung                                |
+| ----------------------------------------- | -------------------------------------------------- |
+| 1-2 Std. MFA-Zeit pro Tag für ePA-Uploads | ~5 Min. pro Tag (Monitoring)                       |
+| Fehlerquote bei manueller Eingabe: 3-5%   | Fehlerquote: <0.5%                                 |
+| Compliance-Risiko: hoch                   | Compliance: lückenlos dokumentiert                 |
+| Kosten: MFA-Arbeitszeit + Sanktionsrisiko | Kosten: einmalige Einrichtung + laufende Betreuung |
+
+Bei einem MFA-Stundenlohn von ~18€ und 1,5 Stunden täglichem Aufwand ergibt sich eine monatliche Ersparnis von ca. **540€** — allein an direkter Arbeitszeit. Dazu kommen vermiedene Sanktionen und reduzierte Fehlerkosten.
+
+## Nächste Schritte
+
+Wenn die ePA in Ihrer Praxis aktuell ein Schmerzpunkt ist — oder wenn Sie wissen, dass die Sanktionen ab 2026 Sie treffen werden — sprechen Sie mich an. In einem kostenlosen Erstgespräch schaue ich mir Ihre aktuelle Situation an und zeige Ihnen, wie eine automatisierte ePA-Pipeline für Ihre Praxis aussehen könnte.
+
+[→ Erstgespräch vereinbaren](/contact)

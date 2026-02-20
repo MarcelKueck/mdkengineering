@@ -2,10 +2,10 @@
 
 ## Project Overview
 
-MDK Engineering is a Next.js 16 website for an AI knowledge systems consultancy based in Munich.
-The business specializes in production-grade RAG (Retrieval-Augmented Generation) systems,
-AI document intelligence, and technical consulting for organizations where accuracy and
-compliance matter. Clients span research, healthcare, and e-commerce.
+MDK Engineering is a Next.js 16 website for a German medical practice automation engineer based in Munich.
+The business specializes in workflow automation (ePA, document processing, billing optimization),
+smart practice hardware (IoT device integration, check-in terminals, queue displays), and
+DSGVO-compliant AI systems for Arztpraxen. The primary audience is German practice owners (Praxisinhaber).
 It's deployed on Vercel at mdkengineering.com.
 
 ## Tech Stack
@@ -35,17 +35,18 @@ src/
     sitemap.ts            — Dynamic sitemap generation
     robots.ts             — Robots.txt generation
     api/contact/route.ts  — Contact form API endpoint
-    services/             — Services page
-    about/                — About page
-    projects/             — Project listing + [slug] case studies
-    blog/                 — Blog listing + [slug] individual posts
-    contact/              — Contact page
+    services/             — Services page (Leistungen)
+    about/                — About page (Über mich)
+    projects/             — Project listing + [slug] case studies (Projekte)
+    blog/                 — Blog listing + [slug] individual posts (Einblicke)
+    contact/              — Contact page (Kontakt)
     impressum/            — Legal notice (German)
     datenschutz/          — Privacy policy (German)
   components/
     Navbar.tsx            — Navigation with mobile menu
     Footer.tsx            — Site footer
     ContactForm.tsx       — Contact form (client component)
+    HeroAnimation.tsx     — Robotic arm animation with typed text
     ScrollReveal.tsx      — Intersection Observer animations
   lib/
     blog.ts               — Blog utility functions
@@ -60,6 +61,7 @@ content/
 - Server Components by default; only use `'use client'` when needed (interactivity)
 - Blog posts are MDX files with frontmatter (title, description, date, category)
 - All pages export metadata for SEO
+- Website language is German (`lang="de"`) — target audience is German Praxisinhaber
 - German legal pages (Impressum, Datenschutz) contain placeholder data marked with [brackets]
 
 ## Adding a Blog Post
@@ -74,3 +76,5 @@ content/
 - Legal pages need real data before going live (replace [placeholders])
 - Contact form currently logs to console — integrate with email service (Resend recommended) for production
 - No analytics/tracking is installed (privacy-first approach)
+- Target audience: German medical practice owners (Praxisinhaber)
+- Service focus: ePA automation, document processing, IoT device integration, ongoing support

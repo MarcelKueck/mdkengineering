@@ -1,9 +1,9 @@
 # MDK Engineering
 
-> AI Knowledge Systems That Work
+> KI-Automatisierung für Arztpraxen
 
-The website for MDK Engineering — an AI knowledge systems consultancy based in Munich, Germany.
-Specializing in production-grade RAG systems, document intelligence, and AI architecture consulting.
+The website for MDK Engineering — a German medical practice automation engineer based in Munich.
+Automatisierung für deutsche Arztpraxen: ePA-Workflows, Geräteanbindung, Smart-Praxis-Hardware und DSGVO-konforme KI-Systeme.
 
 **Live:** [mdkengineering.com](https://mdkengineering.com)
 
@@ -48,13 +48,13 @@ content/
 | Route | Description |
 |-------|-------------|
 | `/` | Home — hero, services, projects, about, blog preview, contact |
-| `/services` | Detailed service offerings & pricing |
-| `/about` | Background, timeline, capabilities |
-| `/projects` | Project portfolio |
+| `/services` | Detailed service offerings (Leistungen) & pricing |
+| `/about` | Background, timeline, capabilities (Über mich) |
+| `/projects` | Project portfolio (Projekte) |
 | `/projects/[slug]` | Individual case studies |
-| `/blog` | Blog listing |
+| `/blog` | Blog listing (Einblicke) |
 | `/blog/[slug]` | Individual blog posts (MDX) |
-| `/contact` | Contact form & info |
+| `/contact` | Contact form & info (Kontakt) |
 | `/impressum` | Legal notice (German, TMG §5) |
 | `/datenschutz` | Privacy policy (German, DSGVO) |
 

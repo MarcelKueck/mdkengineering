@@ -11,30 +11,31 @@ export default function Home() {
       <section className={styles.hero} id="hero">
         <div className="container">
           <div className={styles.heroContent}>
-            <div className={styles.heroTag}>AI Knowledge Systems · Munich</div>
+            <div className={styles.heroTag}>Praxisautomatisierung · München</div>
             <HeroAnimation />
             <p className={styles.heroDescription}>
-              I build AI systems that give your team instant, reliable access to your
-              organization&apos;s knowledge — whether that&apos;s research papers, product catalogs,
-              or medical guidelines. Production-grade, compliant, tailored to your domain.
+              Ihre MFAs tippen Messwerte ab, kämpfen mit ePA-Uploads, sortieren Faxe
+              und verlieren Stunden an Verwaltung. Ärzte dokumentieren statt zu behandeln.
+              Ich automatisiere genau diese Abläufe — DSGVO-konform, nahtlos in Ihr PVS
+              integriert, Software und Hardware aus einer Hand.
             </p>
             <div className={styles.heroButtons}>
               <Link href="#contact" className="btn btn-primary btn-arrow">
-                Let&apos;s Talk
+                Erstgespräch vereinbaren
               </Link>
-              <Link href="#projects" className="btn btn-secondary">
-                See My Work
+              <Link href="#services" className="btn btn-secondary">
+                Leistungen ansehen
               </Link>
             </div>
             <div className={styles.heroMeta}>
               <div className={styles.heroMetaItem}>
-                <span className="num">8+</span> Years Engineering
+                <span className="num">ePA</span> Automatisierte Uploads statt Klick-Marathons
               </div>
               <div className={styles.heroMetaItem}>
-                <span className="num">2</span> Startups Founded
+                <span className="num">MFA</span> Weniger Abtippen, mehr Zeit für Patienten
               </div>
               <div className={styles.heroMetaItem}>
-                <span className="num">E2E</span> Research · Healthcare · E-Commerce
+                <span className="num">PVS</span> Geräte, Dokumente &amp; Abrechnung — alles verbunden
               </div>
             </div>
           </div>
@@ -46,26 +47,26 @@ export default function Home() {
       <div className={styles.trustBar}>
         <div className="container">
           <div className={styles.trustInner}>
-            <span className={styles.trustLabel}>Background</span>
+            <span className={styles.trustLabel}>Hintergrund</span>
             <div className={styles.trustLogos}>
               <div className={styles.trustItem}>
                 <span className={styles.trustName}>TUM</span>
-                <span className={styles.trustRole}>Computer Science</span>
+                <span className={styles.trustRole}>Informatik &amp; Robotik</span>
               </div>
               <div className={styles.trustDivider} />
               <div className={styles.trustItem}>
                 <span className={styles.trustName}>Oxford</span>
-                <span className={styles.trustRole}>AI Research</span>
+                <span className={styles.trustRole}>KI-Forschung</span>
               </div>
               <div className={styles.trustDivider} />
               <div className={styles.trustItem}>
                 <span className={styles.trustName}>Siemens</span>
-                <span className={styles.trustRole}>Systems Engineering</span>
+                <span className={styles.trustRole}>Industrieautomatisierung</span>
               </div>
               <div className={styles.trustDivider} />
               <div className={styles.trustItem}>
                 <span className={styles.trustName}>Devanthro</span>
-                <span className={styles.trustRole}>Humanoid Robotics</span>
+                <span className={styles.trustRole}>Humanoide Robotik</span>
               </div>
             </div>
           </div>
@@ -76,71 +77,164 @@ export default function Home() {
       <section id="services">
         <div className="container">
           <div className="reveal">
-            <div className="section-label">Services</div>
-            <h2 className="section-title">What I build.</h2>
+            <div className="section-label">Leistungen</div>
+            <h2 className="section-title">Was ich für Ihre Praxis baue.</h2>
             <p className="section-subtitle">
-              End-to-end engineering: from understanding your problem to deploying a working
-              solution. No handoffs, no gaps.
+              Von der Analyse bis zur laufenden Betreuung — alles aus einer Hand.
+              Kein Vendor-Lock-in, keine Abhängigkeit von Ihrem PVS-Anbieter.
             </p>
           </div>
 
           <div className={`${styles.servicesGrid} reveal reveal-delay-2`}>
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>🧠</div>
-              <h3>Custom RAG &amp; Knowledge Systems</h3>
+              <div className={styles.serviceIcon}>⚡</div>
+              <h3>Workflow-Automatisierung</h3>
               <p>
-                I build AI-powered retrieval systems that make your organization&apos;s knowledge
-                instantly accessible. From research databases to product catalogs to medical
-                guidelines — accurate, contextual, and production-ready.
+                ePA-Uploads, Dokumentenklassifikation, Befundbrief-Erstellung,
+                Abrechnungsoptimierung — ich automatisiere die Verwaltungsarbeit,
+                die Ihre MFAs täglich Stunden kostet.
               </p>
               <div className={styles.serviceTech}>
                 <span className="tech-tag">Python</span>
-                <span className="tech-tag">LangChain</span>
-                <span className="tech-tag">Vector DBs</span>
-                <span className="tech-tag">LLM APIs</span>
-                <span className="tech-tag">Evaluation Pipelines</span>
-              </div>
-              <Link href="/services#rag-systems" className={styles.serviceLink}>
-                Discuss your knowledge challenge →
-              </Link>
-            </div>
-
-            <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>�</div>
-              <h3>AI Document Intelligence</h3>
-              <p>
-                End-to-end systems that extract, classify, and route documents using LLM-based
-                analysis. Invoices, contracts, reports, research papers — integrated into your
-                existing workflows and tools.
-              </p>
-              <div className={styles.serviceTech}>
-                <span className="tech-tag">Python</span>
-                <span className="tech-tag">Claude/OpenAI APIs</span>
-                <span className="tech-tag">FastAPI</span>
+                <span className="tech-tag">n8n</span>
+                <span className="tech-tag">GDT</span>
                 <span className="tech-tag">OCR</span>
-                <span className="tech-tag">NLP</span>
+                <span className="tech-tag">LLM APIs</span>
+                <span className="tech-tag">HL7 FHIR</span>
               </div>
-              <Link href="/services#document-intelligence" className={styles.serviceLink}>
-                Automate your documents →
+              <Link href="/services#workflow-automation" className={styles.serviceLink}>
+                ePA-Automatisierung besprechen →
               </Link>
             </div>
 
             <div className={styles.serviceCard}>
-              <div className={styles.serviceIcon}>�</div>
-              <h3>AI Architecture &amp; Consulting</h3>
+              <div className={styles.serviceIcon}>🔧</div>
+              <h3>Smart-Praxis-Hardware &amp; Geräteanbindung</h3>
               <p>
-                Architecture reviews, RAG evaluation strategy, build-vs-buy analysis, and compliance
-                planning. I help teams make the right technical decisions before writing a single
-                line of code.
+                Check-in-Terminals, Wartezimmer-Displays, Geräte-Integration —
+                Blutdruck, EKG, Spirometrie direkt ins PVS und die ePA,
+                ohne manuelles Abtippen.
               </p>
               <div className={styles.serviceTech}>
-                <span className="tech-tag">Architecture Design</span>
-                <span className="tech-tag">RAG Evaluation</span>
-                <span className="tech-tag">Compliance Strategy</span>
-                <span className="tech-tag">Tech Selection</span>
+                <span className="tech-tag">ESP32</span>
+                <span className="tech-tag">Bluetooth LE</span>
+                <span className="tech-tag">MQTT</span>
+                <span className="tech-tag">Raspberry Pi</span>
+                <span className="tech-tag">GDT</span>
               </div>
-              <Link href="/services#consulting" className={styles.serviceLink}>
-                Book a consultation →
+              <Link href="/services#smart-hardware" className={styles.serviceLink}>
+                Hardware-Lösungen entdecken →
+              </Link>
+            </div>
+
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceIcon}>🛡️</div>
+              <h3>Laufende Betreuung &amp; Optimierung</h3>
+              <p>
+                Monitoring, Updates, neue Automatisierungen nach Bedarf — ich bleibe
+                Ihr technischer Ansprechpartner, damit alles reibungslos läuft.
+              </p>
+              <div className={styles.serviceTech}>
+                <span className="tech-tag">Monitoring</span>
+                <span className="tech-tag">Updates</span>
+                <span className="tech-tag">Priority Support</span>
+                <span className="tech-tag">Optimierung</span>
+              </div>
+              <Link href="/services#ongoing-support" className={styles.serviceLink}>
+                Betreuungsmodell ansehen →
+              </Link>
+            </div>
+
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceIcon}>🧠</div>
+              <h3>Praxis-Copilot — KI-Wissenssystem (in Planung)</h3>
+              <p>
+                Kontextbewusste Unterstützung direkt im Praxisalltag: Leitlinien,
+                Medikamenteninteraktionen, Differentialdiagnosen — aufgebaut auf
+                der Automatisierungsinfrastruktur.
+              </p>
+              <div className={styles.serviceTech}>
+                <span className="tech-tag">RAG</span>
+                <span className="tech-tag">Leitlinien</span>
+                <span className="tech-tag">ABDA</span>
+                <span className="tech-tag">Lokale KI</span>
+                <span className="tech-tag">DSGVO</span>
+              </div>
+              <Link href="/services#practice-copilot" className={styles.serviceLink}>
+                Mehr erfahren →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* ═══════════ WARUM MDK ═══════════ */}
+      <section id="warum-mdk">
+        <div className="container">
+          <div className="reveal">
+            <div className="section-label">Warum MDK</div>
+            <h2 className="section-title">Was mich von Ihrem PVS-Anbieter unterscheidet.</h2>
+          </div>
+
+          <div className={`${styles.servicesGrid} reveal reveal-delay-2`}>
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceIcon}>🔧</div>
+              <h3>Software + Hardware aus einer Hand</h3>
+              <p>
+                Jeder andere Anbieter im Praxisumfeld ist rein software-basiert. Ich kann
+                zusätzlich Hardware installieren — IoT-Hubs, Check-in-Terminals, Displays —
+                und alles miteinander verbinden. Ein Ansprechpartner für das gesamte System.
+              </p>
+            </div>
+
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceIcon}>⚕️</div>
+              <h3>Ich verstehe den Praxisalltag</h3>
+              <p>
+                Meine Partnerin studiert Medizin. Ich kenne die realen Abläufe, den Zeitdruck
+                und die Frustrationen aus erster Hand — nicht aus einem Marktforschungsbericht.
+              </p>
+            </div>
+
+            <div className={styles.serviceCard}>
+              <div className={styles.serviceIcon}>🔓</div>
+              <h3>Kein Vendor-Lock-in</h3>
+              <p>
+                Ich arbeite mit Open-Source-Technologie und offenen Standards (GDT, HL7 FHIR).
+                Was ich baue, gehört Ihnen — nicht einem Plattform-Anbieter.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* ═══════════ ePA ═══════════ */}
+      <section id="epa">
+        <div className="container">
+          <div className="reveal">
+            <div className="section-label">ePA</div>
+            <h2 className="section-title">ePA-Pflicht seit Oktober 2025. Sanktionen ab 2026.</h2>
+          </div>
+
+          <div className="reveal reveal-delay-1">
+            <p className="section-subtitle" style={{ maxWidth: '800px' }}>
+              Seit Oktober 2025 ist die elektronische Patientenakte Pflicht für alle Praxen.
+              Ab 2026 drohen 1% Honorarkürzung und halbierte TI-Pauschale bei Nicht-Compliance.
+              Die meisten PVS-Anbieter liefern klunky Upload-Tools, die pro Patient mehrere
+              Klicks erfordern. Bei 40+ Patienten pro Tag wird das schnell zur größten
+              Zeitfresser-Aufgabe Ihrer MFAs.
+            </p>
+            <p className="section-subtitle" style={{ maxWidth: '800px', marginTop: '1.5rem' }}>
+              Ich automatisiere den gesamten ePA-Upload — Dokumente werden im Hintergrund
+              formatiert, validiert und übertragen. Kein Klicken pro Patient.
+            </p>
+            <div style={{ marginTop: '2rem' }}>
+              <Link href="/services#workflow-automation" className="btn btn-primary btn-arrow">
+                ePA-Automatisierung besprechen →
               </Link>
             </div>
           </div>
@@ -153,83 +247,82 @@ export default function Home() {
       <section id="projects">
         <div className="container">
           <div className="reveal">
-            <div className="section-label">Projects</div>
-            <h2 className="section-title">Selected work.</h2>
+            <div className="section-label">Projekte</div>
+            <h2 className="section-title">Ausgewählte Arbeit.</h2>
             <p className="section-subtitle">
-              Real AI knowledge systems I&apos;ve designed and built. Each project ships — no slide decks.
+              Praxisnahe Automatisierungslösungen, die im Alltag funktionieren — keine PowerPoint-Konzepte.
             </p>
           </div>
 
           <div className={styles.projectsGrid}>
-            <Link href="/projects/research-knowledge-assistant" className={`${styles.projectCard} reveal reveal-delay-1`}>
+            <Link href="/projects/epa-automation" className={`${styles.projectCard} reveal reveal-delay-1`}>
               <div className={styles.projectImage}>
                 <div className={styles.projectImagePattern} />
-                <div className={styles.projectImageIcon}>🔬</div>
-                <span className={styles.projectStatus}>● Case Study</span>
+                <div className={styles.projectImageIcon}>📋</div>
+                <span className={styles.projectStatus}>● Konzept</span>
               </div>
               <div className={styles.projectBody}>
-                <h3>AI Knowledge Assistant for Academic Research</h3>
+                <h3>ePA-Automatisierung für Allgemeinmedizin</h3>
                 <p className={styles.projectDesc}>
-                  Built a domain-specific RAG system for a research institute, enabling researchers
-                  to query thousands of papers and internal documents with accurate, citation-backed
-                  answers.
+                  Automatisierte Dokumentenaufbereitung und ePA-Upload für eine Allgemeinarztpraxis.
+                  Befundberichte, Labordaten und Bildgebung werden automatisch formatiert, validiert
+                  und hochgeladen.
                 </p>
-                <div className={styles.projectResult}>↓ Hours of literature search reduced to seconds</div>
+                <div className={styles.projectResult}>↓ 90% weniger manueller Aufwand bei ePA-Uploads</div>
                 <div className={styles.projectTags}>
                   <span className="tech-tag">Python</span>
-                  <span className="tech-tag">LangChain</span>
-                  <span className="tech-tag">Vector DB</span>
-                  <span className="tech-tag">Claude API</span>
-                  <span className="tech-tag">FastAPI</span>
-                </div>
-              </div>
-            </Link>
-
-            <Link href="/projects/ai-document-processing" className={`${styles.projectCard} reveal reveal-delay-2`}>
-              <div className={styles.projectImage}>
-                <div className={styles.projectImagePattern} />
-                <div className={styles.projectImageIcon}>📊</div>
-                <span className={styles.projectStatus}>● Case Study</span>
-              </div>
-              <div className={styles.projectBody}>
-                <h3>AI-Powered Document Processing Pipeline</h3>
-                <p className={styles.projectDesc}>
-                  Built an end-to-end automation system that extracts, classifies, and routes
-                  incoming documents using LLM-based analysis. Integrates with existing ERP via REST
-                  API.
-                </p>
-                <div className={styles.projectResult}>↓ 85% reduction in manual data entry</div>
-                <div className={styles.projectTags}>
-                  <span className="tech-tag">Python</span>
-                  <span className="tech-tag">LangChain</span>
-                  <span className="tech-tag">Claude API</span>
-                  <span className="tech-tag">FastAPI</span>
-                  <span className="tech-tag">PostgreSQL</span>
+                  <span className="tech-tag">OCR</span>
+                  <span className="tech-tag">GDT</span>
                   <span className="tech-tag">n8n</span>
+                  <span className="tech-tag">ePA</span>
+                  <span className="tech-tag">DSGVO</span>
                 </div>
               </div>
             </Link>
 
-            <Link href="/projects/medical-copilot" className={`${styles.projectCard} reveal reveal-delay-3`}>
+            <Link href="/projects/device-integration" className={`${styles.projectCard} reveal reveal-delay-2`}>
+              <div className={styles.projectImage}>
+                <div className={styles.projectImagePattern} />
+                <div className={styles.projectImageIcon}>🔧</div>
+                <span className={styles.projectStatus}>● In Entwicklung</span>
+              </div>
+              <div className={styles.projectBody}>
+                <h3>Medizinische Geräteanbindung</h3>
+                <p className={styles.projectDesc}>
+                  IoT-Hub für Behandlungsräume: Blutdruckmessgeräte, Waagen und Pulsoximeter
+                  automatisch über Bluetooth ins PVS und die ePA integriert — null manuelles Abtippen.
+                </p>
+                <div className={styles.projectResult}>→ Eine Messung — drei Systeme aktualisiert (PVS + ePA + Copilot)</div>
+                <div className={styles.projectTags}>
+                  <span className="tech-tag">ESP32-S3</span>
+                  <span className="tech-tag">Bluetooth LE</span>
+                  <span className="tech-tag">MQTT</span>
+                  <span className="tech-tag">GDT</span>
+                  <span className="tech-tag">HL7 FHIR</span>
+                </div>
+              </div>
+            </Link>
+
+            <Link href="/projects/practice-copilot" className={`${styles.projectCard} reveal reveal-delay-3`}>
               <div className={styles.projectImage}>
                 <div className={styles.projectImagePattern} />
                 <div className={styles.projectImageIcon}>⚕️</div>
-                <span className={styles.projectStatus}>● In Development</span>
+                <span className={styles.projectStatus}>● In Planung</span>
               </div>
               <div className={styles.projectBody}>
-                <h3>Medical Practice AI Copilot</h3>
+                <h3>Praxis-Copilot (DSGVO-konform)</h3>
                 <p className={styles.projectDesc}>
-                  Designing a fully DSGVO-compliant AI assistant for German medical practices.
-                  Retrieves patient-relevant guidelines, drug interactions, and clinical protocols
-                  from verified medical knowledge bases.
+                  KI-gestütztes Wissenssystem für Arztpraxen. Greift auf Leitlinien,
+                  Medikamentendatenbanken und Patientenkontext zu — integriert in die
+                  bestehende Praxisinfrastruktur.
                 </p>
-                <div className={styles.projectResult}>Currently in development — pilot phase 2025</div>
+                <div className={styles.projectResult}>Aktuell in Konzeption — Pilotphase geplant</div>
                 <div className={styles.projectTags}>
                   <span className="tech-tag">Python</span>
                   <span className="tech-tag">RAG</span>
-                  <span className="tech-tag">DSGVO Compliance</span>
-                  <span className="tech-tag">Medical NLP</span>
-                  <span className="tech-tag">Guardrails</span>
+                  <span className="tech-tag">DSGVO</span>
+                  <span className="tech-tag">AWMF Leitlinien</span>
+                  <span className="tech-tag">Lokale KI</span>
                 </div>
               </div>
             </Link>
@@ -243,15 +336,15 @@ export default function Home() {
       <section id="about">
         <div className="container">
           <div className="reveal">
-            <div className="section-label">About</div>
-            <h2 className="section-title">The engineer behind it.</h2>
+            <div className="section-label">Über mich</div>
+            <h2 className="section-title">Marcel Kück.</h2>
           </div>
 
           <div className={`${styles.aboutGrid} reveal reveal-delay-1`}>
             <div className={styles.aboutPhoto}>
               <Image
                 src="/marcel.jpg"
-                alt="Marcel Kück, AI Engineer & Founder of MDK Engineering"
+                alt="Marcel Kück, KI-Ingenieur & Gründer von MDK Engineering"
                 fill
                 sizes="(max-width: 768px) 100vw, 400px"
                 style={{ objectFit: 'cover' }}
@@ -265,46 +358,44 @@ export default function Home() {
 
             <div className={styles.aboutText}>
               <blockquote>
-                I&apos;ve built AI knowledge systems for research institutions, e-commerce platforms,
-                and healthcare providers. Each domain has different accuracy requirements, compliance
-                constraints, and user expectations — and I&apos;ve learned what actually works in
-                production, not just in demos.
+                Ich baue Technologie, die im Praxisalltag funktioniert — nicht als Konzeptstudie,
+                sondern als laufendes System. Mein Hintergrund in Informatik, Robotik und
+                Industrieautomatisierung ermöglicht mir, Software und Hardware aus einer Hand
+                zu liefern. Das kann kein reiner Software-Anbieter.
               </blockquote>
               <blockquote>
-                My background spans computer science (TUM), AI research (Oxford), industrial systems
-                (Siemens), and robotics (Devanthro). That breadth means I understand not just the ML,
-                but the infrastructure, the integration, and the real-world constraints that determine
-                whether a system actually ships.
+                Meine Partnerin studiert Medizin — ich verstehe den klinischen Alltag nicht nur
+                aus der Technik-Perspektive, sondern auch aus der Praxis.
               </blockquote>
 
               <div className={styles.aboutFacts}>
                 <div className={styles.aboutFact}>
-                  <div className={styles.factLabel}>Education</div>
-                  <div className={styles.factValue}>CS at TU Munich · AI Research at Oxford</div>
+                  <div className={styles.factLabel}>Ausbildung</div>
+                  <div className={styles.factValue}>TU München &amp; Oxford</div>
                 </div>
                 <div className={styles.aboutFact}>
-                  <div className={styles.factLabel}>Industry</div>
-                  <div className={styles.factValue}>Siemens · Devanthro · 2 Startups</div>
+                  <div className={styles.factLabel}>Erfahrung</div>
+                  <div className={styles.factValue}>Siemens &amp; Devanthro</div>
                 </div>
                 <div className={styles.aboutFact}>
-                  <div className={styles.factLabel}>Focus</div>
-                  <div className={styles.factValue}>RAG Systems · Document AI · Compliance</div>
+                  <div className={styles.factLabel}>Gründungen</div>
+                  <div className={styles.factValue}>2 Startups</div>
                 </div>
                 <div className={styles.aboutFact}>
-                  <div className={styles.factLabel}>Location</div>
-                  <div className={styles.factValue}>Munich · Working Internationally</div>
+                  <div className={styles.factLabel}>Fokus</div>
+                  <div className={styles.factValue}>Software + Hardware für Arztpraxen</div>
                 </div>
               </div>
 
               <div className={styles.aboutValues}>
                 <div className={styles.aboutValue}>
-                  &ldquo;Build the simplest thing that works, then make it better.&rdquo;
+                  &ldquo;Erst verstehen, dann automatisieren — jede Praxis ist anders.&rdquo;
                 </div>
                 <div className={styles.aboutValue}>
-                  &ldquo;Technology should solve real problems, not create new ones.&rdquo;
+                  &ldquo;Software und Hardware aus einer Hand — kein Finger-Pointing zwischen Anbietern.&rdquo;
                 </div>
                 <div className={styles.aboutValue}>
-                  &ldquo;I ship fast, communicate clearly, and own the outcome.&rdquo;
+                  &ldquo;DSGVO ist kein Hindernis, sondern Designprinzip.&rdquo;
                 </div>
               </div>
             </div>
@@ -318,29 +409,28 @@ export default function Home() {
       <section id="blog">
         <div className="container">
           <div className="reveal">
-            <div className="section-label">Insights</div>
-            <h2 className="section-title">Thinking out loud.</h2>
+            <div className="section-label">Einblicke</div>
+            <h2 className="section-title">Aktuelles aus der Praxisautomatisierung.</h2>
             <p className="section-subtitle">
-              Technical deep dives, industry perspectives, and behind-the-scenes from the workshop.
+              Technische Einblicke, Praxis-Perspektiven und Hintergründe aus der Werkstatt.
             </p>
           </div>
 
           <div className={styles.blogGrid}>
             <Link
-              href="/blog/german-mittelstand-ai-adoption"
+              href="/blog/epa-automatisierung-praxis"
               className={`${styles.blogCard} reveal reveal-delay-1`}
             >
               <div className={styles.blogMeta}>
-                <span className={styles.blogCategory}>Industry</span>
+                <span className={styles.blogCategory}>Praxisautomatisierung</span>
                 <span className={styles.blogDate}>Feb 2026</span>
               </div>
               <h3>
-                Why 94% of German Mittelstand Companies Haven&apos;t Adopted AI and What to Do
-                About It
+                ePA-Automatisierung: Wie Ihre Praxis 2026 compliant bleibt, ohne Ihre MFAs zu überlasten
               </h3>
               <p>
-                The German manufacturing sector has a 137,000 IT specialist deficit. Here&apos;s how
-                smaller companies can still leverage AI without building a data science team.
+                Seit Oktober 2025 ist die ePA Pflicht. Ab 2026 drohen Sanktionen.
+                So wird der ePA-Upload zum Hintergrundprozess.
               </p>
               <div className={styles.blogReadTime}>8 min read</div>
             </Link>
@@ -386,45 +476,46 @@ export default function Home() {
       <section className={styles.contactSection} id="contact">
         <div className="container">
           <div className="reveal">
-            <div className="section-label">Contact</div>
-            <h2 className="section-title">Let&apos;s build something.</h2>
+            <div className="section-label">Kontakt</div>
+            <h2 className="section-title">Sprechen wir über Ihre Praxis.</h2>
           </div>
 
           <div className={styles.contactGrid}>
             <div className={`${styles.contactInfo} reveal reveal-delay-1`}>
-              <h3>Have a knowledge challenge or an AI system that needs building?</h3>
+              <h3>Kostenloses Erstgespräch — ich schaue mir an, wo in Ihrem Praxisalltag Automatisierung den größten Unterschied macht.</h3>
               <p>
-                Every engagement starts with a free 30-minute discovery call. Tell me about your
-                challenge, and I&apos;ll tell you honestly whether I can help and what it would take.
+                Jedes Engagement beginnt mit einem kostenlosen 30-Minuten-Gespräch.
+                Erzählen Sie mir von Ihrem Praxisalltag, und ich sage Ihnen ehrlich,
+                wo Automatisierung Sinn ergibt und was es kosten würde.
               </p>
 
               <div className={styles.contactDetails}>
                 <div className={styles.contactDetail}>
                   <div className={styles.contactDetailIcon}>✉</div>
                   <div className={styles.contactDetailText}>
-                    <a href="mailto:hello@mdkengineering.com">hello@mdkengineering.com</a>
+                    <a href="mailto:marcel@mdkengineering.com">marcel@mdkengineering.com</a>
                   </div>
                 </div>
                 <div className={styles.contactDetail}>
                   <div className={styles.contactDetailIcon}>in</div>
                   <div className={styles.contactDetailText}>
                     <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                      LinkedIn Profile
+                      LinkedIn Profil
                     </a>
                   </div>
                 </div>
                 <div className={styles.contactDetail}>
                   <div className={styles.contactDetailIcon}>📍</div>
                   <div className={styles.contactDetailText}>
-                    Based in Munich, Germany.
+                    Sitz in München.
                     <br />
-                    Working with clients worldwide.
+                    Termine vor Ort in ganz Süddeutschland.
                   </div>
                 </div>
               </div>
 
               <div className={styles.contactResponse}>
-                Typically responds within 24 hours
+                Antwortzeit: Innerhalb von 24 Stunden
               </div>
             </div>
 

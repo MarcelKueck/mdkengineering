@@ -3,61 +3,72 @@ import Link from 'next/link';
 import styles from './services.module.css';
 
 export const metadata: Metadata = {
-  title: 'Services',
+  title: 'Leistungen — Automatisierung für Arztpraxen',
   description:
-    'Custom RAG & knowledge systems, AI document intelligence, and architecture consulting. Production-grade AI systems for research, healthcare, and e-commerce.',
+    'Workflow-Automatisierung, ePA-Integration, Smart-Praxis-Hardware und laufende Betreuung. Alles aus einer Hand, DSGVO-konform, nahtlos in Ihr PVS integriert.',
 };
 
 const services = [
   {
-    id: 'rag-systems',
+    id: 'workflow-automation',
+    icon: '⚡',
+    title: 'Workflow-Automatisierung',
+    what: 'Ich automatisiere die administrativen Abläufe, die Ihre MFAs täglich Stunden kosten. Eingehende Faxe und Dokumente werden automatisch klassifiziert und ins PVS übertragen. ePA-Dokumente werden formatiert, validiert und hochgeladen — ohne manuelles Klicken pro Patient. Befundberichte werden aus der Dokumentation generiert, Abrechnungsziffern auf Vollständigkeit geprüft.',
+    forWhom: 'Praxen, die täglich mit manuellem Dokumenten-Upload in die ePA kämpfen. Teams, bei denen MFAs mehr Zeit mit Verwaltung als mit Patienten verbringen. Praxen mit hohem Fax- und Dokumentenaufkommen, die Daten manuell ins PVS übertragen.',
+    process: [
+      { step: 'Analyse', desc: 'Ich beobachte Ihre täglichen Abläufe und identifiziere die größten Zeitfresser' },
+      { step: 'Design', desc: 'Automatisierungs-Workflows, die nahtlos in Ihr PVS und Ihre ePA-Anbindung passen' },
+      { step: 'Umsetzung', desc: 'OCR, KI-Klassifikation, GDT-Export — alles wird gebaut und getestet' },
+      { step: 'Integration', desc: 'Anbindung an Ihr PVS (Medistar, medatixx, T2med, etc.) via GDT-Schnittstelle' },
+      { step: 'Optimierung', desc: 'Feintuning basierend auf echtem Praxisbetrieb' },
+    ],
+    tech: ['Python', 'n8n', 'OCR (Tesseract)', 'LLM APIs', 'GDT-Schnittstelle', 'HL7 FHIR', 'ePA-Integration'],
+    outcome: '90% weniger manueller Aufwand bei ePA-Dokumenten-Uploads durch automatisierte Formatierung, Validierung und Übertragung',
+  },
+  {
+    id: 'smart-hardware',
+    icon: '🔧',
+    title: 'Smart-Praxis-Hardware & Geräteanbindung',
+    what: 'Die meisten Medizingeräte in deutschen Praxen sind isolierte Inseln — Blutdruckmessgeräte, EKGs, Spirometer drucken auf Thermopapier oder speichern nur lokal. Ihre MFA liest den Wert ab und tippt ihn ins PVS. Bei 30-50 Patienten pro Tag: Stunden verschwendeter Zeit und Übertragungsfehler. Meine Lösung: Ein kleiner IoT-Hub pro Behandlungsraum, der Messwerte automatisch über Bluetooth oder Seriell ausliest und direkt ins PVS, die ePA und den Praxis-Copilot überträgt. Dazu: Check-in-Terminals, Wartezimmer-Displays und Raumbelegungsmanagement.',
+    forWhom: 'Praxen mit hohem Patientendurchsatz, die Messwerte manuell abtippen. Praxen, die teure Kiosk-Terminals durch günstigere, intelligentere Lösungen ersetzen wollen. Praxen, die Gerätedaten automatisch in die ePA übernehmen möchten.',
+    process: [
+      { step: 'Bestandsaufnahme', desc: 'Welche Geräte stehen in Ihren Behandlungsräumen? Welche Schnittstellen haben sie?' },
+      { step: 'Prototyp', desc: 'Erster IoT-Hub für einen Behandlungsraum — Anbindung des häufigsten Geräts' },
+      { step: 'Integration', desc: 'GDT-Export ins PVS, automatischer ePA-Upload, Alarmlogik für Auffälligkeiten' },
+      { step: 'Rollout', desc: 'Schrittweise Erweiterung auf alle Behandlungsräume und Gerätetypen' },
+    ],
+    tech: ['ESP32-S3', 'Raspberry Pi', 'Bluetooth LE', 'RS-232', 'MQTT', 'GDT', 'HL7 FHIR', 'OTA Updates'],
+    outcome: 'Eine Messung → null manuelles Abtippen → drei Systeme gleichzeitig aktualisiert (PVS + ePA + Copilot)',
+  },
+  {
+    id: 'ongoing-support',
+    icon: '🛡️',
+    title: 'Laufende Betreuung & Optimierung',
+    what: 'Automatisierung ist kein Einmal-Projekt. Ich bleibe Ihr technischer Ansprechpartner — für Monitoring, Updates, neue Automatisierungen nach Bedarf, und als erste Anlaufstelle, wenn etwas nicht funktioniert. Kein Warten auf den PVS-Anbieter, kein Ticket-System.',
+    forWhom: 'Praxen, die bereits Automatisierungslösungen von MDK Engineering im Einsatz haben und eine verlässliche technische Betreuung wünschen.',
+    process: [
+      { step: 'Monitoring', desc: 'Automatisierte Überwachung aller installierten Systeme' },
+      { step: 'Updates', desc: 'Software-Updates, Sicherheitspatches, neue ePA-Features' },
+      { step: 'Erweiterung', desc: 'Neue Workflows und Automatisierungen nach Bedarf' },
+      { step: 'Support', desc: 'Prioritäts-Support — persönliche Erreichbarkeit statt Ticket-Warteschlange' },
+    ],
+    tech: ['Monitoring', 'Security Updates', 'DSGVO-Compliance', 'OTA Firmware Updates', 'Priority Support'],
+    outcome: 'Monatliche Betreuung ab €500/Monat — technische Sicherheit und kontinuierliche Optimierung',
+  },
+  {
+    id: 'practice-copilot',
     icon: '🧠',
-    title: 'Custom RAG & Knowledge Systems',
-    what: 'I design and build retrieval-augmented generation systems that make your organization\'s knowledge instantly accessible. These aren\'t chatbot demos — they\'re production systems with proper evaluation, monitoring, and guardrails. Whether your knowledge lives in research papers, product databases, internal wikis, or medical guidelines, I build systems that retrieve the right information, in context, reliably.',
-    forWhom:
-      'Organizations sitting on valuable knowledge that their teams can\'t access efficiently. Research institutions, e-commerce companies with large product catalogs, healthcare providers needing clinical decision support, any team where finding the right information is a daily bottleneck.',
+    title: 'Praxis-Copilot — KI-Wissenssystem (in Planung)',
+    what: 'Der Praxis-Copilot ist kein isolierter Chatbot — er ist eingebettet in die Automatisierungsinfrastruktur, die MDK Engineering bereits in Ihrer Praxis aufgebaut hat. Er kennt Ihre PVS-Daten, den aktuellen Patientenkontext, und Ihre Dokumentationsmuster. Proaktiv werden relevante Leitlinien angezeigt, Medikamenteninteraktionen geprüft und Differentialdiagnosen vorgeschlagen — direkt im Workflow, ohne ein separates Tool zu öffnen. Verfügbar als Cloud-Lösung oder vollständig lokal auf einem Mac Mini in der Praxis.',
+    forWhom: 'Praxen, die bereits Automatisierungslösungen von MDK Engineering nutzen und den nächsten Schritt gehen wollen: kontextbewusste klinische Unterstützung im täglichen Workflow.',
     process: [
-      { step: 'Audit', desc: 'Map your knowledge sources, data quality, and access patterns' },
-      { step: 'Design', desc: 'Architecture the retrieval pipeline — chunking strategy, embedding model selection, re-ranking approach' },
-      { step: 'Build', desc: 'Implement the system with proper evaluation benchmarks from day one' },
-      { step: 'Evaluate', desc: 'Systematic testing against your real queries — precision, recall, faithfulness' },
-      { step: 'Deploy & Monitor', desc: 'Production deployment with observability, feedback loops, and continuous improvement' },
+      { step: 'Infrastruktur', desc: 'Aufbau auf der bestehenden Automatisierungsebene (Layer 1-3)' },
+      { step: 'Wissensbasis', desc: 'Integration von AWMF-Leitlinien, Rote Liste, ABDA, ICD-10, EBM/GOÄ' },
+      { step: 'Kontext', desc: 'Verknüpfung mit Patientendaten aus dem PVS (de-identifiziert für Cloud-Variante)' },
+      { step: 'Validierung', desc: 'Klinische Evaluation mit Ärzten vor dem Produktivbetrieb' },
     ],
-    tech: ['Python', 'LangChain / LlamaIndex', 'Vector Databases (Pinecone, Weaviate, Qdrant)', 'OpenAI / Claude APIs', 'Embedding Models', 'FastAPI', 'Evaluation Frameworks (RAGAS, DeepEval)', 'PostgreSQL'],
-    outcome: 'Built a research knowledge assistant that reduced literature review time from hours to minutes for an academic institution',
-  },
-  {
-    id: 'document-intelligence',
-    icon: '�',
-    title: 'AI Document Intelligence',
-    what: 'End-to-end systems that extract, classify, and route documents using LLM-based analysis. From unstructured PDFs to structured, actionable data — integrated into your existing ERP, CRM, or workflow tools. These systems handle the messy reality of real-world documents: inconsistent formats, handwritten notes, multi-language content.',
-    forWhom:
-      'Companies processing high volumes of documents manually — invoices, contracts, shipping notes, research papers, patient records. Teams where data entry and document routing consume hours that should be spent on higher-value work.',
-    process: [
-      { step: 'Assess', desc: 'Analyze your document types, volumes, and current processing workflow' },
-      { step: 'Design', desc: 'Define extraction schemas, classification rules, and integration points' },
-      { step: 'Build', desc: 'Develop the pipeline with OCR, LLM extraction, and validation logic' },
-      { step: 'Integrate', desc: 'Connect to your existing systems via API — ERP, CRM, databases' },
-      { step: 'Optimize', desc: 'Tune accuracy, handle edge cases, set up monitoring' },
-    ],
-    tech: ['Python', 'Claude / OpenAI APIs', 'OCR (Tesseract, Azure Document Intelligence)', 'FastAPI', 'PostgreSQL', 'n8n', 'LangChain'],
-    outcome: 'Reduced manual data entry by 85% with an AI document processing pipeline for invoice and contract handling',
-  },
-  {
-    id: 'consulting',
-    icon: '📐',
-    title: 'AI Architecture & Consulting',
-    what: 'Helping teams make the right technical decisions before they invest in the wrong approach. RAG architecture reviews, LLM evaluation strategy, build-vs-buy analysis, compliance planning (DSGVO, medical regulations), and hands-on team mentoring. I bring practical experience shipping these systems across multiple domains.',
-    forWhom:
-      'CTOs evaluating RAG or LLM integration, teams stuck on architecture decisions for knowledge systems, companies needing compliance guidance for AI in regulated industries, startups that need senior technical guidance on their AI roadmap.',
-    process: [
-      { step: 'Discovery', desc: 'Understand your current state, data landscape, and goals' },
-      { step: 'Analysis', desc: 'Technical assessment, opportunity mapping, risk identification' },
-      { step: 'Recommend', desc: 'Clear recommendations with trade-off analysis and implementation roadmap' },
-      { step: 'Guide', desc: 'Hands-on support during implementation — code reviews, architecture decisions, evaluation setup' },
-    ],
-    tech: ['Architecture Design', 'RAG Evaluation Strategy', 'LLM Selection & Benchmarking', 'DSGVO / Compliance Planning', 'Build vs. Buy Analysis', 'Team Mentoring'],
-    outcome: 'Available as one-off architecture reviews, weekly advisory, or embedded consulting',
+    tech: ['RAG', 'AWMF Leitlinien', 'ABDA', 'Rote Liste', 'Lokale KI (Llama/Mistral)', 'Apple Silicon', 'DSGVO'],
+    outcome: 'In Planung — wird als natürliche Erweiterung der bestehenden Praxisinfrastruktur entwickelt',
   },
 ];
 
@@ -66,13 +77,13 @@ export default function ServicesPage() {
     <>
       <div className="page-header">
         <div className="container">
-          <div className="hero-tag">Services</div>
+          <div className="hero-tag">Leistungen</div>
           <h1>
-            AI knowledge systems that work in <span className="accent">production</span>.
+            Automatisierung, die im Praxisalltag <span className="accent">funktioniert</span>.
           </h1>
           <p>
-            From understanding your data landscape to deploying a reliable retrieval system.
-            Every engagement starts with your actual problem, not a technology pitch.
+            Von ePA bis Geräteanbindung — jedes Engagement beginnt mit Ihrem konkreten Problem,
+            nicht mit einem Technologie-Pitch.
           </p>
         </div>
       </div>
@@ -88,18 +99,18 @@ export default function ServicesPage() {
 
               <div className={styles.serviceGrid}>
                 <div>
-                  <h3 className={styles.subheading}>What</h3>
+                  <h3 className={styles.subheading}>Was</h3>
                   <p className={styles.description}>{service.what}</p>
 
-                  <h3 className={styles.subheading}>For Whom</h3>
+                  <h3 className={styles.subheading}>Für wen</h3>
                   <p className={styles.description}>{service.forWhom}</p>
 
-                  <h3 className={styles.subheading}>Example Outcome</h3>
+                  <h3 className={styles.subheading}>Ergebnis</h3>
                   <div className={styles.outcomeBox}>{service.outcome}</div>
                 </div>
 
                 <div>
-                  <h3 className={styles.subheading}>How It Works</h3>
+                  <h3 className={styles.subheading}>So funktioniert es</h3>
                   <div className={styles.processList}>
                     {service.process.map((step, i) => (
                       <div key={step.step} className={styles.processStep}>
@@ -112,7 +123,7 @@ export default function ServicesPage() {
                     ))}
                   </div>
 
-                  <h3 className={styles.subheading}>Tools & Tech</h3>
+                  <h3 className={styles.subheading}>Technologie</h3>
                   <div className={styles.techList}>
                     {service.tech.map((t) => (
                       <span key={t} className="tech-tag">
@@ -131,28 +142,32 @@ export default function ServicesPage() {
       {/* Pricing */}
       <section className={styles.altSection}>
         <div className="container">
-          <div className="section-label">Pricing</div>
-          <h2 className="section-title">Transparent from the start.</h2>
+          <div className="section-label">Preise</div>
+          <h2 className="section-title">Transparent von Anfang an.</h2>
           <div className={styles.pricingGrid}>
             <div className={styles.pricingCard}>
-              <h3>Knowledge System Pilots</h3>
-              <div className={styles.pricingValue}>from €5,000</div>
-              <p>Focused engagements to build a targeted RAG system or knowledge retrieval solution for your specific use case.</p>
+              <h3>Workflow-Automatisierung</h3>
+              <div className={styles.pricingValue}>ab €3.000</div>
+              <p>ePA-Automation, Dokumentenverarbeitung, PVS-Integration. Typisch 1-3 Wochen Umsetzung.</p>
             </div>
             <div className={styles.pricingCard}>
-              <h3>Consulting</h3>
-              <div className={styles.pricingValue}>from €150/hr</div>
-              <p>Architecture reviews, RAG evaluation strategy, compliance planning, and hands-on technical guidance. Also available as weekly retainer.</p>
+              <h3>Smart-Praxis-Hardware</h3>
+              <div className={styles.pricingValue}>ab €5.000</div>
+              <p>Geräteanbindung, Check-in-Terminals, Wartezimmer-Displays. Hardware + Software + Installation.</p>
             </div>
             <div className={styles.pricingCard}>
-              <h3>Discovery Call</h3>
-              <div className={styles.pricingValue}>Free</div>
-              <p>Every engagement starts with a free 30-minute call to understand your challenge.</p>
+              <h3>Laufende Betreuung</h3>
+              <div className={styles.pricingValue}>ab €500/Monat</div>
+              <p>Monitoring, Updates, neue Automatisierungen, Priority Support. Ihr technischer Partner auf Dauer.</p>
             </div>
           </div>
           <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+            <p style={{ marginBottom: '1.5rem', opacity: 0.8, maxWidth: '640px', margin: '0 auto 1.5rem' }}>
+              Jedes Engagement beginnt mit einem kostenlosen Erstgespräch. Ich komme gerne auch
+              direkt in Ihre Praxis, um mir die Abläufe vor Ort anzuschauen.
+            </p>
             <Link href="/contact" className="btn btn-primary btn-arrow">
-              Start a Conversation
+              Erstgespräch vereinbaren
             </Link>
           </div>
         </div>

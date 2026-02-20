@@ -20,10 +20,10 @@ export default function Navbar() {
   const closeMobile = useCallback(() => setMobileOpen(false), []);
 
   const navLinks = [
-    { href: isHome ? '#services' : '/services', label: 'Services' },
-    { href: isHome ? '#projects' : '/projects', label: 'Projects' },
-    { href: isHome ? '#about' : '/about', label: 'About' },
-    { href: '/blog', label: 'Insights' },
+    { href: isHome ? '#services' : '/services', label: 'Leistungen' },
+    { href: isHome ? '#projects' : '/projects', label: 'Projekte' },
+    { href: isHome ? '#about' : '/about', label: 'Über mich' },
+    { href: '/blog', label: 'Einblicke' },
   ];
 
   return (
@@ -44,7 +44,7 @@ export default function Navbar() {
               href={isHome ? '#contact' : '/contact'}
               className={styles.navCta}
             >
-              Let&apos;s Talk
+              Erstgespräch
             </Link>
           </li>
         </ul>
@@ -70,7 +70,7 @@ export default function Navbar() {
           onClick={closeMobile}
           className={styles.navCta}
         >
-          Let&apos;s Talk
+          Erstgespräch
         </Link>
       </div>
 

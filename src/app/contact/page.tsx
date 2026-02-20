@@ -3,13 +3,13 @@ import ContactForm from '@/components/ContactForm';
 import styles from './contact.module.css';
 
 export const metadata: Metadata = {
-  title: 'Contact – MDK Engineering',
+  title: 'Kontakt — MDK Engineering',
   description:
-    'Get in touch with MDK Engineering. Free discovery call to discuss your AI knowledge system, RAG pipeline, or document intelligence project.',
+    'Kostenloses Erstgespräch zur Praxisautomatisierung. ePA-Workflows, Geräteanbindung, Smart-Praxis-Hardware — sprechen wir über Ihre Praxis.',
   openGraph: {
-    title: 'Contact – MDK Engineering',
+    title: 'Kontakt — MDK Engineering',
     description:
-      'Free discovery call to discuss your AI knowledge system, RAG pipeline, or document intelligence project.',
+      'Kostenloses Erstgespräch: Wo kann Automatisierung in Ihrer Praxis den größten Unterschied machen?',
     url: 'https://mdkengineering.com/contact',
   },
 };
@@ -19,11 +19,11 @@ export default function ContactPage() {
     <main>
       <section className="page-header">
         <div className="container">
-          <span className="section-label">{'// Contact'}</span>
-          <h1 className="section-title">Let&apos;s Build Your Knowledge System</h1>
+          <span className="section-label">{'// Kontakt'}</span>
+          <h1 className="section-title">Sprechen wir über Ihre Praxis</h1>
           <p style={{ maxWidth: '640px', opacity: 0.8, fontSize: '1.125rem', lineHeight: 1.7 }}>
-            Have an engineering challenge? Let&apos;s talk. I offer a free discovery
-            call to understand your problem before proposing a solution.
+            Kostenloses Erstgespräch — ich schaue mir an, wo Automatisierung in Ihrem
+            Praxisalltag den größten Unterschied macht. Gerne auch vor Ort.
           </p>
         </div>
       </section>
@@ -33,37 +33,33 @@ export default function ContactPage() {
           <div className={styles.grid}>
             <div className={styles.info}>
               <div className={styles.infoBlock}>
-                <h3>Direct Contact</h3>
+                <h3>E-Mail</h3>
                 <p>
                   <a href="mailto:marcel@mdkengineering.com">marcel@mdkengineering.com</a>
                 </p>
               </div>
 
               <div className={styles.infoBlock}>
-                <h3>Based in</h3>
-                <p>Munich, Germany</p>
-                <p style={{ opacity: 0.6, fontSize: '0.9rem' }}>
-                  Available for remote work worldwide
-                </p>
+                <h3>Standort</h3>
+                <p>Sitz in München — Termine vor Ort in ganz Süddeutschland</p>
               </div>
 
               <div className={styles.infoBlock}>
-                <h3>Response Time</h3>
-                <p>Usually within 24 hours</p>
+                <h3>Antwortzeit</h3>
+                <p>Innerhalb von 24 Stunden</p>
               </div>
 
               <div className={styles.infoBlock}>
-                <h3>What to Expect</h3>
+                <h3>So läuft es ab</h3>
                 <ol className={styles.expectList}>
-                  <li>Free 30-minute discovery call</li>
-                  <li>Problem assessment & feasibility check</li>
-                  <li>Proposal with clear scope, timeline & pricing</li>
-                  <li>No obligations, only proceed if it makes sense</li>
+                  <li>Kostenloses Erstgespräch (30 Min.) — ich verstehe Ihren Praxisalltag und Ihre größten Zeitfresser</li>
+                  <li>Optional: Praxisbesuch vor Ort — ich schaue mir die Abläufe und Systeme direkt an</li>
+                  <li>Konkreter Vorschlag mit klarem Umfang, Zeitrahmen und Preis — keine versteckten Kosten</li>
                 </ol>
               </div>
 
               <div className={styles.infoBlock}>
-                <h3>Profiles</h3>
+                <h3>Profile</h3>
                 <div className={styles.socialLinks}>
                   <a
                     href="https://github.com/mdk-engineering"

@@ -3,41 +3,41 @@ import Link from 'next/link';
 import styles from './projects.module.css';
 
 export const metadata: Metadata = {
-  title: 'Projects',
+  title: 'Projekte',
   description:
-    'Case studies and selected work: production-grade RAG systems, AI document intelligence, and knowledge retrieval pipelines across research, healthcare, and e-commerce.',
+    'Automatisierungslösungen für Arztpraxen: ePA-Workflows, Geräteanbindung und KI-Wissenssysteme — praxisnah, DSGVO-konform, aus einer Hand.',
 };
 
 const projects = [
   {
-    slug: 'research-knowledge-assistant',
-    icon: '🔬',
-    title: 'AI Knowledge Assistant for Academic Research',
+    slug: 'epa-automation',
+    icon: '📋',
+    title: 'ePA-Automatisierung für Allgemeinmedizin',
     description:
-      'Built a domain-specific RAG system for a research institute, enabling researchers to query thousands of papers and internal documents with accurate, citation-backed answers.',
-    result: '↓ Hours of literature search reduced to seconds',
-    tags: ['Python', 'LangChain', 'Vector DB', 'Claude API', 'FastAPI'],
-    status: 'Case Study',
+      'Automatisierte Dokumentenaufbereitung und ePA-Upload für eine Allgemeinarztpraxis. Befundberichte, Labordaten und Bildgebung werden automatisch formatiert, validiert und hochgeladen.',
+    result: '↓ 90% weniger manueller Aufwand bei ePA-Uploads',
+    tags: ['Python', 'OCR', 'GDT', 'n8n', 'ePA', 'DSGVO'],
+    status: 'Konzept',
   },
   {
-    slug: 'ai-document-processing',
-    icon: '📊',
-    title: 'AI-Powered Document Processing Pipeline',
+    slug: 'device-integration',
+    icon: '🔧',
+    title: 'Medizinische Geräteanbindung',
     description:
-      'Built an end-to-end automation system that extracts, classifies, and routes incoming documents (invoices, contracts, shipping notes) using LLM-based analysis. Integrates with existing ERP via REST API.',
-    result: '↓ 85% reduction in manual data entry',
-    tags: ['Python', 'LangChain', 'Claude API', 'FastAPI', 'PostgreSQL', 'n8n'],
-    status: 'Case Study',
+      'IoT-Hub für Behandlungsräume: Blutdruckmessgeräte, Waagen und Pulsoximeter automatisch über Bluetooth ins PVS und die ePA integriert — null manuelles Abtippen.',
+    result: '→ Eine Messung — drei Systeme aktualisiert (PVS + ePA + Copilot)',
+    tags: ['ESP32-S3', 'Bluetooth LE', 'MQTT', 'GDT', 'HL7 FHIR'],
+    status: 'In Entwicklung',
   },
   {
-    slug: 'medical-copilot',
+    slug: 'practice-copilot',
     icon: '⚕️',
-    title: 'Medical Practice AI Copilot (In Development)',
+    title: 'Praxis-Copilot (DSGVO-konform)',
     description:
-      'Designing a fully DSGVO-compliant AI assistant for German medical practices. Retrieves patient-relevant guidelines, drug interactions, and clinical protocols from verified medical knowledge bases.',
-    result: 'Currently in development — pilot phase 2025',
-    tags: ['Python', 'RAG', 'DSGVO Compliance', 'Medical NLP', 'Guardrails'],
-    status: 'In Development',
+      'KI-gestütztes Wissenssystem für Arztpraxen. Greift auf Leitlinien, Medikamentendatenbanken und Patientenkontext zu — integriert in die bestehende Praxisinfrastruktur.',
+    result: 'Aktuell in Konzeption — Pilotphase geplant',
+    tags: ['Python', 'RAG', 'DSGVO', 'AWMF Leitlinien', 'Lokale KI'],
+    status: 'In Planung',
   },
 ];
 
@@ -46,12 +46,12 @@ export default function ProjectsPage() {
     <>
       <div className="page-header">
         <div className="container">
-          <div className="hero-tag">Projects</div>
+          <div className="hero-tag">Projekte</div>
           <h1>
-            Selected <span className="accent">work</span>.
+            Ausgewählte <span className="accent">Arbeit</span>.
           </h1>
           <p>
-            Real AI knowledge systems I&apos;ve designed and built. Each project ships — no slide decks.
+            Automatisierungslösungen, die im Praxisalltag funktionieren. Jedes Projekt liefert — keine Konzeptpapiere.
           </p>
         </div>
       </div>
@@ -92,12 +92,12 @@ export default function ProjectsPage() {
 
       <section>
         <div className="container" style={{ textAlign: 'center' }}>
-          <h2 className="section-title">Have a knowledge challenge?</h2>
+          <h2 className="section-title">Automatisierung für Ihre Praxis?</h2>
           <p className="section-subtitle" style={{ margin: '0 auto 2rem' }}>
-            I&apos;m always interested in complex retrieval and knowledge system problems. Let&apos;s discuss yours.
+            Ich schaue mir gerne an, wo in Ihrem Praxisalltag die größten Zeitfresser liegen.
           </p>
           <Link href="/contact" className="btn btn-primary btn-arrow">
-            Start a Conversation
+            Erstgespräch vereinbaren
           </Link>
         </div>
       </section>

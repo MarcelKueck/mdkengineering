@@ -1,45 +1,70 @@
 # MDK Engineering — Strategic Roadmap
 
-## Current Focus: AI Knowledge Systems
+## Mission: The Full-Stack Automation Partner for German Medical Practices
 
-MDK Engineering's primary service offering is **production-grade RAG and AI knowledge systems** for organizations where accuracy, domain-specificity, and compliance matter. Current client domains: academic research, e-commerce, and healthcare (German medical practices).
-
-### Why this focus now
-- Active paying clients across multiple industries
-- Medical practice AI copilot product in development (fully DSGVO-compliant)
-- RAG/knowledge systems market is high-demand with strong 2025-2026 timing
-- Cross-industry experience is a differentiator — few RAG consultants have delivered across research, retail, and healthcare
-- Projects have shorter sales cycles and faster time-to-value than hardware/robotics engagements
-
-### Near-term goals
-- Ship the medical copilot to pilot stage
-- Stack 3-5 strong case studies across domains
-- Establish reputation as the go-to knowledge systems specialist for organizations that need production-grade, not prototype-grade
+MDK Engineering's positioning is **the technical partner that German Arztpraxen don't currently have** — someone who understands both software and hardware, can automate workflows end-to-end, and stays on as a long-term technical partner. The unique differentiator: software + hardware from a single source, combined with real understanding of the clinical workflow.
 
 ---
 
-## Future Direction: Robotics & Robot Learning
+## Layered Service Model
 
-Marcel's background in robotics (Devanthro, humanoid robots) and passion for reinforcement learning / imitation learning is a long-term strategic asset. The plan is to **sequence, not choose** — build robotics credibility in parallel, then launch it as a second service line once the knowledge systems business is stable.
+The business is structured as a four-layer service stack, where each layer builds on the previous:
 
-### Phase 1 — Now to ~18 months: Knowledge Systems is the business
-- All client work, website positioning, and content focused on RAG / document AI / consulting
-- Revenue stability and case study accumulation are the priority
+### Layer 1: Workflow-Automatisierung (Entry Point)
+- **Focus:** ePA document automation, OCR, document classification, billing optimization
+- **Why it's the entry point:** ePA compliance is mandatory since October 2025. Sanctions start in 2026. Every practice feels this pain right now.
+- **Pricing:** From €3,000 per implementation
+- **Timeline:** 1-3 weeks per practice
+- **Technology:** Python, n8n, OCR (Tesseract), LLM APIs, GDT interface, HL7 FHIR
 
-### Phase 2 — Parallel, low effort: Build robotics visibility
-- Write occasional blog posts / LinkedIn content about RL and imitation learning
-- Attend robotics conferences and maintain network (Automatica, ICRA, CoRL)
-- Contribute to open-source robotics / RL projects
-- Build a documented side project demonstrating imitation learning on a real robot arm
-- None of this requires paying clients — it's credibility-building
+### Layer 2: Smart-Praxis-Hardware
+- **Focus:** IoT hubs for treatment rooms, medical device integration (blood pressure, ECG, spirometry), check-in terminals, waiting room displays
+- **Why it matters:** Eliminates manual data entry for the most common measurements. Differentiator vs. pure software competitors.
+- **Pricing:** From €5,000 (hardware + software + installation)
+- **Technology:** ESP32-S3, Raspberry Pi, Bluetooth LE, RS-232, MQTT, GDT
 
-### Phase 3 — When ready: Add robotics as a service line
-- Once knowledge systems revenue is consistent and predictable
-- Take on a first robotics engagement (potentially at reduced margin) to create the initial case study
-- Reposition website to encompass both offerings under a unified narrative
+### Layer 3: Laufende Betreuung (Recurring Revenue)
+- **Focus:** Monitoring, updates, new automations on demand, priority support
+- **Why it matters:** Creates sticky, recurring relationships. Practices don't want to manage technical systems themselves.
+- **Pricing:** From €500/month
+- **Technology:** Monitoring, OTA updates, DSGVO compliance maintenance
 
-### The connecting thread
-Both service lines share a coherent higher-level story: **building AI systems that learn from existing knowledge and apply it in practice** — whether that knowledge lives in documents (RAG) or in human demonstrations (imitation learning). This unified positioning only works once there's credibility in both areas.
+### Layer 4: Praxis-Copilot (Future — AI Knowledge System)
+- **Focus:** Context-aware clinical decision support embedded in the practice workflow
+- **Why it depends on Layer 1-3:** The Copilot needs the data infrastructure (documents, measurements, patient context) that the earlier layers create.
+- **Differentiator:** Not an isolated chatbot — it's embedded in the automation stack and has automatic access to patient context.
+- **Technology:** RAG, AWMF guidelines, Rote Liste, ABDA, local AI (Llama/Mistral on Apple Silicon)
+
+---
+
+## Growth Strategy: The 50-Practice Network
+
+### Phase 1 — Now to 6 months: First 5 practices
+- Focus on ePA automation as the door opener
+- Build case studies with measurable ROI (time saved per MFA per day)
+- Refine the implementation process to be repeatable in 1-2 weeks
+- Target: Munich area, personal network, medical contacts through partner
+
+### Phase 2 — 6-18 months: Scale to 20 practices
+- Standardized implementation playbook
+- Hardware products (IoT hubs) ready for deployment
+- Recurring revenue from ongoing support contracts
+- Referral network among Praxisinhaber
+
+### Phase 3 — 18-36 months: 50 practices, Copilot launch
+- Praxis-Copilot pilot with practices that have full Layer 1-3 infrastructure
+- Platform play: standardized tools that can be deployed across the network
+- Potential for "Zapier for German Practice Software" — connecting PVS, ePA, devices, and AI
+
+---
+
+## Competitive Moat
+
+1. **Software + Hardware:** No other practice automation provider can also install IoT hardware. Pure software companies can't bridge the physical-digital gap.
+2. **Clinical understanding:** Partner studies medicine — real insight into daily clinical workflows, not market research.
+3. **No vendor lock-in:** Open standards (GDT, HL7 FHIR), open-source technology. What we build belongs to the practice.
+4. **Full-stack engineering:** From ML pipelines to PCB design. TUM, Oxford, Siemens, Devanthro background.
+5. **Local presence:** Based in Munich, available for on-site visits. Practices want a person, not a ticket system.
 
 ---
 
@@ -47,6 +72,7 @@ Both service lines share a coherent higher-level story: **building AI systems th
 
 | Date     | Decision                                                        | Rationale                                                                                               |
 | -------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Feb 2025 | Pivot from general AI consultancy to AI Knowledge Systems focus | Active clients, market timing, shorter sales cycles                                                     |
-| Feb 2025 | Defer robotics/RL as primary offering                           | No current clients in that space, no deployed case studies as consultant, long sales cycles             |
-| Feb 2025 | Keep robotics as Phase 2 parallel track                         | Passion area with real background (Devanthro), builds toward future service line without financial risk |
+| Feb 2026 | Pivot from AI Knowledge Systems to Medical Practice Automation  | Clearer market need (ePA), specific audience (Praxisinhaber), hardware differentiator, recurring revenue potential |
+| Feb 2026 | ePA automation as entry point                                   | Mandatory compliance, immediate pain point, short sales cycle, clear ROI                                |
+| Feb 2026 | Layered service model (Workflow → Hardware → Support → Copilot) | Each layer builds on the previous, creates natural upsell path, Copilot needs infrastructure first     |
+| Feb 2026 | German-language website                                         | Target audience operates entirely in German, builds trust with Praxisinhaber                            |

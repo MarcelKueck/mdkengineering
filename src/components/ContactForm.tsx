@@ -15,8 +15,8 @@ export default function ContactForm() {
       name: formData.get('name'),
       email: formData.get('email'),
       company: formData.get('company'),
+      topic: formData.get('topic'),
       project: formData.get('project'),
-      budget: formData.get('budget'),
     };
 
     try {
@@ -46,19 +46,18 @@ export default function ContactForm() {
               <path d="M14 24l7 7 13-13" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={styles.successCheck} />
             </svg>
           </div>
-          <h3 className={styles.successTitle}>Message Sent</h3>
+          <h3 className={styles.successTitle}>Nachricht gesendet!</h3>
           <p className={styles.successText}>
-            Thanks for reaching out. I&apos;ll review your project details and
-            get back to you within 24 hours.
+            Ich melde mich innerhalb von 24 Stunden bei Ihnen.
           </p>
           <div className={styles.successMeta}>
             <div className={styles.successMetaItem}>
-              <span className={styles.successMetaLabel}>Response time</span>
-              <span>&lt; 24 hours</span>
+              <span className={styles.successMetaLabel}>Antwortzeit</span>
+              <span>&lt; 24 Stunden</span>
             </div>
             <div className={styles.successMetaItem}>
-              <span className={styles.successMetaLabel}>Next step</span>
-              <span>Free discovery call</span>
+              <span className={styles.successMetaLabel}>Nächster Schritt</span>
+              <span>Kostenloses Erstgespräch</span>
             </div>
           </div>
           <button
@@ -66,7 +65,7 @@ export default function ContactForm() {
             className={`btn btn-secondary ${styles.successBtn}`}
             onClick={() => setStatus('idle')}
           >
-            Send another message
+            Weitere Nachricht senden
           </button>
         </div>
       </div>
@@ -78,43 +77,43 @@ export default function ContactForm() {
       <div className={styles.formRow}>
         <div className="form-group">
           <label htmlFor="name">Name *</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required />
+          <input type="text" id="name" name="name" placeholder="Ihr Name" required />
         </div>
         <div className="form-group">
-          <label htmlFor="email">Email *</label>
-          <input type="email" id="email" name="email" placeholder="you@company.com" required />
+          <label htmlFor="email">E-Mail *</label>
+          <input type="email" id="email" name="email" placeholder="ihre@email.de" required />
         </div>
       </div>
 
       <div className="form-group">
         <label htmlFor="company">
-          Company <span style={{ color: 'var(--text-muted)' }}>(optional)</span>
+          Praxis / Organisation <span style={{ color: 'var(--text-muted)' }}>(optional)</span>
         </label>
-        <input type="text" id="company" name="company" placeholder="Company name" />
+        <input type="text" id="company" name="company" placeholder="Praxisname (optional)" />
       </div>
 
       <div className="form-group">
-        <label htmlFor="project">Project Description *</label>
+        <label htmlFor="topic">Thema</label>
+        <select id="topic" name="topic" defaultValue="">
+          <option value="" disabled>
+            Bitte wählen
+          </option>
+          <option value="epa-automatisierung">ePA-Automatisierung</option>
+          <option value="dokumentenverarbeitung">Dokumentenverarbeitung</option>
+          <option value="geraeteanbindung">Geräteanbindung</option>
+          <option value="laufende-betreuung">Laufende Betreuung</option>
+          <option value="allgemeine-anfrage">Allgemeine Anfrage</option>
+        </select>
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="project">Nachricht *</label>
         <textarea
           id="project"
           name="project"
-          placeholder="Tell me about your project, challenge, or idea. The more context, the better."
+          placeholder="Beschreiben Sie kurz Ihre Situation — z.B. welches PVS Sie nutzen, wo die größten Zeitfresser liegen, ob die ePA bereits ein Thema ist..."
           required
         />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="budget">Budget Range</label>
-        <select id="budget" name="budget" defaultValue="">
-          <option value="" disabled>
-            Select a range
-          </option>
-          <option value="<5k">Under €5,000</option>
-          <option value="5-15k">€5,000 – €15,000</option>
-          <option value="15-50k">€15,000 – €50,000</option>
-          <option value="50k+">€50,000+</option>
-          <option value="unsure">Not sure yet</option>
-        </select>
       </div>
 
       <button
@@ -122,13 +121,13 @@ export default function ContactForm() {
         className={`btn btn-primary btn-arrow ${styles.formSubmit}`}
         disabled={status === 'sending'}
       >
-        {status === 'sending' ? 'Sending...' : 'Send Message'}
+        {status === 'sending' ? 'Wird gesendet...' : 'Nachricht senden'}
       </button>
 
       {status === 'error' && (
         <p className={styles.errorMsg}>
-          Something went wrong. Please email{' '}
-          <a href="mailto:marcel@mdkengineering.com">marcel@mdkengineering.com</a> directly.
+          Etwas ist schiefgelaufen. Bitte schreiben Sie direkt an{' '}
+          <a href="mailto:marcel@mdkengineering.com">marcel@mdkengineering.com</a>.
         </p>
       )}
     </form>

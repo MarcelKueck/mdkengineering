@@ -21,26 +21,26 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "MDK Engineering | AI Knowledge Systems That Work",
+    default: "MDK Engineering | KI-Automatisierung für Arztpraxen",
     template: "%s | MDK Engineering",
   },
   description:
-    "I build AI systems that give your team instant, reliable access to your organization's knowledge — production-grade, compliant, and tailored to your domain. Based in Munich.",
+    "Ihr technischer Partner für Praxisautomatisierung. ePA-Workflows, Dokumentenverarbeitung, Geräteanbindung und DSGVO-konforme KI-Lösungen für Arztpraxen. Sitz in München.",
   metadataBase: new URL("https://mdkengineering.com"),
   openGraph: {
-    title: "MDK Engineering | AI Knowledge Systems That Work",
+    title: "MDK Engineering | KI-Automatisierung für Arztpraxen",
     description:
-      "I build AI systems that give your team instant, reliable access to your organization's knowledge — production-grade, compliant, and tailored to your domain. Based in Munich.",
+      "Weniger Verwaltung, mehr Zeit für Patienten. Automatisierung von ePA-Uploads, Dokumentenverarbeitung und Gerätedatenerfassung — DSGVO-konform, praxistauglich, aus einer Hand.",
     url: "https://mdkengineering.com",
     siteName: "MDK Engineering",
-    locale: "en_US",
+    locale: "de_DE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MDK Engineering | AI Knowledge Systems That Work",
+    title: "MDK Engineering | KI-Automatisierung für Arztpraxen",
     description:
-      "I build AI systems that give your team instant, reliable access to your organization's knowledge — production-grade, compliant, and tailored to your domain. Based in Munich.",
+      "Automatisierung für Arztpraxen: ePA, Dokumentenverarbeitung, Geräteanbindung. Software + Hardware aus einer Hand.",
   },
   robots: {
     index: true,
@@ -64,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${jetbrainsMono.variable} ${dmSans.variable}`}>
+    <html lang="de" className={`${jetbrainsMono.variable} ${dmSans.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -76,19 +76,32 @@ export default function RootLayout({
               url: 'https://mdkengineering.com',
               email: 'marcel@mdkengineering.com',
               description:
-                'AI knowledge systems specialist based in Munich. Building production-grade RAG systems for research, healthcare, and e-commerce.',
+                'KI-gestützte Automatisierung für deutsche Arztpraxen. ePA-Workflows, Dokumentenverarbeitung, Geräteanbindung und laufende Betreuung — Software und Hardware aus einer Hand.',
+              areaServed: {
+                '@type': 'Country',
+                name: 'Germany',
+              },
+              serviceType: [
+                'Praxisautomatisierung',
+                'ePA-Automatisierung',
+                'Medizinische Dokumentenverarbeitung',
+                'IoT-Geräteanbindung',
+                'KI für Arztpraxen',
+              ],
+              knowsAbout: [
+                'ePA',
+                'GDT-Schnittstelle',
+                'PVS-Integration',
+                'DSGVO',
+                'Medizinische IoT',
+                'Workflow-Automatisierung',
+              ],
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Munich',
+                addressRegion: 'Bavaria',
                 addressCountry: 'DE',
               },
-              founder: {
-                '@type': 'Person',
-                name: 'Marcel Kück',
-                jobTitle: 'AI Engineer & Knowledge Systems Specialist',
-              },
-              areaServed: ['DE', 'EU'],
-              priceRange: '€€€',
             }),
           }}
         />

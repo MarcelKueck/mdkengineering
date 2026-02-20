@@ -16,69 +16,72 @@ interface CaseStudy {
 }
 
 const caseStudies: Record<string, CaseStudy> = {
-  'research-knowledge-assistant': {
-    slug: 'research-knowledge-assistant',
-    icon: '🔬',
-    title: 'AI Knowledge Assistant for Academic Research',
+  'epa-automation': {
+    slug: 'epa-automation',
+    icon: '📋',
+    title: 'ePA-Automatisierung für Allgemeinmedizin',
     problem:
-      'A research institute had thousands of papers, internal reports, and datasets spread across multiple repositories and file shares. Researchers spent hours manually searching for relevant prior work, often missing critical references. The existing keyword-based search was inadequate for finding conceptually related work across disciplines.',
+      'Eine Allgemeinarztpraxis mit 40+ Patienten pro Tag kämpft mit dem manuellen ePA-Upload. Seit der Pflicht im Oktober 2025 müssen Befundberichte, Labordaten und Bildgebung in die ePA hochgeladen werden — aber der PVS-Anbieter liefert nur ein klunky Upload-Tool, das pro Patient mehrere Klicks erfordert. Die MFAs verlieren täglich 1-2 Stunden mit dieser Arbeit, und ab 2026 drohen Sanktionen bei Nicht-Compliance.',
     approach:
-      'I built a domain-specific RAG system tailored to the institute\'s research corpus. The system ingests papers (PDF, LaTeX), internal reports, and metadata, chunks them using a strategy optimized for academic content (respecting section boundaries, tables, and citations), and indexes them in a vector database. Researchers interact through a conversational interface that retrieves relevant passages and generates citation-backed answers. A re-ranking pipeline ensures the most relevant results surface first, and an evaluation framework continuously measures retrieval quality.',
+      'Aufbau eines automatisierten Dokumenten-Pipelines: Alle im PVS bereits digital vorliegenden Dokumente werden automatisch identifiziert, in das richtige ePA-Format gebracht, validiert und hochgeladen. Nicht-digitale Dokumente (Faxe, Scans) werden zunächst per OCR erfasst und klassifiziert. Ein Compliance-Dashboard zeigt der Praxisleitung, welche Patienten eine ePA haben, was hochgeladen wurde und wo Lücken bestehen.',
     result:
-      'Literature review that previously took hours now completes in seconds. Researchers report discovering relevant cross-disciplinary work they would have missed entirely. The system handles over 15,000 documents with sub-second query response times. Retrieval precision measured at 89% on the institute\'s evaluation benchmark.',
-    resultMetric: '↓ Hours of literature search reduced to seconds',
-    techStack: ['Python', 'LangChain', 'Pinecone', 'Claude API', 'FastAPI', 'React', 'RAGAS', 'PostgreSQL'],
+      'Geschätzter Zeitgewinn von 90% bei ePA-Dokumenten-Uploads. Die MFAs müssen nicht mehr pro Patient einzeln hochladen — das System arbeitet im Hintergrund. Das Compliance-Dashboard gibt Sicherheit bei der TI-Pauschale.',
+    resultMetric: 'Konzeptphase — Pilotierung geplant',
+    techStack: ['Python', 'n8n', 'OCR (Tesseract)', 'GDT-Schnittstelle', 'LLM-basierte Klassifikation', 'ePA-API', 'DSGVO-konformes Hosting (Hetzner/AWS Frankfurt)'],
     details: [
-      'Custom PDF and LaTeX parsing pipeline preserving document structure and citations',
-      'Chunking strategy optimized for academic content — respects section boundaries, figures, and tables',
-      'Hybrid search combining dense vector retrieval with BM25 keyword matching',
-      'Re-ranking pipeline using cross-encoder models for improved precision',
-      'Citation tracking — every generated answer includes source references with page numbers',
-      'Evaluation framework measuring precision, recall, and faithfulness using RAGAS',
-      'Feedback loop allowing researchers to rate answer quality, feeding into continuous improvement',
+      'Automatische Identifikation ePA-relevanter Dokumente im PVS',
+      'OCR + KI-Klassifikation für nicht-digitale Dokumente (Faxe, Scans, Ausdrucke)',
+      'Formatierung und Validierung nach ePA-Dokumentenstandards',
+      'GDT-Export für nahtlose PVS-Integration (CGM Medistar, medatixx, T2med)',
+      'Compliance-Dashboard: ePA-Status pro Patient, Upload-Historie, Lückenanalyse',
+      'Automatische Berücksichtigung von Widersprüchen (Opt-out)',
+      'Auditlog für alle Uploads — Dokumentation der ePA-Compliance',
     ],
   },
-  'ai-document-processing': {
-    slug: 'ai-document-processing',
-    icon: '📊',
-    title: 'AI-Powered Document Processing Pipeline',
+  'device-integration': {
+    slug: 'device-integration',
+    icon: '🔧',
+    title: 'Medizinische Geräteanbindung — IoT für Behandlungsräume',
     problem:
-      'The client received hundreds of documents daily (invoices, contracts, shipping notes, compliance forms), all in different formats. A team of 4 people spent most of their day manually extracting data and routing documents to the right departments. The process was slow, error-prone, and not scalable.',
+      'In den meisten deutschen Arztpraxen sind Medizingeräte isolierte Inseln. Blutdruckmessgeräte, EKGs, Spirometer, Waagen und Pulsoximeter speichern Daten nur lokal oder drucken auf Thermopapier. Die MFA liest den Wert ab und tippt ihn ins PVS ein — bei 30-50 Patienten pro Tag summiert sich das zu Stunden verlorener Zeit und einer systematischen Quelle für Übertragungsfehler.',
     approach:
-      'I built an intelligent document pipeline that combines OCR with LLM-based analysis. Documents arrive via email or upload, are classified by type using a fine-tuned classifier, then key data is extracted using LangChain with Claude API. The extracted data is validated against business rules and automatically pushed to the existing ERP system via REST API. Edge cases get flagged for human review.',
+      'Ein kompakter IoT-Hub (ESP32-S3 oder Raspberry Pi) pro Behandlungsraum liest Messwerte automatisch über Bluetooth LE oder serielle Schnittstelle aus und überträgt sie via GDT ins PVS, als strukturiertes Dokument in die ePA, und als Patientenkontext an den Praxis-Copilot. Eine Messung, null manuelles Abtippen, drei Systeme gleichzeitig aktualisiert.',
     result:
-      'Manual data entry was reduced by 85%. The 4-person team now handles 3x the document volume with only 1 person doing quality checks. Processing time per document went from 8 minutes average to 12 seconds.',
-    resultMetric: '↓ 85% reduction in manual data entry',
-    techStack: ['Python', 'LangChain', 'Claude API', 'FastAPI', 'PostgreSQL', 'n8n', 'OCR', 'Docker'],
+      'Eliminierung manueller Datenerfassung für die häufigsten Messwerte (Blutdruck, Gewicht, Sauerstoffsättigung). Gleichzeitige Aktualisierung von PVS, ePA und Copilot-Wissensbasis.',
+    resultMetric: 'In Entwicklung',
+    techStack: ['ESP32-S3', 'Raspberry Pi', 'Bluetooth LE', 'RS-232 Adapter', 'MQTT', 'GDT-Schnittstelle', 'HL7 FHIR', 'OTA Firmware Updates', 'Next.js Dashboard'],
     details: [
-      'Document classification with 97% accuracy across 12 document types',
-      'LLM-based extraction with structured output validation',
-      'n8n workflow orchestration for routing and notifications',
-      'REST API integration with legacy ERP system (SAP)',
-      'Human-in-the-loop review interface for edge cases',
-      'Full audit trail and compliance logging',
+      'Bluetooth LE für moderne Geräte, RS-232 für Legacy-Equipment',
+      'MQTT für interne Gerätekommunikation, GDT für PVS-Anbindung',
+      'Lokale Edge-Verarbeitung — Messwerte werden validiert, bevor sie den Raum verlassen',
+      'Automatische ePA-Dokumenterstellung aus Messwerten',
+      'Alarmlogik für pathologische Werte — sofortige Benachrichtigung an den Arzt',
+      'Unterstützte Geräte (initial): Blutdruckmessgeräte, Waagen, Pulsoximeter, EKG, Spirometer',
+      'OTA-Updates für alle deployten Hubs — kein manuelles Firmware-Update nötig',
+      'Regulatorisch: Datentransport, keine klinische Entscheidung — kein Medizinprodukt',
     ],
   },
-  'medical-copilot': {
-    slug: 'medical-copilot',
+  'practice-copilot': {
+    slug: 'practice-copilot',
     icon: '⚕️',
-    title: 'Medical Practice AI Copilot (In Development)',
+    title: 'Praxis-Copilot — KI-Wissenssystem (in Planung)',
     problem:
-      'German medical practices face a growing challenge: staying current with evolving clinical guidelines, drug interactions, and treatment protocols while managing increasing patient volumes. Physicians spend significant time manually searching through medical databases and guidelines during consultations. Existing tools are either too generic (not tailored to German medical regulations) or not compliant with DSGVO and medical data protection requirements.',
+      'Ärzte müssen täglich klinische Entscheidungen treffen und dabei aktuelle Leitlinien, Medikamenteninteraktionen und Abrechnungsregeln berücksichtigen. Bestehende Lösungen wie Prof. Valmed sind isolierte Web-Tools — der Arzt muss den Workflow unterbrechen, ein separates Tool öffnen, und manuell den Kontext eingeben. Microsoft Dragon Copilot fokussiert auf Kliniken, nicht auf deutsche Arztpraxen.',
     approach:
-      'I am designing and building a fully DSGVO-compliant AI copilot specifically for German medical practices. The system retrieves patient-relevant guidelines, drug interaction data, and clinical protocols from verified medical knowledge bases using a RAG architecture with strict guardrails. Every response includes source citations from approved medical databases. The system is designed with multiple safety layers: input validation, output guardrails, confidence scoring, and mandatory human-in-the-loop for all clinical recommendations.',
+      'Der Praxis-Copilot wird direkt in die bestehende Automatisierungsinfrastruktur eingebettet — er hat automatisch Zugriff auf die Dokumente, Labordaten und Messwerte, die MDK Engineering bereits verarbeitet. RAG-Architektur über kuratierte medizinische Wissensdatenbanken (AWMF-Leitlinien, Rote Liste, ABDA, ICD-10). Verfügbar als Cloud-Lösung mit de-identifizierten Abfragen oder vollständig lokal auf Apple Silicon Hardware in der Praxis.',
     result:
-      'Currently in active development with pilot phase planned for late 2025. Architecture is complete, core RAG pipeline is functional with initial medical knowledge base. Compliance framework for DSGVO and medical data regulations has been validated with legal counsel.',
-    resultMetric: 'Currently in development — pilot phase 2025',
-    techStack: ['Python', 'LangChain', 'Vector Database', 'Claude API', 'FastAPI', 'DSGVO Compliance Framework', 'Medical NLP', 'Guardrails AI'],
+      'In Konzeptionsphase. Architektur steht, RAG-Pipeline funktional mit initialer medizinischer Wissensbasis. Pilotierung geplant nach Aufbau der Praxis-Automatisierungsinfrastruktur (Layer 1-3).',
+    resultMetric: 'In Planung — Pilotphase nach Layer 1-3',
+    techStack: ['Python', 'RAG (LangChain)', 'AWMF Leitlinien', 'Rote Liste', 'ABDA', 'Claude/OpenAI APIs', 'Lokale KI (Llama/Mistral)', 'Apple Silicon', 'DSGVO-Compliance', 'Guardrails AI'],
     details: [
-      'RAG pipeline ingesting verified German medical guidelines (AWMF Leitlinien), drug databases, and clinical protocols',
-      'DSGVO-compliant architecture — all patient data stays on-premise, no PHI sent to external LLM APIs',
-      'Multi-layer guardrails: input filtering, output validation, confidence scoring, and mandatory physician review',
-      'Citation system linking every recommendation to specific guideline sections and evidence grades',
-      'Drug interaction checking against ABDA database with severity classification',
-      'Designed for integration with common German practice management systems (PVS)',
-      'Audit trail for every query and recommendation for medical documentation requirements',
+      'RAG über kuratierte deutsche medizinische Wissensquellen (AWMF, Rote Liste, ABDA)',
+      'Kontextbewusst durch Integration mit der bestehenden Automatisierungsebene',
+      'Proaktive Unterstützung: Leitlinien-Hinweise, Interaktionsprüfung, Abrechnungsvorschläge',
+      'Cloud-Variante: de-identifizierte Abfragen, EU-Hosting (AWS Frankfurt/Hetzner)',
+      'Lokale Variante: Mac Mini M4 in der Praxis, maximale Datensouveränität',
+      'Zitatpflicht: Jede Empfehlung referenziert die Quell-Leitlinie und Evidenzgrad',
+      'Kein Medizinprodukt in Phase 1 (nur Informationsabruf, keine klinischen Claims)',
+      'CE-Zertifizierung als MDSW geplant für Phase 2 (Prof. Valmed als Präzedenzfall)',
     ],
   },
 };
@@ -90,7 +93,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   return params.then(({ slug }) => {
     const study = caseStudies[slug];
-    if (!study) return { title: 'Project Not Found' };
+    if (!study) return { title: 'Projekt nicht gefunden' };
     return {
       title: study.title,
       description: study.problem.slice(0, 160),
@@ -108,7 +111,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
     <>
       <div className="page-header">
         <div className="container">
-          <div className="hero-tag">Case Study</div>
+          <div className="hero-tag">Projekt</div>
           <h1>{study.title}</h1>
           <div style={{ marginTop: '1.5rem' }}>
             <span
@@ -131,17 +134,17 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         <div className="container">
           <div className={styles.caseStudy}>
             <div className={styles.caseStudySection}>
-              <h2>The Problem</h2>
+              <h2>Das Problem</h2>
               <p>{study.problem}</p>
             </div>
 
             <div className={styles.caseStudySection}>
-              <h2>The Approach</h2>
+              <h2>Der Ansatz</h2>
               <p>{study.approach}</p>
             </div>
 
             <div className={styles.caseStudySection}>
-              <h2>Key Details</h2>
+              <h2>Details</h2>
               <ul>
                 {study.details.map((detail) => (
                   <li key={detail}>{detail}</li>
@@ -150,12 +153,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             </div>
 
             <div className={styles.caseStudySection}>
-              <h2>The Result</h2>
+              <h2>Das Ergebnis</h2>
               <p>{study.result}</p>
             </div>
 
             <div className={styles.caseStudySection}>
-              <h2>Tech Stack</h2>
+              <h2>Technologie</h2>
               <div className={styles.techStackGrid}>
                 {study.techStack.map((tech) => (
                   <span key={tech} className="tech-tag">
@@ -168,10 +171,10 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
           <div style={{ marginTop: '4rem' }}>
             <Link href="/projects" className="btn btn-secondary">
-              ← All Projects
+              ← Alle Projekte
             </Link>
             <Link href="/contact" className="btn btn-primary btn-arrow" style={{ marginLeft: '1rem' }}>
-              Discuss a Similar Project
+              Ähnliches Projekt besprechen
             </Link>
           </div>
         </div>

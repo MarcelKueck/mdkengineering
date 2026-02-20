@@ -4,13 +4,14 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './HeroAnimation.module.css';
 
 /* ── Text segments ── */
-// 3 rows: "I engineer AI" / "into" / "real systems."
-const ROW1_BEFORE = 'I engineer ';
-const ROW1_A = 'A';
-const ROW1_I = 'I';
-const ROW1 = ROW1_BEFORE + ROW1_A + ROW1_I; // "I engineer AI"
-const ROW2 = 'into';
-const ROW3 = 'real systems.';
+// 3 rows: "Ich automatisiere" / "Ihren" / "Praxisalltag."
+// The final "e" in row 1 is the tilt target — the arm straightens it.
+const ROW1_BEFORE = 'Ich automatisier';
+const ROW1_A = '';
+const ROW1_I = 'e';
+const ROW1 = ROW1_BEFORE + ROW1_A + ROW1_I; // "Ich automatisiere"
+const ROW2 = 'Ihren';
+const ROW3 = 'Praxisalltag.';
 
 /* ── Timing ── */
 const TYPING_SPEED = 55;
@@ -57,7 +58,7 @@ function getArmVariant(): ArmVariant {
 /* ── Tilt geometry helper ── */
 // Returns the screen-space transform-origin of the tilted I element
 // and related geometry, without modifying the DOM.
-const TILT_DEG = 20;
+const TILT_DEG = 25;
 const TILT_RAD = (TILT_DEG * Math.PI) / 180;
 const TILT_TRANSLATE_Y = -3;
 const COS_T = Math.cos(TILT_RAD);
