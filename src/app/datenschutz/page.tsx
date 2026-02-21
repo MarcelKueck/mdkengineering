@@ -56,12 +56,12 @@ export default function DatenschutzPage() {
 
             <h3>Verantwortliche Stelle</h3>
             <p>
-              MDK Engineering<br />
-              Marcel Kück<br />
+              MDK Engineering GbR<br />
+              Marcel Kück &amp; Veronika Raum<br />
               [Straße und Hausnummer]<br />
-              [PLZ und Ort]<br />
+              [PLZ] München<br />
               Deutschland<br />
-              E-Mail: marcel@mdkengineering.com
+              E-Mail: contact@mdkengineering.com
             </p>
 
             <h2>4. Datenerfassung auf dieser Website</h2>

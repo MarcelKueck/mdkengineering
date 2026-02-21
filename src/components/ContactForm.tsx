@@ -48,7 +48,7 @@ export default function ContactForm() {
           </div>
           <h3 className={styles.successTitle}>Nachricht gesendet!</h3>
           <p className={styles.successText}>
-            Ich melde mich innerhalb von 24 Stunden bei Ihnen.
+            Wir melden uns innerhalb von 24 Stunden bei Ihnen.
           </p>
           <div className={styles.successMeta}>
             <div className={styles.successMetaItem}>
@@ -127,7 +127,7 @@ export default function ContactForm() {
       {status === 'error' && (
         <p className={styles.errorMsg}>
           Etwas ist schiefgelaufen. Bitte schreiben Sie direkt an{' '}
-          <a href="mailto:marcel@mdkengineering.com">marcel@mdkengineering.com</a>.
+          <a href="mailto:contact@mdkengineering.com">contact@mdkengineering.com</a>.
         </p>
       )}
     </form>

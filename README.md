@@ -1,9 +1,9 @@
 # MDK Engineering
 
-> KI-Automatisierung für Arztpraxen
+> Praxisautomatisierung für Arztpraxen
 
-The website for MDK Engineering — a German medical practice automation engineer based in Munich.
-Automatisierung für deutsche Arztpraxen: ePA-Workflows, Geräteanbindung, Smart-Praxis-Hardware und DSGVO-konforme KI-Systeme.
+The website for MDK Engineering GbR — a German medical practice automation team based in Munich.
+Automatisierung für deutsche Arztpraxen: ePA-Workflows, Geräteanbindung und Smart-Praxis-Hardware — DSGVO-konform, aus einer Hand.
 
 **Live:** [mdkengineering.com](https://mdkengineering.com)
 
@@ -11,7 +11,6 @@ Automatisierung für deutsche Arztpraxen: ePA-Workflows, Geräteanbindung, Smart
 
 - [Next.js 16](https://nextjs.org/) — App Router, TypeScript, Server Components
 - CSS Modules — Component-scoped styling
-- [MDX](https://mdxjs.com/) — Blog content with next-mdx-remote
 - [Vercel](https://vercel.com/) — Deployment & hosting
 
 ## Getting Started
@@ -38,40 +37,18 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 src/
   app/           — Pages (App Router)
   components/    — Reusable components
-  lib/           — Utility functions
-content/
-  blog/          — MDX blog posts
 ```
 
 ## Pages
 
 | Route | Description |
 |-------|-------------|
-| `/` | Home — hero, services, projects, about, blog preview, contact |
-| `/services` | Detailed service offerings (Leistungen) & pricing |
-| `/about` | Background, timeline, capabilities (Über mich) |
-| `/projects` | Project portfolio (Projekte) |
-| `/projects/[slug]` | Individual case studies |
-| `/blog` | Blog listing (Einblicke) |
-| `/blog/[slug]` | Individual blog posts (MDX) |
+| `/` | Home — hero, services, why us, contact |
+| `/services` | Detailed service offerings (Leistungen) |
+| `/about` | Team page (Über uns) |
 | `/contact` | Contact form & info (Kontakt) |
 | `/impressum` | Legal notice (German, TMG §5) |
 | `/datenschutz` | Privacy policy (German, DSGVO) |
-
-## Adding Blog Posts
-
-Create a new `.mdx` file in `content/blog/`:
-
-```mdx
----
-title: "Your Post Title"
-description: "A short description for SEO and previews."
-date: "2025-01-20"
-category: "Tutorial"
----
-
-Your content here...
-```
 
 ## Deployment
 
@@ -91,10 +68,8 @@ Or connect the GitHub repository to Vercel for automatic deployments on push.
 
 - [ ] Replace placeholder data in `/impressum` and `/datenschutz` (use [e-recht24.de](https://www.e-recht24.de/) generator)
 - [ ] Set up email service for contact form (e.g., [Resend](https://resend.com/))
-- [ ] Add real project photos / headshot
 - [ ] Configure custom domain on Vercel
-- [ ] Set up Vercel Analytics (optional, privacy-friendly)
 
 ## License
 
-© MDK Engineering. All rights reserved.
+© MDK Engineering GbR. All rights reserved.

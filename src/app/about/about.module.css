@@ -132,6 +132,53 @@
   line-height: 1.6;
 }
 
+/* Team */
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.teamCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid transparent;
+  border-radius: 4px;
+  padding: clamp(1.75rem, 3vw, 2.25rem);
+  transition: var(--transition);
+}
+
+.teamCard:hover {
+  background: var(--bg-card-hover);
+  border-left-color: var(--accent);
+  border-color: var(--border-hover);
+  border-left-color: var(--accent);
+}
+
+.teamCardHeader {
+  margin-bottom: 1rem;
+}
+
+.teamCardHeader h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.teamRole {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.teamCard p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
 /* Values */
 .valuesList {
   display: flex;

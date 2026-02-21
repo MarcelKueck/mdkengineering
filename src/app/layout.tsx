@@ -21,14 +21,14 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "MDK Engineering | KI-Automatisierung für Arztpraxen",
+    default: "MDK Engineering | Praxisautomatisierung für Arztpraxen",
     template: "%s | MDK Engineering",
   },
   description:
-    "Ihr technischer Partner für Praxisautomatisierung. ePA-Workflows, Dokumentenverarbeitung, Geräteanbindung und DSGVO-konforme KI-Lösungen für Arztpraxen. Sitz in München.",
+    "Ihr technisches Team für Praxisautomatisierung. ePA-Workflows, Dokumentenverarbeitung, Geräteanbindung und DSGVO-konforme Lösungen für Arztpraxen. Sitz in München.",
   metadataBase: new URL("https://mdkengineering.com"),
   openGraph: {
-    title: "MDK Engineering | KI-Automatisierung für Arztpraxen",
+    title: "MDK Engineering | Praxisautomatisierung für Arztpraxen",
     description:
       "Weniger Verwaltung, mehr Zeit für Patienten. Automatisierung von ePA-Uploads, Dokumentenverarbeitung und Gerätedatenerfassung — DSGVO-konform, praxistauglich, aus einer Hand.",
     url: "https://mdkengineering.com",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MDK Engineering | KI-Automatisierung für Arztpraxen",
+    title: "MDK Engineering | Praxisautomatisierung für Arztpraxen",
     description:
-      "Automatisierung für Arztpraxen: ePA, Dokumentenverarbeitung, Geräteanbindung. Software + Hardware aus einer Hand.",
+      "Praxisautomatisierung für Arztpraxen: ePA, Dokumentenverarbeitung, Geräteanbindung. Software + Hardware aus einer Hand.",
   },
   robots: {
     index: true,
@@ -72,11 +72,23 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'ProfessionalService',
-              name: 'MDK Engineering',
+              name: 'MDK Engineering GbR',
               url: 'https://mdkengineering.com',
-              email: 'marcel@mdkengineering.com',
+              email: 'contact@mdkengineering.com',
               description:
-                'KI-gestützte Automatisierung für deutsche Arztpraxen. ePA-Workflows, Dokumentenverarbeitung, Geräteanbindung und laufende Betreuung — Software und Hardware aus einer Hand.',
+                'Praxisautomatisierung für deutsche Arztpraxen. ePA-Workflows, Dokumentenverarbeitung, Geräteanbindung und laufende Betreuung — Software und Hardware aus einer Hand.',
+              founder: [
+                {
+                  '@type': 'Person',
+                  name: 'Marcel Kück',
+                  jobTitle: 'Engineering & KI',
+                },
+                {
+                  '@type': 'Person',
+                  name: 'Veronika Raum',
+                  jobTitle: 'Medizin & klinische Workflows',
+                },
+              ],
               areaServed: {
                 '@type': 'Country',
                 name: 'Germany',
@@ -86,7 +98,7 @@ export default function RootLayout({
                 'ePA-Automatisierung',
                 'Medizinische Dokumentenverarbeitung',
                 'IoT-Geräteanbindung',
-                'KI für Arztpraxen',
+                'Workflow-Automatisierung',
               ],
               knowsAbout: [
                 'ePA',

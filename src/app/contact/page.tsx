@@ -22,7 +22,7 @@ export default function ContactPage() {
           <span className="section-label">{'// Kontakt'}</span>
           <h1 className="section-title">Sprechen wir über Ihre Praxis</h1>
           <p style={{ maxWidth: '640px', opacity: 0.8, fontSize: '1.125rem', lineHeight: 1.7 }}>
-            Kostenloses Erstgespräch — ich schaue mir an, wo Automatisierung in Ihrem
+            Kostenloses Erstgespräch — wir schauen uns an, wo Automatisierung in Ihrem
             Praxisalltag den größten Unterschied macht. Gerne auch vor Ort.
           </p>
         </div>
@@ -35,7 +35,7 @@ export default function ContactPage() {
               <div className={styles.infoBlock}>
                 <h3>E-Mail</h3>
                 <p>
-                  <a href="mailto:marcel@mdkengineering.com">marcel@mdkengineering.com</a>
+                  <a href="mailto:contact@mdkengineering.com">contact@mdkengineering.com</a>
                 </p>
               </div>
 
@@ -52,8 +52,8 @@ export default function ContactPage() {
               <div className={styles.infoBlock}>
                 <h3>So läuft es ab</h3>
                 <ol className={styles.expectList}>
-                  <li>Kostenloses Erstgespräch (30 Min.) — ich verstehe Ihren Praxisalltag und Ihre größten Zeitfresser</li>
-                  <li>Optional: Praxisbesuch vor Ort — ich schaue mir die Abläufe und Systeme direkt an</li>
+                  <li>Kostenloses Erstgespräch (30 Min.) — wir verstehen Ihren Praxisalltag und Ihre größten Zeitfresser</li>
+                  <li>Optional: Praxisbesuch vor Ort — wir schauen uns die Abläufe und Systeme direkt an</li>
                   <li>Konkreter Vorschlag mit klarem Umfang, Zeitrahmen und Preis — keine versteckten Kosten</li>
                 </ol>
               </div>

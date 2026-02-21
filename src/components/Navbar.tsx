@@ -21,9 +21,8 @@ export default function Navbar() {
 
   const navLinks = [
     { href: isHome ? '#services' : '/services', label: 'Leistungen' },
-    { href: isHome ? '#projects' : '/projects', label: 'Projekte' },
-    { href: isHome ? '#about' : '/about', label: 'Über mich' },
-    { href: '/blog', label: 'Einblicke' },
+    { href: isHome ? '#about' : '/about', label: 'Über uns' },
+    { href: isHome ? '#contact' : '/contact', label: 'Kontakt' },
   ];
 
   return (

@@ -2,10 +2,10 @@
 
 ## Project Overview
 
-MDK Engineering is a Next.js 16 website for a German medical practice automation engineer based in Munich.
-The business specializes in workflow automation (ePA, document processing, billing optimization),
-smart practice hardware (IoT device integration, check-in terminals, queue displays), and
-DSGVO-compliant AI systems for Arztpraxen. The primary audience is German practice owners (Praxisinhaber).
+MDK Engineering GbR is a Next.js 16 website for a German medical practice automation team based in Munich.
+The business specializes in workflow automation (ePA, document processing, billing optimization) and
+smart practice hardware (IoT device integration, check-in terminals, queue displays) for Arztpraxen.
+The primary audience is German practice owners (Praxisinhaber).
 It's deployed on Vercel at mdkengineering.com.
 
 ## Tech Stack
@@ -13,7 +13,6 @@ It's deployed on Vercel at mdkengineering.com.
 - **Framework:** Next.js 16 with App Router, TypeScript
 - **Styling:** CSS Modules + global CSS (not Tailwind utilities)
 - **Fonts:** JetBrains Mono (headings/mono) + DM Sans (body) via next/font/google
-- **Blog:** MDX files in `/content/blog/` parsed with gray-matter + reading-time, rendered with next-mdx-remote
 - **Deployment:** Vercel
 
 ## Design System
@@ -36,9 +35,7 @@ src/
     robots.ts             — Robots.txt generation
     api/contact/route.ts  — Contact form API endpoint
     services/             — Services page (Leistungen)
-    about/                — About page (Über mich)
-    projects/             — Project listing + [slug] case studies (Projekte)
-    blog/                 — Blog listing + [slug] individual posts (Einblicke)
+    about/                — About page (Über uns)
     contact/              — Contact page (Kontakt)
     impressum/            — Legal notice (German)
     datenschutz/          — Privacy policy (German)
@@ -48,10 +45,6 @@ src/
     ContactForm.tsx       — Contact form (client component)
     HeroAnimation.tsx     — Robotic arm animation with typed text
     ScrollReveal.tsx      — Intersection Observer animations
-  lib/
-    blog.ts               — Blog utility functions
-content/
-  blog/                   — MDX blog posts
 ```
 
 ## Conventions
@@ -59,17 +52,10 @@ content/
 - Use CSS Modules for component-specific styles (`.module.css`)
 - Use global CSS classes for shared patterns (`section-label`, `section-title`, `btn`, etc.)
 - Server Components by default; only use `'use client'` when needed (interactivity)
-- Blog posts are MDX files with frontmatter (title, description, date, category)
 - All pages export metadata for SEO
 - Website language is German (`lang="de"`) — target audience is German Praxisinhaber
 - German legal pages (Impressum, Datenschutz) contain placeholder data marked with [brackets]
-
-## Adding a Blog Post
-
-1. Create a new `.mdx` file in `/content/blog/`
-2. Add frontmatter: title, description, date (YYYY-MM-DD), category
-3. Write content in MDX (Markdown with optional JSX)
-4. The post will automatically appear on /blog and be included in the sitemap
+- Team voice: always use "wir/unser" (never "ich/mein")
 
 ## Important Notes
 

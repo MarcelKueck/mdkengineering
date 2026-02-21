@@ -8,18 +8,16 @@ export default function Footer() {
         <div className={styles.footerInner}>
           <div className={styles.footerLeft}>
             <span className={styles.footerLogo}>MDK Engineering</span>
-            <span className={styles.footerTagline}>KI-Automatisierung für Arztpraxen.</span>
+            <span className={styles.footerTagline}>Praxisautomatisierung aus einer Hand.</span>
           </div>
           <div className={styles.footerLinks}>
             <Link href="/services">Leistungen</Link>
-            <Link href="/projects">Projekte</Link>
-            <Link href="/about">Über mich</Link>
-            <Link href="/blog">Einblicke</Link>
+            <Link href="/about">Über uns</Link>
             <Link href="/contact">Kontakt</Link>
           </div>
         </div>
         <div className={styles.footerBottom}>
-          <span>© {new Date().getFullYear()} MDK Engineering. Sitz in München.</span>
+          <span>© {new Date().getFullYear()} MDK Engineering GbR. Sitz in München.</span>
           <div className={styles.footerLegal}>
             <Link href="/impressum">Impressum</Link>
             <Link href="/datenschutz">Datenschutz</Link>

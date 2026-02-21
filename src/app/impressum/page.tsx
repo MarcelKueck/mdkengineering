@@ -22,16 +22,21 @@ export default function ImpressumPage() {
           <div className={styles.prose}>
             <h2>Angaben gemäß § 5 TMG</h2>
             <p>
-              MDK Engineering<br />
-              Marcel Kück<br />
+              MDK Engineering GbR<br />
+              Marcel Kück &amp; Veronika Raum<br />
               [Straße und Hausnummer]<br />
-              [PLZ und Ort]<br />
+              [PLZ] München<br />
               Deutschland
             </p>
 
             <h2>Kontakt</h2>
             <p>
-              E-Mail: marcel@mdkengineering.com
+              E-Mail: contact@mdkengineering.com
+            </p>
+
+            <h2>Vertretungsberechtigt</h2>
+            <p>
+              Marcel Kück, Veronika Raum
             </p>
 
             <h2>Umsatzsteuer-ID</h2>
@@ -42,7 +47,7 @@ export default function ImpressumPage() {
 
             <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
             <p>
-              Marcel Kück<br />
+              Marcel Kück &amp; Veronika Raum<br />
               [Adresse wie oben]
             </p>
 

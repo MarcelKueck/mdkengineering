@@ -4,12 +4,12 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './HeroAnimation.module.css';
 
 /* ── Text segments ── */
-// 3 rows: "Ich automatisiere" / "Ihren" / "Praxisalltag."
+// 3 rows: "Wir automatisiere" / "Ihren" / "Praxisalltag."
 // The final "e" in row 1 is the tilt target — the arm straightens it.
-const ROW1_BEFORE = 'Ich automatisier';
+const ROW1_BEFORE = 'Wir automatisier';
 const ROW1_A = '';
 const ROW1_I = 'e';
-const ROW1 = ROW1_BEFORE + ROW1_A + ROW1_I; // "Ich automatisiere"
+const ROW1 = ROW1_BEFORE + ROW1_A + ROW1_I; // "Wir automatisiere"
 const ROW2 = 'Ihren';
 const ROW3 = 'Praxisalltag.';
 
